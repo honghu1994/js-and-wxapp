@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <!-- 
+      强调：
+        1.最常用  内嵌JS --- 学习期间用
+                 外部JS  --- 开发部署最多使用 ，使用时，为了 不让 js 文件 被 爬虫 抓取，会 写一堆比较复杂的 js 动态 加载 其他的外部js页面
+                 行内JS 一般不会直接 写到 html中，而是 通过 webapi 来 动态创建！！
+        2.小坑：  script标间 一旦 使用了 src属性 来引用外部 js文件的话，标签中间的js代码 就不会被执行了！！！
+     -->
+
+    <!-- 1.内嵌JS -->
+    <script>
+      alert('Hi~~班长~~来呀~~');
+    </script>
+
+    <!-- 2.外部JS -->
+    <script src="02外部js文件.js"> 
+      alert('我是班长的女朋友~~~~');
+    </script>
+
+  </head>
+  <body>
+    <!-- 3.行内 JS -->
+    <input type="button" value="点我呀" onclick="alert('小白~~~');">
+  </body>
+</html>

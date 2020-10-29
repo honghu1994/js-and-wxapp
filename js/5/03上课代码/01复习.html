@@ -1,0 +1,62 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //1.day01 --  变量、数据类型
+                      //prompt(text,defaultText) --- prompt() 方法用于显示可提示用户进行输入的对话框。
+    //            输入  ：var usrInput =  prompt('消息内容'); --> 返回的都是字符串
+    //                    var usrChoose = confirm('消息内容'); --> 返回的true/false
+    //                    document.write('<script src="1.js"><\/script>')  
+
+    //          输出  ： console.log('输出内容');  --> 程序员用
+    //                  alert('用户消息');  --> 给页面浏览者看的
+
+    //2.day02 -- if else 条件判断   switch case  --> if(a === 1)
+    //           显示类型转换：
+    //                     转数值： parseInt()  parseFloat()  Number()   ,        +('') -> 0     parseInt('') -> NaN
+    //                     转字符串： 变量.toString()    String() -- null和 undefined 没有toString() ，会报错！
+    //                     转布尔值： Boolean()
+    //                                    转成false  : 0  -0  NaN  ''  false  undefined null document.all
+    //                                    转成true
+
+    //3.day03 -- 循环 ： 凡是 不依赖与 循环次数，都用 while 或 do while 
+    //                  while       先奏后斩  - 先判断 循环条件是否成立，如果成立，则执行循环体代码，否则，直接退出循环
+    //                  do while    先占后奏  - 先执行1次循环体代码，然后再判断循环条件，看要不要执行下一次循环
+
+    //                  for  --- 有指定循环次数 时 使用！
+    //                           用来 按照次数循环 for(var i = 1; i<=10;i++){ }
+    //                           用来 生成数字     for(var i = 20; i<= 80;i++){ }
+    //                           用来 生成 数组 的 下标  for(var i = 0; i < arr.length;i++){ }
+    //                  continue -- 退出本次循环 --》跳到 i++
+    //                  break    -- 退出整个循环
+
+    //4.day04  -- 数组：
+    //                var arr = [1 , 2 , 3 , 'a' , true];
+    //                           0   1   2    3      4    ,  length = 5
+    //            数组三要素：  元素，下标，length
+    //            追加元素：arr.push('暴雨为何还不来~~！');   // -> [1 , 2 , 3 , 'a' , true, '暴雨为何还不来~~！']
+    //            删除元素：arr.splice(index,count)
+    //            修改元素：arr[1] = 'love'; // -> [1 , 'love' , 3 , 'a' , true, '暴雨为何还不来~~！']
+    //            清空数组：arr.length = 0; // -> [ ]
+
+    //            遍历数组
+    var arr = [1, 2, 3, 'a', true];
+    //         0  1  2   3     4    ,  length = 5
+    // 正序遍历
+    for (var i = 0; i < arr.length; i++) { // i = 0 1 2 3 4
+      console.log(arr[i]);
+    }
+
+    // 倒序遍历
+    for (var i = arr.length - 1; i >= 0; i--) { // i = 4 3 2 1 0
+      console.log(arr[i]);
+    }
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

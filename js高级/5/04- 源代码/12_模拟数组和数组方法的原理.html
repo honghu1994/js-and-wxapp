@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        arugments用在函数里
+            它是一个伪数组，保存了所有传递过来的实参
+     -->
+
+    <script>
+        // 数组其实是Array的实例对象
+        // var nums = new Array(10,20,30); //长度3，要加一个，给下标3加
+        // // console.log(nums);
+        // nums[nums.length] = 40; //长度为4了
+        // nums[nums.length] = 50;
+        // // 总结，写nums.length就是给它最后加一个元素
+        // console.log(nums);
+        
+
+        // var nums2 = new Array(10,20,30);
+        // console.log(nums2);
+        
+        
+
+
+        // 在模拟系统内数组的构造函数
+        function Myarr(){
+
+            // 实参有多少个，就遍历多少次，再把实参依次加到创建的对象
+            for(var i = 0 ; i < arguments.length; i++){
+
+                this[i]  = arguments[i];
+            }
+
+            this.length = arguments.length;
+        }
+
+        // 模拟出了系统提供的数组的push方法
+        Myarr.prototype.push = function(ys){
+
+            this[this.length] = ys;
+            this.length++;
+        }
+
+
+        var obj = {
+            0:10,
+            1:20,
+            2:30,
+            length:3
+        }
+
+        Myarr.prototype.push.call(obj,40);
+        console.log(obj);
+        
+
+
+
+        // var arr = new Myarr(10,20,30,40);
+        // // console.log(arr);
+        // arr.push(50);
+        // arr.push(60);
+        // console.log(arr);
+        
+
+        // var arr2 = new Myarr(100,200,300,400);
+        // console.log(arr2);
+
+
+
+
+
+
+
+     
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

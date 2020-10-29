@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // 1.将1~100之间的整数相加，当累加的和大于或等于20时就停止，并打印出当前数（加到几的时候和大于等于20）
+    var sumNum = 0; // 保存 和 的变量
+
+    // 使用 for 循环 生成 1 - 100 之间的整数
+    for (var i = 1; i <= 100; i++) {
+      //累加 到 变量中
+      sumNum += i;
+      //如果 累加和 大于 等于 20，就停止循环
+      if(sumNum >= 20){
+        break;
+      }
+    }
+
+    // 打印 当 和 >= 20 时的 数值
+    // 1 + 2 + 3 + 4 + 5 + 6 = 21
+    console.log('当 和 >=20时，i=' + i);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

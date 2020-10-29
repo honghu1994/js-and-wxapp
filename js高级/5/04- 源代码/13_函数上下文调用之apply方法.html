@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+
+        apply方法和call方法，效果是一样的：都是用来修改this的指向
+
+        apply：只有两个参数
+                参数1：要修改的this的指向
+                参数2：传入一个数组，数组中每个元素会一一对应给形参
+
+                相当于它会把这个数组元素展开，一个一个给
+     -->
+
+    <script>
+        // function f1() {
+
+        //     console.log(this);
+
+        // }
+        // f1();//window
+
+        // var obj = { name: "jack" };
+        // f1.apply(obj); //obj
+
+
+
+        function f1(n1,n2){
+
+            console.log(this);
+            console.log(n1,n2);
+            
+        }
+
+        // f1(10,20); //window,分别是10,20
+
+        var obj = { name: "jack" };
+        // f1.call(obj,10,20);
+
+        // 它只接收2个参数：参数1：要修改的this的指向 参数2：要传入一个数组，数组里的元素就是给函数的实参
+        f1.apply(obj,[100,200]);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

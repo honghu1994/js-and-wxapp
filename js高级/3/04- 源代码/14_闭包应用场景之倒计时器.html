@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        闭包是一个可以访问另外一个函数内部变量的函数
+
+        以后闭包可能我们会在不经意就已经使用到了，你甚至都不用想到这是用到闭包。
+
+
+     -->
+</head>
+
+<body>
+    <input type="button" value="获取验证码" id="btn">
+
+    <script>
+        // 找到按钮，加点击事件
+        var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            
+            // 点击后禁用按钮
+            btn.disabled = true;
+
+            // 设置默认倒计时
+            var sec = 5;
+            btn.value = "还有" + sec + "秒";
+
+            // 每隔一秒来让时间-1
+            var timerID = setInterval(function () {
+
+                //每隔一秒来让sec--
+                sec--;
+                btn.value = "还有" + sec + "秒";
+
+                if (sec == 0) {
+
+                    clearInterval(timerID);
+                    // 还要启用按钮，并且把文字恢复
+                    btn.disabled = false;
+                    btn.value = "获取验证码";
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>

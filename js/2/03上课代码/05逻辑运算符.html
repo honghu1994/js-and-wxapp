@@ -1,0 +1,72 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //1.逻辑运算符
+    //  &&    ||     !
+
+    //1.1逻辑与 && ---------------------------------------------------------------
+    // 只有 && 两边的 数据 都为 true 时，整个 逻辑与 表达式 才返回 true
+    //                    只要有一个是 false,整个 逻辑与表达式 就返回 false
+    // 口诀：一假都假
+    //  左边的表达式  &&  右边的表达式  -> 表达式结果
+    //     true      &&    true            true
+    //     false     &&    true            false
+    //     true      &&    false           false
+
+
+
+    // 找男朋友  --  高 富 帅 情商高
+    // 如果 四个 条件 都要满足 才 成立： 逻辑与  var isOk = 高 && 富 && 帅 && 情商高;
+    //                                                   高富帅情商 4个条件 都要满足 才 返回 true
+    //                                                                     只要有一个不满足，都返回 false
+    var isOk = 1 > 2 && 1 >= 0; // false
+    //         false && true    // false
+    var isOk = 1 == 1 && 1 >= 0; // true
+    //          true  && true    // true
+
+    var isOk = 1 == 1 && 1 >= 0 && 2 > 1; // true
+    //           true &&   true  && 2 > 1
+    //                 true      && true
+
+
+    //1.2 逻辑或 ||  ---------------------------------------------------------------
+    // 只要 || 两边有一个是 true，整个表达式 就返回 true
+    //         两边都是 false，整个表达式 才返回 false
+    // 口诀：一真都真
+    // 左边的表达式  ||  右边的表达式  -> 表达式结果
+    //    true      ||     false          true
+    //    false     ||     true           true
+    //    false     ||     false          false
+
+    // 如果 四个 条件中， 满足一个就成立：逻辑或 var isOk = 高 || 富 || 帅 || 情商高;
+    //                                                   高富帅情商 4个条件 只要满足一个 就 返回 true
+    //                                                                     只有4个条件都不满足，才返回 false
+    var isOk = 1 > 2 || 1 >= 0; // true
+    //          false || true   -> true
+    var isOk = 1 == 1 || 1 == 0; // true
+    //          true  ||  false; -> true
+
+    //1.3 逻辑非（取反运算符）
+    //    可以用来 将 一个 布尔值 变成 相反的值  
+    //    !true -> false
+    //    !false -> true
+    console.log('!true = ' + !true);
+    console.log('!false = ' + !false);
+
+    console.log(!(1 > 2));// true
+
+    // var obj = / /
+    // var foo={att:16}
+    // console.log(foo['att']);
+    
+   
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

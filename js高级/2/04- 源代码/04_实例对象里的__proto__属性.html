@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        每个对象默认都有一个__proto__属性，指向了它所对应的原型对象
+
+        注意左右各2个下划线，一共4个
+
+        但是不推荐用__proto__去找原型，因为有兼容问题，最好使用 构造函数.prototype去找原型
+     -->
+
+     <script>
+         function Person(name,age){
+
+            this.name = name;
+            this.age = age;
+         }
+
+         Person.prototype.sayHi = function(){
+
+            console.log('hello');
+            
+         }
+
+         var p1 = new Person('游润东',99);
+         var p2 = new Person('女儿国国王',299);
+
+         p1.sayHi();
+         console.log(p1.__proto__ === Person.prototype); //true
+         console.log(p2.__proto__ === Person.prototype); //true
+
+        //  console.log(p2);
+         
+     </script>
+</head>
+<body>
+    
+</body>
+</html>

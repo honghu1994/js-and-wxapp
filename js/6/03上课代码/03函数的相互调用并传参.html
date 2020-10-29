@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+      //1.函数 内部 可以 调用 其他的函数，并传入实参
+      // function a(){
+      //   console.log('请你吃饭啊~~~');
+      //   b('小苍苍'); // 调用 b 函数
+      // }
+
+      // function b(usrName){
+      //   console.log('没空，我在洗澡~~~ ' + usrName);
+      // }
+
+      // a();
+
+      //2.函数 内部 可以 调用 其他的函数，并将 自己的 形参的值 传入
+      function a(usrName){ // usrName = '小苍苍'
+        console.log('请你吃饭啊~~~' + usrName);
+        
+        b(usrName); // 调用 b 函数 ， 相当于 -》b('小苍苍')
+        //【将变量作为参数 传递时，是把 变量的 值 复制了一份 传给 被调用函数的 形参】
+      }
+
+      function b(usrName){
+        console.log('没空，我在洗澡~~~ ' + usrName);
+      }
+
+      a('小苍苍');
+
+
+      var num1 = 13.11;
+      var num2 = Math.ceil(num1);// 13.11 -> 14
+      console.log(num2); // 14
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

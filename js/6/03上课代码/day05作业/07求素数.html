@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    /* 
+    8.判断一个数是否是素数
+      素数（质数）：就只能被1和自身整除的数就是素数，例如：7,13
+
+      1既不是素数也不是合数
+     */
+
+    function isSuNum(num) {
+      var count = 0;
+      //1.循环 从 1 循环到 Num，依次取模自己，看是否为0，统计 取模结果为0的次数
+      for (var i = 1; i <= num; i++) {
+        if (num % i == 0) {
+          count++;
+        }
+      }
+      //2.如果 次数 ==2，就是素数
+      //                否则，不是素数
+      if(count == 2){
+        return true;
+      }
+      
+      return false;
+    }
+
+
+
+    var usrNum = parseInt(prompt('请输入一个数值：'));
+
+    var isOk = isSuNum(usrNum);
+
+    alert(isOk);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

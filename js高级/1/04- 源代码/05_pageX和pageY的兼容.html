@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            width: 2000px;
+            height: 2000px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        var box = document.querySelector('.box');
+
+        box.onclick = function (e) {
+
+            e = e || window.event;
+
+            // ie8和之前的浏览器不支持相对于页面的坐标
+            // console.log(e.pageX,e.pageY);
+
+            // 相对于可视区域的x和y，但是这个没有兼容问题，IE8也支持
+            // console.log(e.clientX,e.clientY);
+
+            // var pageX = e.clientX + 页面往左滚出去的距离
+            // var pageY = e.clientY + 页面往上滚出去的距离
+
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+            
+            var pageX = e.clientX + scrollLeft;
+            var pageY = e.clientY + scrollTop;
+            
+            console.log(pageX,pageY);
+            
+        }
+    </script>
+</body>
+
+</html>

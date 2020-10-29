@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+
+        [^] 负向类
+                不能有这些
+                
+        例：
+            [abc] 要么a要么b要么c
+
+            [^abc] 找到abc以外的字符
+    -->
+
+    <script>
+        console.log(/[^abc]/.test('a')); //false
+        console.log(/[^abc]/.test('ad')); //true
+
+
+        console.log(/[^abc]/.test('abcabc'));//false
+        console.log(/[^abc]/.test('abcabcd'));//true
+        console.log(/[^abc]/.test('ad')); //true
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //0. 创建了一个数组，里面有5 个元素
+    var arrCity = ['P城', 'R城', 'G港', '学校', '靶场'];
+    //              0       1       2     3       4       length = 5
+
+    //1. 通过 length 访问数组中 元素的个数
+    console.log(arrCity.length); 
+
+    //2. 通过 length 来设置 数组 的 元素个数
+    //2.1 通过 length 为 数组 增加 空的 元素
+    arrCity.length = 7; // 因为 此时 数组 最大长度为 5，设置为7 的话，就是 向数组 添加了 3个 空元素
+    console.log(arrCity);
+    console.log(arrCity[5]); // undefined
+    console.log(arrCity[6]); // undefined
+    console.log(arrCity[7]); // undefined
+
+    //2.2 通过 length 为数组 删减 元素
+
+    arrCity.length = 3;
+    console.log(arrCity);  // ['P城', 'R城', 'G港']
+
+    //注意：如果 设置数组.length = 0,相当于 清空整个数组
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

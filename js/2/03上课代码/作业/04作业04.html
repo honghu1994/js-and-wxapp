@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    /* 
+      写一个程序，输入总人数，每10人一列，要求站成一个方队（每队必须保持10人，不够就不要了），可以排多少列，余多少人。
+          例：一共有30个人，一共可以排3列，余0个
+              一共有31个人，一共也只可以排3列（因为每对必须保持10个人，不够就不要了），余1个
+      
+      */
+
+    var stuNum = +prompt('请输入学员的个数：');
+    var queNum = Math.floor(stuNum / 10); // 获取队列数--- 使用 floor方法 去掉 小数点和后面的小数
+    var leftNum = stuNum % 10; // 取模：获取 除不尽的 余数
+
+    alert('总人数【'+ stuNum + '】，队列数【' + queNum + '】，剩余人数【' + leftNum + '】');
+    
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

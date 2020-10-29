@@ -1,0 +1,40 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+
+    //1.变量 的本质 就是一个 容器，用来装 一个 数据
+    var num = 1;
+    num = '小白';
+
+    //2.数组 的本质 就是多个 容器，用来装 多个 数据
+    var arr = [1, '小羽', 3, 4];
+
+    //3.函数（方法）的本质 就是 一个 特殊的容器，用来 装 一段 代码
+    //3.1 函数的声明
+    //    a.形参：本质就是 一个 局部变量
+    //            形参  可以设置 多个
+    function showLove(uName = '小苍苍',fName = '班长'){
+      console.log(uName + ',i love u ,but u don\'t know~~~  from:' + fName);
+      console.log('i know,but i dont love u ~~~');
+    }
+
+    //3.2 函数的调用
+    //    a.实参：就是为形参 赋的 值
+    //           根据形参的个数 来 设置 实参的个数
+    // showLove('小熊熊','小兔兔'); // uName = '小熊熊' ， fName = '小兔兔' 
+
+    showLove();
+
+
+
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //1.创建 空对象
+    var obj = {}; //new Object();
+
+    //2.创建 带 初始值 的对象
+    // var obj = {
+    //   name: '小白',
+    //   age: 18,
+    //   say:function(){
+
+    //   }
+    // };
+
+    //3.为 对象 动态添加成员（属性，方法）
+    obj.name = '我是新增的成员的值';
+    obj.age = 18;
+
+
+    var obj1 = {
+      name: '我是新增的成员的值'
+    };
+
+    obj1.age = 19;
+
+    console.log(obj);
+    console.log(obj1);
+
+
+    //3.写一个构造函数，用来创建 保存 图书信息 的对象
+    //  包含 三个属性(bookName,bookPages,bookPrice) 和 一个方法(showInfo -- 用来显示书籍的三个属性)
+
+
+
+    //【构造函数】：存在的目的 就是 为 new关键字 传入的 空对象 添加 共同 属性 和 方法
+    function BookInfo(bName, bPage, bPrice) {
+      // this 就是 new 关键字调用 本函数时 传入的 空对象
+      this.bookName = bName;
+      this.bookPages = bPage;
+      this.bookPrice = bPrice;
+
+      this.showInfo = function () {
+        console.log('我是一本书~~~');
+      }
+    }
+
+
+    //new 关键字：   a.创建空对象   var obj = new Object();  --> var obj = { };
+    //              b.将空对象 传给 构造函数里的 this     this = obj
+    //              c.调用构造函数
+    //              d.返回第一步创建的对象   return obj;
+    var book1 = new BookInfo('进化心理学', 400, 52);
+    var book2 = new BookInfo('JS高级编程', 600, 73);
+
+    console.log(book1);
+    console.log(book2);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

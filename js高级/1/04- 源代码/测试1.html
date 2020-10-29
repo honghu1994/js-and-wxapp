@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 330px;
+            height: 550px;
+            border: 1px solid black;
+        }
+
+        .right{
+            position: absolute;
+            top:8px;
+            right:10px;
+        }
+
+        img{
+            width: 100px;   
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <img src="images/1.jpg" alt="">
+        <img src="images/2.jpg" alt="">
+        <img src="images/3.jpg" alt="">
+        <img src="images/4.jpg" alt="">
+        <img src="images/5.jpg" alt="">
+    </div>
+    <div class="right"></div>
+    <script>
+    var currentImg;
+    var imgList=document.querySelectorAll('img')
+    var right=document.querySelector('.right')
+    var left=document.querySelector('.left')
+    for (var i=0;i<imgList.length;i++){
+        imgList[i].ondragstart=function(){
+            currentImg=this;
+        }
+    }
+    right.ondragover=function(e){
+        e.preventDefault();}
+    
+    right.ondrop=function(){
+        right.appendChild(currentImg)
+    }
+    left.ondragover=function(e){
+        e.preventDefault();}
+    
+    left.ondrop=function(){
+        left.appendChild(currentImg)
+    }
+    </script>
+</body>
+</html>

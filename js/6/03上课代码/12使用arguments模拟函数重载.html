@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // 1.函数重载：一个页面中 有多个 方法 同名，只不过 形参的个数不一样
+    //   但 JS中 不直接支持 重载语法，因为 前面的同名函数 会被最后一个同名函数 覆盖
+
+    // function add(x,y){
+    //   alert(x+y);
+    // }
+
+    // function add(x,y,z){
+    //   alert(x+y+z);
+    // }
+
+    // // add(1,2); // NaN -- 因为调用的 是 最后一个add函数，只传了两个实参，所以最后一个形参为 undefined，undefined 与数值运算都是 NaN非数值
+    // add(1,2,3); // 6
+
+
+    // 2.【用 JS 模拟函数 重载】：传入不同个数的实参，执行 不同 的代码
+    // 一般 不建议 完全不使用形参，都用 arguments，因为 不方便也不容易读懂参数 用来干嘛
+    function add() {
+      //1.如果 调用时 传入了 两个 实参
+      if (arguments.length == 2) {
+        alert(arguments[0] + arguments[1]);
+      } 
+
+      //2.如果 调用时 传入了 三个 实参
+      else if (arguments.length == 3) {
+        alert(arguments[0] + arguments[1] + arguments[2])
+      }
+    }
+
+    // 当传入 两个实参时，函数内部的 arguments.length 就等于 2
+    // add(1,2);
+
+    // 当传入 两个实参时，函数内部的 arguments.length 就等于 3
+    add(1, 2, 3);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title></title>
+    <meta charset='UTF-8' />
+    <script>
+        function countdays(usrYear, usrmonth, usrday) {
+            var allDaysNum = 0
+            for (var yue = 1; yue < usrmonth; yue++) {
+                if (yue == 1 || yue == 3 || yue == 5 || yue == 7 || yue == 8 || yue == 10 || yue == 12) {
+                    allDaysNum += 31;
+                }else if(yue==4||yue==6||yue==9||yue==11){
+                    allDaysNum+=30;
+                }else{
+                    if(usrYear%400==0||(usrYear%4==0&&usrYear%100!=0)){allDaysNum+=29;
+                    }else {
+                        allDaysNum+=28;
+                    }
+              
+              }
+
+            }
+            allDaysNum+=usrday;
+
+            return allDaysNum;
+
+        }
+        var year = parseInt(prompt("输入年份"))
+        var month = parseInt(prompt('输入月份'))
+        var day = parseInt(prompt('输入天数'))
+        var num = countdays(year, month, day)
+
+        alert('总天数为' + num);
+
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        替换原型方式继承的好处：方便。一句话替换后，后面创建对象都有继承
+
+        缺点：会改变自己的构造函数
+     -->
+</head>
+
+<body>
+
+    <script>
+        var wjl = {
+            house: "豪宅",
+            car: "布加迪威龙",
+            balance: 100000000000,
+            company: "万达",
+        }    
+
+        // 假如说wjl现在有两个儿子，就要创建两个对象，最好先准备一个构造函数
+        function Son(name,age){
+
+            this.name = name;
+            this.age = age;
+        }
+
+        // 把原型替换成wjl，相当于让wjl这个对象成为他们的原型
+        // 那么wjl有的属性，这些对象就都有了
+        // 这种方式，我们就叫替换原型继承
+        Son.prototype = wjl;
+
+
+        var wsc = new Son('王思聪',31);
+        var wss = new Son('王思蒜',16);
+
+        // 用之前的混入式继承缺点：如果有10个对象，就你要遍历10次，我希望一旦这些对象创建来就有wjl的所有属性
+        // for(var key in wjl){
+
+        //     wsc[key] = wjl[key];
+        // }
+
+        // for(var key in wjl){
+
+        //     wss[key] = wjl[key];
+        // }
+        console.log(wsc);
+        console.log(wss);
+
+        // 指向构造函数
+        console.log(wsc.__proto__.constructor);
+        
+        
+
+
+    </script>
+</body>
+
+</html>

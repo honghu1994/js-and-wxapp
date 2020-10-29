@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        如果我的n等于5，它就打印1,2,3,4,5
+
+        我要打印5，还要先打印4   先打印5-1，再打印5
+        我要打印4，还要先打印3   先打印4-1，再打印4
+        我要打印3，还要先打印2   先打印3-1，再打印3
+        我要打印2，还要先打印1   先打印2-1，再打印2
+                前面是个重复过程，这个重复过程可以用递归
+
+        我为0的时候，就不往下打印了
+                这就是所谓的结束条件
+     -->
+
+    <script>
+        // 每次进来先打印这个数的前一个数
+        function print(n) {
+            
+            // 如果为0就不往下执行，就代表不会打印-1，以及不会打印0自己
+            if(n == 0){
+                return;
+            }    
+            
+            print(n - 1); 
+            console.log(n); //1 2 3 4 5
+        }
+
+        /* 如何理解上面代码？
+                我要打印5之前先打印4，我打印4之前先打印3，...... 如果为0就不打印了（退出）
+        */
+
+        print(5);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

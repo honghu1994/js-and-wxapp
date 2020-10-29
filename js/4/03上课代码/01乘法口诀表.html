@@ -1,0 +1,42 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    
+
+      /* 
+         row = 1     for (var col = 1; col <= 9; col++)
+         row = 2     for (var col = 1; col <= 8; col++)
+         row = 3     for (var col = 1; col <= 7; col++)
+         .....
+         row = 9      for (var col = 1; col <= 1; col++)
+       */
+
+
+    var strStar = ''; // 保存 口诀表 的 字符串
+
+    // 1.生成9行，并且 row 会逐一生成 行号
+    for (var row = 1; row <= 9; row++) {
+
+      //2. 内层循环：负责生成 每一行 里的 星星的个数（列数）
+      for (var col = 1; col <= 10 - row; col++) {
+        //strStar += '*\t';
+        strStar += col + ' * ' + (10 - row) + ' = '+ ( col * (10 - row) )  +'\t';
+      }
+
+      //3. 加入换行符
+      strStar += '\n';
+
+    }
+
+    //4. 循环结束后，打印乘法口诀表
+    console.log(strStar);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

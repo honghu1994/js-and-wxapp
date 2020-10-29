@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        instanceof
+            以前说：它是判断某个数据是否属于某种类型
+
+            专业的叫法说： 判断对象 在不在 这个构造函数的原型对象的原型链上
+
+        语法：
+            对象 instanceof 构造函数
+
+        例：
+            callback instanceof Function
+                判断callback是不是函数
+                专业叫法：判断callback在不在 Function的原型对象的原型链上
+    -->
+
+    <script>
+        var nums = [10,20,30,40];
+
+        // 判断nums在不在Array原型对象的原型链上
+        console.log( nums instanceof Array);  //true
+        // 判断nums在不在Object原型对象的原型链上
+        console.log( nums instanceof Object); //true
+        console.log( nums instanceof Function); //false
+
+
+
+        function f1(){
+
+            console.log('我是函数');
+        }
+
+        console.log(f1 instanceof Function); //true
+
+        if(f1 instanceof Function){
+
+            f1();
+        }
+
+        console.log(f1 instanceof Object); //true
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    /* 
+      7. 猜数字游戏.  随机产生1个1-100之间的整数 让用户猜  
+
+          当用户输入的数比产生的随机数大 就输出 猜大了 并让用户继续输入新的数.。
+          当用户输入的比产生的随机数小的时候 就输出 猜小了 并且继续猜
+          当用户刚好输入的就是这个随机数的时候 提示成功  并显示用户猜了多少次.
+
+          a. 先产生1-100的随机数
+          b. 写1个循环 让用户反复不停的去猜 直到猜对结束.
+      
+       */
+
+    var ranNum = Math.floor(Math.random() * 100); // 获取 随机整数
+    var count = 0;//猜的次数
+
+    // 先让用户猜一次，如果 不对，再循环 猜一次，依次类推，直到 猜对位置
+    do {
+      var usrNum = parseInt(prompt('请输入您要猜的数字：')); // 接收 用户的数字
+      count++;
+
+      if (usrNum == ranNum) {
+        alert('恭喜你，猜对了！！！' + usrNum + '，一共猜了【' + count + '】次');
+        break; // 猜对了就退出循环
+      }else if(usrNum > ranNum){
+        alert('先生，你猜大了~~~' + usrNum);
+      }else{
+        alert('先生，你猜小了~~~' +  usrNum);
+      }
+    } while (true);
+
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

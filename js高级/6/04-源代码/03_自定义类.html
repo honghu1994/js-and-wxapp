@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        自定义类：就是自己设置的内容
+
+        例：
+            其实就是自己写什么，它就帮匹配有没有这个内容
+     -->
+
+     <script>
+
+        // //  找数字 
+        //  console.log(/\d/.test(123) );//true
+        // //  这个代表找有没有d这个单词
+        //  console.log(/d/.test(123) ); //false
+        //  console.log(/@/.test(123) ); //false
+        //  console.log(/@/.test('dsada@dsd.com') ); //true
+         
+
+        //自定义类
+        //你用test检测的字符串里面，有没有包含d这个字母。如果有就是true.
+        // console.log(/d/.test("123")); //false
+        // console.log(/d/.test("123d")); //true
+
+
+
+        //你用test检测的字符串里面， 有没有包含heima，，如果有就是true.
+        // console.log(/heima/.test("hei")); //false
+        // console.log(/heima/.test("ma"));  //false
+        // console.log(/heima/.test("heima"));  //true
+        // console.log(/heima/.test("heiheimama")); //true
+        // console.log(/heima/.test("heihei.mama")); //false
+        // console.log(/heima/.test("heimaheima")); //true
+        // console.log(/heima/.test("林黑群真尼玛hei")); //false
+        // console.log(/heima/.test("he1im2a")); //false
+
+
+        // 参数：
+        // i: 忽略大小写
+        // g：全局匹配（暂时无法演示）
+
+        console.log(/a/.test('aaaaaaaa')); //true
+        console.log(/a/.test('AAAAAAAA')); //false
+
+        // 忽略大小写
+        console.log(/a/i.test('AAAAAAAA')); //true
+        
+
+     </script>
+</head>
+<body>
+    
+</body>
+</html>

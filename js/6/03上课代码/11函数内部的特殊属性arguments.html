@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+      //1.每个 函数 内部 有一个 特殊属性 arguments
+      //                     本质上 就是 函数内部 自带的一个变量
+      //                     是一个 '类数组'
+      //                            类数组：有 元素、下标、length 的一种特殊对象
+
+      //2. arguments 属性 中 保存的 是 函数调用时 传入的 【实参 列表】！！！！
+
+      function showLove(){
+        // console.log(arguments);
+        //2.1 通过 下标访问 实参
+        console.log(arguments[0]);
+        console.log(arguments[1]);
+        console.log(arguments[2]);
+
+        console.log('------------遍历arguments:-------------');
+        for(var i = 0 ;i < arguments.length;i++){
+          console.log(arguments[i]);
+        }
+      }
+
+      showLove(1,'小白白','小泽泽');
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

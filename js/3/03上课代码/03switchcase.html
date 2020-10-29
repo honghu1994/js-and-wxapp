@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // 1. switch case 语法 主要用来 做 变量 判等 操作
+    //                     注意：switch case 中 对变量做判等 用的是 全等号 === ！
+    //                     补充：case 后面 可以 放 任意类型的值 与 变量 进行判等 ！
+    //    switch(要进行判等的 变量) {
+    //         case '值1':{
+    //                 case1 代码块~~~~
+    //                 break; // 退出 整个 switch 结构 
+    //          }
+    //         case '值2':{
+    //                 case2 代码块~~~~
+    //                 break; // 退出 整个 switch 结构 
+    //          }
+    //         case '值3':{
+    //                 case3 代码块~~~~
+    //                 break; // 退出 整个 switch 结构 
+    //          }
+    //         default:{
+    //                 default 代码块~~~~
+    //          }
+    // }
+
+    // == 值判断 两边的 值是不是一样
+    // === 判断 两边的值 也 会 判断 两边的 数据类型 是否一样！！
+
+    var usrName = '小班班';
+
+    switch (usrName) {
+      case '小波波': { // 相当于 if(usrName === '小波波')
+        console.log('亲，我可以亲你吗？');
+        break; // 跳出 switch 结构 ，执行 switch结构 后面的代码
+      }
+      case '小苍苍': {
+        console.log('亲，我可以抱你嘛？');
+        break;
+      }
+      case '小泽泽': {
+        console.log('亲，我可以带你去湘江边吗？');
+        break;
+      }
+      default: {
+        console.log('我不喜欢男的~~~~');
+      }
+    }
+
+    console.log('我是switch结构后面的代码~~~~');
+
+    // if(usrName == '小波波'){
+    //   console.log('亲，我可以亲你吗？');
+    // }else if(usrName == '小苍苍'){
+    //   console.log('亲，我可以抱你嘛？');
+    // }else if(usrName == '小泽泽'){
+    //   console.log('亲，我可以带你去湘江边吗？');
+    // }else{
+    //   console.log('我不喜欢男的~~~~');
+    // }
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

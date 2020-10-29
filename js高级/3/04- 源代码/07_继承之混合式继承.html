@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        混合式继承其实就是把混入式和替换原型继承的思想混合到一起来继承
+     -->
+
+    <script>
+
+        var wjl = {
+            house: "豪宅",
+            car: "布加迪威龙",
+            balance: 100000000000,
+            company: "万达",
+        }
+
+        // 假如说wjl现在有两个儿子，就要创建两个对象，最好先准备一个构造函数
+        function Son(name, age) {
+
+            this.name = name;
+            this.age = age;
+        }
+
+        // Son.prototype.house = wjl['house']
+        // Son.prototype.car = wjl['car']
+        // Son.prototype.balance = wjl['balance']
+        // Son.prototype.company = wjl['company']
+
+        // 混合式继承
+        for(var key in wjl){
+
+            Son.prototype[key] = wjl[key];
+        }
+
+        var wsc = new Son('王思聪',31);
+        var wss = new Son('王思蒜',16);
+
+        console.log(wsc.house);
+        console.log(wss.house);
+        
+        console.log(wsc.__proto__.constructor);
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

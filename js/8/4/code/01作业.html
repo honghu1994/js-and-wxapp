@@ -1,0 +1,76 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //1. 作用域：
+    //         全局作用域 - 整个页面都是 范围，本质上就是 指的 window对象
+    //         局部作用域 - 函数内部的范围
+    //2. 全局变量 和 局部变量
+    //         全局变量 ： 在 全局作用域中 声明的 变量 就叫 全局变量  -- 函数外面声明的变量！！
+    //                    特例：在函数内部 声明变量时 如果 不是使用 var关键字，那么 也是声明 全局变量！！！
+
+    //         局部变量 :  在 局部作用域中 声明的 变昂 就叫 局部变量  -- 函数内部声明的变量！！
+
+    var a = 110;
+
+    function aa() {
+      var b = 120;
+      c = 150; //全局变量: 在函数内部 声明变量时 如果 不是使用 var关键字，那么 也是声明 全局变量！！！
+    }
+    aa();
+
+    console.log(c);
+
+    console.log(window);
+
+    // 只有 函数的 {} 才有局部作用域，其他的 都是 全局作用域 
+
+    //案例1 : 
+    {
+      var num = 5;
+    }
+    console.log(num);
+
+
+    //案例2
+    var num = 5;
+    if (num > 3) {
+      var sum = 7;
+    }
+    console.log(sum); // 7
+
+    //案例3  
+    for (var i = 0; i < 10; i++) {
+
+    }
+    console.log(i); // 10
+
+
+    //案例4 全局变量
+    var name = "zs";
+
+    function f() {
+      // 全局变量 在函数 内部 也能访问
+      name = "ww";
+    }
+
+    f();
+    console.log(name); // ww
+
+
+    //案例5  局部变量
+    function f() {
+      var name1 = "zs";
+    }
+
+    f();
+    console.log(name1); // 报错！！！
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #8a2be2;
+            border: 1px solid #000;
+        }
+
+        th:nth-child(1) {
+            width: 80px;
+        }
+
+        th:nth-child(2) {
+            width: 160px;
+        }
+
+        th:nth-child(3) {
+            width: 120px;
+        }
+
+        th:nth-child(4) {
+            width: 80px;
+        }
+
+        td {
+            text-align: center;
+            border: 1px solid #000;
+        }
+
+        tbody>tr{
+
+            background-color: #ffc0cb;
+        }
+
+        /* tr:nth-child(odd){
+
+            background-color: #ffff00;
+        }
+        tr:nth-child(even){
+
+            background-color: #ff0000;
+        } */
+
+    </style>
+</head>
+
+<body>
+    请输入姓名：<input type="text" id="name">
+    <br>
+    请输入邮箱：<input type="text" id="email">
+    <br>
+    请输入手机：<input type="text" id="phone">
+    <br>
+    请输入地址：<input type="text" id="addr">
+    <br>
+    <input type="button" value="添加" id="add">
+
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>邮箱</th>
+                <th>手机</th>
+                <th>地址</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>小黑</td>
+                <td>xiaohei@126.com</td>
+                <td>199999009090</td>
+                <td>北京</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        //找到四个文本框
+        var userName = document.getElementById('name');
+        var email = document.getElementById('email');
+        var phone = document.getElementById('phone');
+        var address = document.getElementById('addr');
+
+        // 找到按钮
+        var add = document.getElementById('add');
+
+        // 找到tbody
+        var tb = document.querySelector('tbody');
+
+        // 点击按钮，添加数据
+        add.onclick = function(){
+
+            // 只要有一个为空就不往下走了
+            if( userName.value == "" 
+                || email.value == "" 
+                || phone.value == "" 
+                || address.value == "" )
+            {
+                alert('请将数据填入完全');
+                return;
+            }
+
+            //要创建tr，而且这个tr要有4个td
+            var tr = document.createElement('tr');
+            tr.innerHTML = "<td>" + userName.value +  "</td>";
+            tr.innerHTML += "<td>"+ email.value +"</td>";
+            tr.innerHTML += "<td>"+ phone.value +"</td>";
+            tr.innerHTML += "<td>"+ address.value +"</td>";
+
+            tb.appendChild(tr);
+
+            // 重新找到所有tr
+            var trList = document.querySelectorAll('tbody>tr');
+            for(var i = 0; i < trList.length; i++){
+
+                if(i % 2 == 0){
+
+                    trList[i].style.backgroundColor = "#ffff00";
+                }else{
+
+                    trList[i].style.backgroundColor = "#ff0000";
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

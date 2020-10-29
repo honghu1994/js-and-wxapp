@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    var numa = Math.floor(Math.random() * 100); // 0 - 1 随机小数   ， 0.2322 * 100   =  23.22
+
+    //条件语句：
+    //  1. 单条件  if(bool){   代码块  }  
+    if (2 > 1) {
+      console.log('我觉得你大学不应该毕业~~~');
+    }
+
+    // 2. 二选一条件 if(bool){ if代码块 }  else{ else代码块 }
+    //    如果 if小括号 中 的结果 是 true，就执行 if代码块 ，否则 执行 else 代码块
+    if (1 > 2) {
+      console.log('true');
+    } else {
+      console.log('false');
+    }
+
+    // 3. 多条件  if(bool) { 代码 }  else if(bool){ 代码 } else if(bool) { 代码 } ..... else{ }
+    //    多条件中 ，如果 任意一个 if 的条件满足了，就执行 这个 if 的 代码块，后面的 判断 都不执行了，直接 执行 整个 if 结构 后面的代码！
+    var salary = 5000;
+
+    if (salary == 5000) {
+      console.log('每天吃 方便面~~~');
+    } else if (salary == 10000) {
+      console.log('每天吃 两包方面便~~~');
+    } else if (salary == 15000) {
+      console.log('每天吃 农家小炒肉~~~');
+    } else {
+      console.log('每天吃 麻辣烫~~~');
+    }
+
+    console.log('if 主要代码复习结束~~~~');
+
+    //4. if 嵌套 ： 就在 if 的代码块 中 再写一个 if结构的代码
+    if (1 > 0) {
+      if (2 > 0) {
+
+      }else if(3 > 0){
+
+      }else{
+
+      }
+    }
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset='UTF-8'/>
+        <script>
+            var count =0;
+            var sumAge=0;
+            var avaAge=0;
+            for (var i=1; i<=5;i++){
+                var age =parseInt(prompt('请输入用户的年龄'))
+                if (age<0||age>100){
+                    alert('请输入正确的年龄!!!')
+                    break;
+                }
+                count++;
+                sumAge+=age;
+            } 
+            console.log(count);
+            avaAge=sumAge/count;
+            console.log(avaAge);
+            
+            
+            
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

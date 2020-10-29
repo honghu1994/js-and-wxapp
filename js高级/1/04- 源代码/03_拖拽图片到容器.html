@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 330px;
+            height: 550px;
+            border: 1px solid black;
+        }
+
+        .right{
+            position: absolute;
+            top:8px;
+            right:10px;
+        }
+
+        img{
+            width: 100px;   
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <img src="images/1.jpg" alt="">
+        <img src="images/2.jpg" alt="">
+        <img src="images/3.jpg" alt="">
+        <img src="images/4.jpg" alt="">
+        <img src="images/5.jpg" alt="">
+    </div>
+    <div class="right"></div>
+
+
+    <script>
+
+        // 声明一个变量，存图片
+        var currentImg;
+
+        // 找到所有图片
+        var imgList = document.querySelectorAll('img');
+
+        // 找到右边容器
+        var right = document.querySelector('.right');
+        // 找到左边容器
+        var left = document.querySelector('.left');
+
+
+        // 给所有的img加拖拽开始事件
+        for(var i = 0; i < imgList.length; i++){
+
+            imgList[i].ondragstart = function(){
+
+                // 谁拖拽开始就把谁存到变量里
+                currentImg = this;
+            }
+        }
+
+        // 为了ondrop能够触发
+        right.ondragover = function(e){
+
+            e.preventDefault();
+        }
+
+        // 在我范围内松手触发的事件
+        right.ondrop = function(){
+
+            // 变量里存的是谁就把谁加到右边
+           right.appendChild(currentImg);
+        }
+
+        left.ondragover = function(e){
+
+            e.preventDefault();
+        }
+
+        left.ondrop = function(){
+
+            // 把变量里存的图片，添加到左边
+            left.appendChild(currentImg);
+            
+        }
+    </script>
+</body>
+</html>

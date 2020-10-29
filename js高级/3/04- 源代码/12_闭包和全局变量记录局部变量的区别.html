@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        如果用全局变量去保存局部变量，你看起来好像能够在外面访问这个局部变量了。但事实上不是，事实上，相当于还是全局变量
+        只不过是全局变量保存了局部变量它之前的值而已。相当于不同的空间
+
+        但是用闭包，访问的还是那同一个局部变量，只有那一个空间
+     -->
+</head>
+
+<body>
+
+    <script>
+        var globalNum;
+
+        function f1(){
+
+            var num = 10;
+            num++;
+            globalNum = num;
+        }
+
+        // //想在外面这个num，不能访问
+        // f1();
+        // f1();
+        // f1();
+        // f1();
+        // f1();
+        // console.log(globalNum);//11
+
+
+        // function f1(){
+
+        //     var num = 10;
+
+        //     function f2(){
+
+        //         num++;
+        //         console.log(num);
+
+        //     }
+
+        //     return f2;
+        // }
+        // var res = f1();
+        // res();//11
+        // res();//12
+        // res();//13
+
+
+        // var res1, res2;
+        // function f1() {
+
+        //     var num = 10;
+
+        //     function add() {
+        //         num++;
+        //     }
+
+        //     function getNum() {
+        //         console.log(num);
+        //     }
+
+        //     res1 = add;
+        //     res2 = getNum;
+        // }
+
+        // f1();
+
+        // res2();//10
+        // res1();
+        // res2();//11
+
+
+        // var globalNum,closure;
+        // function f1() {
+
+        //     //局部变量
+        //     var num = 10;
+
+        //     //闭包
+        //     function add() {
+        //         num++;
+        //     }
+
+        //     // 全局变量保存这个num的值
+        //     globalNum = num;
+        //     closure = add;
+        // }
+
+        // f1();
+
+        // console.log(globalNum); //10
+        // closure();
+        // console.log(globalNum); //10
+
+
+
+        // var globalNum, getNum;
+        // function f1(){
+
+        //     var num = 10;
+
+        //     function f2(){
+        //         console.log(num);
+        //     }
+
+        //     globalNum = num;
+        //     getNum = f2;
+        // }
+
+        // f1();
+
+        // globalNum = 1000;
+        // getNum(); //10
+
+
+
+        var setNum, getNum;
+        function f1() {
+
+            var num = 10;
+
+            function f2() {
+                console.log(num);
+            }
+
+            function f3(){
+
+                num = 1000;
+            }
+
+            setNum = f3;
+            getNum = f2;
+        }
+
+        f1();
+        setNum();
+        getNum(); //1000
+
+    </script>
+</body>
+
+</html>

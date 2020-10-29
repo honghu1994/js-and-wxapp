@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+      
+        //1.获取 要点的菜 的名字
+        console.log('欢迎光临~~~');
+
+        fanDian(xiaoChaoRou);
+
+        fanDian(xiaoLongXia);
+
+
+      // 饭店函数
+      function fanDian(func){
+        //2.做菜
+        func(); // 调用 回调函数
+
+     
+        //3.上菜
+        console.log('您要的菜来咯~~~');
+        //4.结账走人
+        console.log('请您付款1000元~~~');
+      }
+
+      function xiaoChaoRou(){
+        console.log('放点辣椒');
+        console.log('放点肉');
+        console.log('放点各种配料~~~');
+        console.log('香喷喷的 辣椒炒肉 做好了~~~');
+      }
+
+      function xiaoLongXia(){
+        console.log('放点辣椒');
+        console.log('放点龙虾');
+        console.log('放点各种配料~~~');
+        console.log('香喷喷的 小龙虾 做好了~~~');
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

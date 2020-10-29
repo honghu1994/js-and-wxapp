@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // 数组去重
+    var arr = [2, 3, 5, 3]; // -> [2, 3, 1, 5, 6]
+
+    var arrNew = [];
+    //思路：
+    //    1. 逐个 取出 元素
+    //       1.1 判断 取出 的 元素 是否 在 新数组 中 存在多个(多过一次)
+    //            将取出 的 元素 与 新数组 里的 元素 进行比较，如果 新数组中 没有与之相等的，则 添加到 新数组
+    //                                                                   有  与之相等的，则不添加到 新数组，直接 进入下一次循环
+    for (var i = 0; i < arr.length; i++) {
+      //a.取出一个原数组的值
+      var ele = arr[i];
+
+      // 创建 开关变量：
+      var isCunZai = false;
+
+      //b.遍历新数组，看是否有与 ele 相等的元素存在
+      //  注意：新数组 里的 元素 要 全都 不等于 ele 时，才 把 ele 加入到 新数组中
+      for (var j = 0; j < arrNew.length; j++) {
+        // d.如果 新数组中 有任何一个 元素 与 ele 相等，则 将开关标记为 true，不需要将 此元素ele 加入新数组
+        if (arrNew[j] == ele) {
+          isCunZai = true;
+          break; // 退出 遍历 新数组的循环 ，因为 ele 在新数组中 已经存在，不需要添加到新数组中
+        }
+      }
+
+      //f.判断 isCunZai 的值 是否为 false，如果为 false，代表 ele 在新数组中 不存在，进而 将 ele 加入新数组
+      if(!isCunZai){ //if (isCunZai == false) {
+        arrNew.push(ele);
+      }
+
+    }
+
+    console.log(arr);
+    console.log(arrNew);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

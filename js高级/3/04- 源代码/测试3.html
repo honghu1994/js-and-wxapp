@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // function f1() {
+
+        //     var num = 10;
+
+        //     //  这个函数就叫闭包
+        //     function f2() {
+
+        //         console.log('f2里num=' + num);
+        //     }
+
+        //     return f2;
+        // }//这里才销毁
+        // var res = f1();
+        // //  console.log(res);
+        // res(); //相当于是在外面访问的num了
+      
+        var res1, res2;
+        function f1() {
+
+            var num = 10;
+
+            function add() {
+                num++;
+            }
+
+            function getNum() {
+                console.log(num);
+            }
+
+            res1 = add;
+            res2 = getNum;
+        }
+
+        f1();
+
+        res2();//10
+        res1();
+        res2();//11
+        
+    </script>
+</body>
+
+</html>

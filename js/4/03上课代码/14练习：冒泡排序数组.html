@@ -1,0 +1,84 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // 冒泡排序
+
+    // 1. 求数组最小值
+    var arrNum = [4, 3, 2, 1]; // -> [1,2,3,4]
+    //            0  1  2  3 length = 4
+
+    console.log('排序前：');
+    console.log(arrNum);
+    
+    // 排序的过程，就是 不断 找 最大值的过程，两两相比，将 大的数字 和 小的数字 位置 进行 调换
+    
+
+    //第一轮比较：将 数组中 最大的值 放到了 最后面
+    console.log('第1轮比较：将 数组中 最大的值 放到了 最后面--------------------');
+    if(arrNum[0] > arrNum[1]){
+      var temp = arrNum[0];  // temp = 4 ,  a[0] = 4 , a[1] = 3
+      arrNum[0] = arrNum[1]; // temp = 4 ,  a[0] = 3 , a[1] = 3
+      arrNum[1] = temp;      // temp = 4 ,  a[0] = 3 , a[1] = 4
+    }
+
+    console.log(arrNum);
+
+    if(arrNum[1] > arrNum[2]){
+      var temp = arrNum[1];  
+      arrNum[1] = arrNum[2]; 
+      arrNum[2] = temp;     
+    }
+
+    console.log(arrNum);
+
+    
+    if(arrNum[2] > arrNum[3]){
+      var temp = arrNum[2];  
+      arrNum[2] = arrNum[3]; 
+      arrNum[3] = temp;     
+    }
+
+    console.log(arrNum);
+
+
+     //第2轮比较：将 数组中 第二大的值 放到了 倒数第二个位置
+     console.log('第2轮比较：将 数组中 第二大的值 放到了 倒数第二个位置--------------------');
+    if(arrNum[0] > arrNum[1]){
+      var temp = arrNum[0];  
+      arrNum[0] = arrNum[1]; 
+      arrNum[1] = temp;      
+    }
+
+    console.log(arrNum);
+
+    if(arrNum[1] > arrNum[2]){
+      var temp = arrNum[1];  
+      arrNum[1] = arrNum[2]; 
+      arrNum[2] = temp;     
+    }
+
+    console.log(arrNum);
+
+
+     //第3轮比较：将 数组中 第3大的值 放到了 倒数第3个位置
+     console.log('第3轮比较：将 数组中 第3大的值 放到了 倒数第3个位置--------------------');
+    if(arrNum[0] > arrNum[1]){
+      var temp = arrNum[0]; 
+      arrNum[0] = arrNum[1]; 
+      arrNum[1] = temp;     
+    }
+
+    console.log(arrNum);
+
+
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

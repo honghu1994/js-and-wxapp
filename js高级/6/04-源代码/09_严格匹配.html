@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    
+        //1.严格匹配
+    //   /^   / 以什么开头
+    //   /   $/ 以什么结尾
+
+    //严格匹配   /^    $/   符合中间要求的只能出现一次,不能有别的东西
+
+
+
+    //  console.log(/abc/.test("abc"));  //true
+    //  console.log(/abc/.test("abcabcabc")); //true
+
+    
+    //   console.log(/^abc$/.test("abcabcabc"));  //false
+    //   console.log(/^abc$/.test("abc"));  //true
+    //   console.log(/^abc$/.test("abc1")); //false
+    //   console.log(/^abc$/.test("aabc")); //false
+
+
+
+//        //自定义类,只要检测的字符串中包含数字就是true.
+
+    //    console.log(/\d/.test("1")); //true
+    //    console.log(/\d/.test("12345"));//true
+    //    console.log(/\d/.test("abc12345def"));//true
+    //    console.log(/\d/.test("abc1"));//true
+
+
+    //    console.log(/^\d$/.test("1")); //true
+    //    console.log(/^\d$/.test("12345")); //false
+    //    console.log(/^\d$/.test("abc12345def"));//false
+    //    console.log(/^\d$/.test("abc1def"));//false
+    //    console.log(/^\d$/.test("abc1"));//false
+    //    console.log(/^\d$/.test("a"));//false
+
+
+
+        // {2} 代表必须出现2次
+        // 必须有2位数字，不能别的东西
+        // console.log(/^\d{2}$/.test("22"));//true
+        // console.log(/^\d{2}$/.test("223"));//false
+        // console.log(/^\d{2}$/.test("22b"));//false
+
+
+    //    console.log(/^\d$/.test("9"));//true
+
+    // abc加任意数字 不能有别的东西了
+    //    console.log(/^abc\d$/.test("abc7"));//true
+
+    //    console.log(/^abc\d$/.test("abc7abc9")); //false
+
+    //    console.log(/abc\d/.test("abc7abc9"));//true
+//
+//
+      console.log(/^滑稽$/.test("老师很滑稽啊"));  //false
+      console.log(/^滑稽$/.test("滑稽")); //true
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

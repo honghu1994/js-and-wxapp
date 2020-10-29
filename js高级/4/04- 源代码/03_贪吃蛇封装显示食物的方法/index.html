@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <!-- 
+
+        1. 完成地图和食物的显示
+            1.1 创建地图，其实就是个div，设置宽高背景色，以及相对定位（方便食物参照它定位）
+
+            1.2 写构造函数（可能后面要创建多个食物对象）
+
+            1.3 实例化一个食物对象，但是现在只是有一堆数据，界面看不到
+
+            1.4 创建div，把食物的数据做成div的数据，再添加到地图里就能显示
+
+
+        2. 完成食物随机显示
+            2.1 先计算出水平方向最多有多少个格子
+            2.2 计算出垂直方向最多有多少个格子
+            2.3 生成水平方向随机下标
+            2.4 生成垂直方向随机下标
+            2.5 用随机的x下标乘以宽度给left 再用随机的Y下标乘以高度给top
+
+
+        3. 把食物显示出来的代码封装成原型对象的一个方法
+                记得把里面的food改成this（谁调用就显示谁）
+
+            好处：以后创建出来的多个食物都有显示出来的方法
+
+
+        --------------------- 以下是本文件内容 --------------------------
+        4. 完成蛇的显示
+            4.1 创建蛇的构造函数，传入width和height，记得给默认值
+            4.2 蛇还有一个重要的属性：方向，默认给一个right
+            4.3 蛇其实是由多节身体组成，每节身体有自己的坐标和颜色，所以每节身体是一个对象，而每节加在一起就是一条蛇，所以应该是数组
+                所以有一个属性叫body，它是一个数组（保存了每节身体），数组中每个元素是一个对象
+
+            4.4 给蛇原型加一个show方法，里面遍历身体，每节身体都是一个div，给宽高颜色和坐标就好了
+        
+     -->
+
+    <style>
+        #map {
+            width: 800px;
+            height: 600px;
+            background-color: #ccc;
+
+            /* 方便让食物参照它定位 */
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <script>
+
+        // 找到map
+        var map = document.getElementById('map');
+
+        // 食物要有宽高背景色坐标,所以食物应该是一个对象
+        // 因为如果不是对象，你就需要用5个变量保存一个食物的特征，那样就比较分散而且占用变量名
+        // 所以应该用对象，对象就可以一个变量保存5个数据
+        // var width;
+        // var height;
+        // var bgColor;
+        // var x;
+        // var y;
+
+        // 因为以后可能会要创建多个食物对象，为了能快速创建，所以最好准备一个构造函数
+        function Food(width, height, bgColor, x, y) {
+            // 为了防止别人不传参数，所以用一个||，来给默认值
+            // 如果不传，就会给20，传了就是传多少就是多少
+            this.width = width || 20;
+            this.height = height || 20;
+            this.bgColor = bgColor || 'green';
+            this.x = x || 0;
+            this.y = y || 0;
+        }
+
+        // 让每个食物对象都有show方法（也就是把自己显示出来）
+        // 你要让食物显示出来，是不是要告诉别人在哪显示出来
+        // 所以应该传一个地图对象进来
+        Food.prototype.show = function () {
+
+            // 创建一个div
+            var div = document.createElement('div');
+            div.style.width = this.width + "px";
+            div.style.height = this.height + "px";
+            div.style.backgroundColor = this.bgColor;
+            div.style.position = "absolute";
+
+            // 先要用地图的宽度除以食物的宽度，算出一行能放多少个食物，例如一共能放30个食物，那么就有30个小格子
+            // 下标就是0-29
+            var maxX = map.offsetWidth / this.width;
+            // 生成随机x（水平方向的下标）
+            this.x = parseInt(Math.random() * maxX);
+
+            // 用地图的高度除以食物的高度，算出垂直能放多少个食物，例如一共能放25个食物，就有25个格子（垂直方向）
+            // 下标就是0-24
+            var maxY = map.offsetHeight / this.height;
+            // 生成随机垂直方向的下标
+            this.y = parseInt(Math.random() * maxY);
+
+            // 不要直接给x，y，因为x，y仅仅只是下标，还要用x乘以食物宽度得到真正的left
+            // 还用y乘以食物的高度，得到真正的top
+            div.style.left = this.x * this.width + "px";
+            div.style.top = this.y * this.height + "px";
+
+            map.appendChild(div);
+        }
+
+
+        // 就可以创建出一个食物对象
+        // 现在仅仅只是有一个数据类型保存了5个值，界面上看不到，还要想办法，把这个5个值转为成界面能看到的东西
+        var food = new Food();
+        food.show();
+
+
+        // 蛇也写一个构造函数
+        function Snake(width, height) {
+
+            this.width = width || 20;
+            this.height = height || 20;
+            // 蛇其实还有个很重要的属性：方向
+            this.direction = 'right';
+
+            // 蛇其实是由多个格子组成，所以应该是一个数组
+            // 每个格子有自己的x,y和颜色，所以应该是一个对象
+            // 所以数组中每个元素又是一个对象
+            this.body = [
+                { x: 3, y: 1, bgColor: 'red' },
+                { x: 2, y: 1, bgColor: 'green' },
+                { x: 1, y: 1, bgColor: 'orange' },
+            ];
+        }
+
+
+        Snake.prototype.show = function () {
+
+            // 蛇的身体有几节，就创建几个div
+            for (var i = 0; i < this.body.length; i++) {
+
+                var div = document.createElement('div');
+                // 设置宽高颜色
+                div.style.width = this.width + "px";
+                div.style.height = this.height + "px";
+                div.style.backgroundColor = this.body[i].bgColor;
+
+                // 设置位置
+                div.style.position = "absolute";
+                div.style.left = this.body[i].x * this.width + "px";
+                div.style.top = this.body[i].y * this.height + "px";
+
+                map.appendChild(div);
+            }
+        }
+
+        // new条蛇
+        var snake = new Snake();
+        snake.show();
+
+
+    </script>
+</body>
+
+</html>

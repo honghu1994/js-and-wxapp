@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //1. 问题： Number.MAX_VALUE 和 Math.max() 两者有啥区别？ ----------------------------------------
+    //   回答：
+    //        a. 所属对象 不同，一个属于 Number对象，一个属于 Math对象
+    //        b. MAX_VALUE 相当于  Number对象中的一个 "变量" 
+    //           max() 是 Math 对象里的 一个 方法(函数)
+    //        c. 使用方式 和 作用不同：
+
+    console.log(Number.MAX_VALUE); // js 能够使用的 最大 数值！！！
+
+    var num = Math.max(2, 6, 1, 9); // 将 写在括号里面的 一组 数值中 最大的数值 返回给 前面的变量 num
+    console.log('最大值为：' + num);
+
+
+    //2.问题：接收用户的数据之后为什么 + 运算的结果 是 连接的作用呢？-----------------------------------
+    //  注意：prompt 返回的 都是字符串类型的数据
+    //       在前面 添加一个 +号，可以 把 数值字符串 转成 数值
+    
+    // var num1 = prompt('请输入你的年龄：'); // '18'
+    // console.log(num1);
+    
+    // var num2 = prompt('请输入你男朋友的年龄：'); // '39'
+    // console.log(num2);
+
+    // var res = num1 + num2; // '18' + '39' -> '1839'
+    // console.log('你和你男朋友年龄的和为：' + res);
+
+    
+    var num1 = +prompt('请输入你的年龄：'); // +'18' -> 18
+    console.log(num1);
+    
+    var num2 = +prompt('请输入你男朋友的年龄：'); // +'39' -> 39
+    console.log(num2);
+
+    var res = num1 + num2; // 18 + 39 -> 57
+    console.log('你和你男朋友年龄的和为：' + res);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

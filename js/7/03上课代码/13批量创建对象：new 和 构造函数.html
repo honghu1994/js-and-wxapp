@@ -1,0 +1,56 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //1. 工厂方式 批量创建对象 ---------------------------------------------
+    function createStuInfo(stuName, stuAge, stuGender) {
+      //1.1 创建一个 空对象
+      var obj = new Object();
+      //1.2 动态 的 为 空对象 添加 成员
+      obj.name = stuName;
+      obj.age = stuAge;
+      obj.gender = stuGender;
+      obj.sayHi = function () {
+        console.log('我很喜欢你~~~~');
+      };
+
+      //2. 将 添加了成员的  对象 返回
+      return obj;
+    }
+
+
+    //2.构造函数：就是用来 批量创建对象的一个种函数写法 -----------------------------------------
+    //      命名规范：首字母 都 大写 ，一般用 名词
+    //      用法：通过 new 关键字 来调用
+
+    function StuInfo(stuName, stuAge, stuGender) {
+      this.name = stuName;
+      this.age = stuAge;
+      this.gender = stuGender;
+      this.sayHi = function () {
+        console.log('我很喜欢你呀~~~小狗狗');
+      }
+    }
+
+    //2.1 通过 new 关键字 来 调用 构造函数
+    //   【看不到的细节】 new 关键字 做的四个事情：
+    //   2.1 偷偷的 创建一个 空对象
+    //   2.2 偷偷的 将 空对象 传给 被调用的 构造函数 里的 this
+    //   2.3 调用 构造函数，调用完后，空对象里 就有了 各种 属性 和 方法
+    //   2.4 返回 对象
+
+    var stu1 = new StuInfo('小狗狗', 1, false);
+
+    console.log(stu1);
+    console.log(stu1.name);
+    stu1.sayHi();
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

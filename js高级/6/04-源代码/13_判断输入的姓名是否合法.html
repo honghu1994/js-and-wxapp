@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+
+        我们做的是国内网站，让你输入姓名，只能输入中文，中文至少2个，最多5个
+    -->
+
+
+</head>
+<body>
+    <input type="text" placeholder="请输入姓名" id="name">
+    <span id="res"></span>
+
+    <script>
+        var userName = document.getElementById('name');
+        //找到span
+        var res = document.getElementById('res');
+
+        // 文本框加失去焦点事件
+        userName.onblur = function(){
+
+            // 拿到文本框内容，判断是否匹配规则
+            // 只能是中文，并且至少2位，最多5位
+            // 如果不加严格匹配，代表的意思是只要有2位到5位的汉字
+            // console.log( /[\u4e00-\u9fa5]{2,5}/.test('张三'));//true
+            // console.log( /[\u4e00-\u9fa5]{2,5}/.test('张三dsadasds'));//true
+            // console.log( /^[\u4e00-\u9fa5]{2,5}$/.test('张三dsadasds'));//false
+
+            // 判断文本框输入的内容是否匹配规则，如果匹配得到true
+            if( /^[\u4e00-\u9fa5]{2,5}$/.test( userName.value ) ){
+
+                res.innerHTML = "姓名符合规则！";
+            }else{
+
+                res.innerHTML = "请输入2-5位中文姓名";
+            }
+        }
+    </script>
+</body>
+</html>

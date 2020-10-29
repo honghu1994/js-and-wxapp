@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+
+        跟容器有关的事件：
+                ondragenter：拖拽进入事件
+
+                ondragleave：拖拽离开事件
+
+                ondrop： 当有元素拖进来，并在我范围内松手才会触发的事件
+
+                ondragover：它主要是为了ondrop事件服务的，在ondragover里阻止事件默认行为，才能让ondrop得到触发
+     -->
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: hotpink;
+        }
+        .container{
+
+            width: 400px;
+            height: 550px;
+            border: 1px solid #000;
+            position: absolute;
+            right:10px;
+            top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" draggable="true"></div>
+    <div class="container"></div>
+
+    <script>
+        // 找到box
+        var box = document.querySelector('.box');
+        // 找到container
+        var container = document.querySelector('.container');
+
+        // 拖拽结束事件：用这个事件不太好，我在其他地方松手也会放进来
+        // box.ondragend = function(){
+
+        //     //添加到container
+        //     container.appendChild(box);
+        // }
+
+
+        // 这个需要鼠标有拖拽的东西并进入才触发
+        // container.ondragenter = function(){
+
+        //     // console.log('进来(了');
+        //     container.appendChild(box);
+            
+        // }
+
+        // container.ondragleave = function(){
+
+        //     console.log('出去了');
+        // }
+
+        container.ondragover = function(e){
+
+            // 阻止事件默认行为
+            e.preventDefault();
+
+            // console.log('over');
+            // 这个事件只要拖拽进来在范围内就一直触发
+            // 它的默认行为就是不断的阻止让元素放进来
+        }
+
+
+        // 如果想这个事件能够触发，还要先写一个事件ondragover，并且还要在ondragover里阻止事件默认行为
+        container.ondrop =  function(){
+
+            container.appendChild(box);
+            
+        }
+
+
+        // 下面这个叫鼠标：只要鼠标移入就触发，不需要鼠标上有东西
+        // container.onmouseover = function(){
+
+        //     console.log('鼠标移入');
+            
+        // }
+        // container.onmouseout = function(){
+
+        //     console.log('鼠标移出');
+            
+        // }
+    </script>
+</body>
+</html>

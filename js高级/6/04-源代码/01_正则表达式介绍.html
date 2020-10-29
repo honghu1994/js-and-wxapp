@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        正则表达式，简单来说就是一套规则
+
+        规则是程序员自己定的，用来判断页面的某个内容是否匹配你这个规则
+
+        你要用正则，就需要先new一个正则对象
+                RegExp正则对象
+
+                new RegExp(规则);
+
+            调用 test方法来判断是否符合规则，符合得到true，不符合得到false
+
+
+        正则字面量创建： /规则/ 记得//中间要写规则
+
+     -->
+     <script>
+        //  创建了一个正则对象，如果要写规则，就把规则写在小括号里
+         var reg = new RegExp('男'); //规则是：你的内容必须包含男这个字
+
+         var str = "陈恒岳喜欢男生";
+
+        //  我要判断这个字符串是否匹配规则
+        var res = reg.test(str); //判断str是否匹配reg的规则：reg的规则是要内容包含男，str包含，所以会得到true
+        console.log(res);
+
+        console.log(reg.test('陈恒岳喜欢女生'));
+
+
+
+        // // 复习创建数组方法
+        // var arr = new Array(10,20,30);
+        // // 简写形式：字面量表示法
+        // var arr = [10,20,30];
+
+
+        // 正则也有字面量创建方法，正则的符号：/规则/ 就是正则符号
+
+        var reg = /男/; //等同于var reg = new RegExp('男'); 
+        console.log(reg.test('强人锁男')); //true
+        console.log(reg.test('左右为男')); //true
+
+
+        // 判断内容是否包含女
+        console.log(/女/.test('陈恒岳没有女朋友')); //true
+        
+        
+    
+        
+     </script>
+
+</head>
+<body>
+    
+</body>
+</html>

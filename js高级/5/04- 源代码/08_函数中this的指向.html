@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        函数里的this，你不要看这个函数是怎么声明，而应该看这个函数是谁调用的
+
+        总结：
+            1.如果直接调用函数（没有任何前缀），那么函数里的this是window
+            2.如果是方法，就看谁调用，调用者是谁，那么this就是谁
+            3.计时器里的this是window
+     -->
+
+    <script>
+        // function f1(){
+
+        //     console.log(this);
+            
+        // }
+        // f1(); //window
+
+        // var obj = { name:"jack", sayHi:function(){  console.log(this) }};
+        // obj.sayHi();//this是obj这个对象
+
+
+        // setInterval(function(){
+
+        //     console.log(this);
+            
+        // },500);
+
+
+        // function f1(){
+
+        //     console.log(this);
+            
+        // }
+
+        // f1(); //window
+
+        // var obj = { name : "jack" };
+
+        // obj.f1 = f1;
+
+        // obj.f1();//obj
+
+        var obj = {name:"jack",sayHi:function(){  console.log(this) }};
+
+        var sayHi = obj.sayHi;
+
+        sayHi(); //window
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

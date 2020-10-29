@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+
+        以前拖拽：先鼠标按下，再鼠标移动
+
+        H5以后，直接就能拖拽
+
+        H5里面默认就能拖拽，但是元素不是你想拖想拖就能拖
+        强行拖：加一个行内属性叫 draggable = "true"
+        
+
+        跟拖拽有关的事件：
+            1. 拖拽开始
+                    ondragstart
+
+            2. 拖拽中
+                    ondrag
+
+            3. 拖拽结束
+                    ondragend
+     -->
+
+     <style>
+         .box{
+             width: 100px;
+             height: 100px;
+             background-color: hotpink;
+             position: absolute;
+         }
+     </style>
+</head>
+<body>
+    <img src="images/mn.jpg" alt="" draggable="true">
+    <div class="box" draggable="true"></div>
+
+    <script>
+        // 找到div
+        var box = document.querySelector('.box');
+
+        // 拖拽开始
+        box.ondragstart = function(){
+
+            console.log('拖拽开始');
+            
+        }
+
+        // 拖拽中不断触发
+        box.ondrag = function(){
+
+            console.log('拖拽中');
+            
+        }
+
+        // 拖拽结束
+        box.ondragend = function(e){
+        
+            console.log('拖拽结束');
+
+            // 获取鼠标的坐标
+            box.style.left = e.pageX + "px";
+            box.style.top = e.pageY + "px";
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //1.用 for 循环 求 1- 100 之间所有数的和
+    var sumNum = 0; // 箩筐变量，用来存放 所有数 的和
+
+    for (var i = 1; i <= 100; i++) {
+      console.log('i = ' + i);
+      sumNum += i; // 将 i 的值 累加到 变量 sumNum中
+    }
+
+    console.log(sumNum);
+
+
+    //2.用 for 循环 求 1- 100 之间所有偶数的和
+    var sumNum = 0; // 箩筐变量，用来存放 所有数 的和
+
+    for (var i = 1; i <= 100; i++) {
+      if (i % 2 == 0) {
+        console.log('i = ' + i);
+        sumNum += i; // 将 i 的值 累加到 变量 sumNum中
+      }
+    }
+
+    console.log(sumNum);
+
+
+    //3.用 for 循环 求 1- 100 之间所有奇数的和
+    var sumNum = 0; // 箩筐变量，用来存放 所有数 的和
+
+    for (var i = 1; i <= 100; i++) {
+      if (i % 2 != 0) {
+        console.log('i = ' + i);
+        sumNum += i; // 将 i 的值 累加到 变量 sumNum中
+      }
+    }
+
+    console.log(sumNum);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

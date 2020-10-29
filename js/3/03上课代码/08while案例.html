@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //while循环 案例 -----------------------------------------------------------------------
+    //1.接收用户输入的年龄，要求必须是数值，如果不是，则提示重新输入
+    var usrAge = parseInt(prompt('请输入年龄：')); // parseInt 转换数值时：如果 是 'aa' ，返回 NaN
+
+    // isNaN(usrAge)  如果 usrAge 是 非数值，就返回 true
+    //                               数字化，就返回 false
+
+    while (isNaN(usrAge)) {
+      alert('对不起，你这个大sb，年龄怎么会是非数值呢？请重新操作！');
+      usrAge = parseInt(prompt('请输入年龄：'));
+    }
+
+    alert('恭喜您，您的年龄为：【' + usrAge + '】');
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

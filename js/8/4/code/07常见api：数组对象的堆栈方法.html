@@ -1,0 +1,77 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    var arrObj = [];
+    //1.push 从尾部 添加数组元素
+    arrObj.push('P城');
+    arrObj.push('R城');
+    arrObj.push('Z城');
+    arrObj.push('Y城');
+
+    console.log(arrObj);
+
+    //2.pop 从 尾部 取出 一个 元素
+    var lastEle = arrObj.pop();
+    console.log(arrObj);
+    console.log('lastEle = ' + lastEle);
+
+    // ----------------------------------------------
+
+    //3.unshift 从头部 添加 一个 元素
+    var arrObj2 = [];
+    arrObj2.unshift('小猫猫');
+    arrObj2.unshift('小狗狗');
+    arrObj2.unshift('小牛牛');
+    console.log(arrObj2);
+
+    //4.shift 从头部 取出 一个 元素
+    var firstEle = arrObj2.shift();
+    console.log(arrObj2);
+    console.log('firstEle = ' + firstEle);
+
+
+    //5. 【栈 ： 先进后出】  --- 将 一个 元素 先 存入数组，会 最后一个 取出来 ----------------------------------
+    // 5.1 两种栈的实现方式：从头部存，从头部取  ；    从 尾部存，从 尾部取
+    var arrObj3 =[];
+    //a.从头部存，头部取
+    arrObj3.unshift('a');
+    arrObj3.unshift('b');
+    arrObj3.unshift('c');
+
+    console.log(arrObj3);
+    console.log(arrObj3.shift());
+    console.log(arrObj3);
+    console.log(arrObj3.shift());
+    console.log(arrObj3);
+    console.log(arrObj3.shift());
+    console.log(arrObj3);
+
+    //5.2 【队列实现方式： 先进先出】  -- 将一个元素 先存入 数组，会 第一个 取出来
+    // 两种 实现方案： 从 头部存，从尾部取 ；  从 尾部存，从头部取
+    //a. 头部存，从尾部取
+    var arrObj4 = [];
+    arrObj4.unshift('a');
+    arrObj4.unshift('b');
+    arrObj4.unshift('c');
+
+    console.log(arrObj4);
+    console.log(arrObj4.pop());
+    
+    console.log(arrObj4);
+    console.log(arrObj4.pop());
+    
+    console.log(arrObj4);
+    console.log(arrObj4.pop());
+    
+    console.log(arrObj4);
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

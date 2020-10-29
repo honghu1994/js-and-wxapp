@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+      //1. 函数 的作用 ： 封装代码 ， 复用代码
+      //2. 函数 的参数 : 函数声明时的【形参】，函数调用时的【实参】
+      //3. 函数 的形参的默认值： es6语法，在小括号中直接为 形参设置 默认值
+      //4. 函数 的返回值 ：在函数 内部 使用 return 关键字 可以 将一个值 返回 给 函数的调用者
+
+      // 调用函数 的目的 ：
+      //               a.执行一段 封装在 函数内部的 代码 ，比如说 bigSword函数，就是单纯的为 了 执行一遍 大宝剑的业务代码
+      //               b.执行一段 封装在 函数内部的 代码，并且 获取 一个 执行的 结果，比如说 求 随机数 Math.random() ，执行后 会返回一个 随机数
+
+      // function add(x,y){
+      //   var res = x + y;
+      //   return res; // 在函数内部 将一个 值 返回给 函数的调用者
+      //   console.log('我是 retrun后面的代码，永远都不会被执行！！！');
+      // }
+
+      // var numX = add(1,2); // 相当于 ： var numX = 3;
+
+      // console.log(numX);
+
+//一般return语句用于函数返回值，当外界调用该函数需要知道函数执行情况的时候，就需要用返回值来告诉调用者，
+//而当调用者不需要知道执行情况，只需要去执行该函数的时候，那就不需要返回值。
+      // 如果 函数中 不使用 return ，那 有没有返回值？
+      //4.1【所有函数中如果 不使用 return 来返回一个值的话，默认 都返回 undefined~~!】
+
+      function showLove(){
+        console.log('cai lan hei ~~~~');
+    // return 1;
+    // return;
+      }
+      // showLove();
+      var a = showLove();
+      console.log(a);
+
+      
+      //4.2 return 跳出 当前函数！！！
+      // function showLove(){
+      //   console.log('我爱你~~');
+      //   console.log('i love u ~~');
+
+      //   return; // return undefined;
+
+      //   console.log('cai lan hei ~~');
+      //   console.log('a yi xi te nu ~~');
+      // }
+
+      // showLove();
+
+      // console.log('showLove 参数执行完毕');
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

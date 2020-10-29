@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        delete 关键字作用：
+            1. 删除不规则声明的变量
+                    不规则声明变量：没有声明，直接赋值的变量
+
+
+            2. 删除对象中的属性
+     -->
+
+    <script>
+
+        /*
+            //  var age = 16; //规则声明;
+             
+            //  height = 175; //不规则声明，没有预解析,哪怕写在函数内也是全局变量
+    
+             function f1(){
+                
+                var age = 16;
+                height = 185;
+             }
+    
+             f1();
+    
+            //  console.log(age);//报错
+             console.log(height);//185
+    
+             delete height; //删掉不规则声明的变量
+    
+             console.log(height); //报错
+        */
+
+        // var obj = { name: "jack", age: 16 };
+        // console.log(obj.name);
+
+        // delete obj.name; //因为删除name这个属性了
+
+        // // 访问对象的属性，如果找不到只是得到undefined
+        // console.log(obj.name);//undefined
+
+
+
+        // var age = 16;
+
+        // console.log(age);
+        // delete age; //删不了规则声明变量
+        // console.log(age);
+        
+        
+        
+             
+        // function f1(){
+
+        //     console.log(age);
+        //     var age = 16;
+        // }
+
+        //----- 预解析后代码-----
+        // function f1(){
+
+        //     var age;
+        //     console.log(age);
+        //     age = 16;
+        // }
+
+        // f1();
+
+   
+        function f1(){
+
+            console.log(age);
+            age = 16;
+        }
+
+        f1();//报错，因为age是不规则声明变量，不参与预解析
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

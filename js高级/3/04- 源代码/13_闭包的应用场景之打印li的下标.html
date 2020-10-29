@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>隔壁老王1</li>
+        <li>隔壁老王2</li>
+        <li>隔壁老王3</li>
+        <li>隔壁老王4</li>
+        <li>隔壁老王5</li>
+    </ul>
+
+    <script>
+        // 找到所有li
+        var liList = document.getElementsByTagName('li');
+
+        // 遍历每个li，给它们加点击事件
+        // for(var i = 0; i < liList.length; i++){
+        //     //先把下标存起来
+        //     liList[i].setAttribute('index',i);
+
+        //     liList[i].onclick = function(){
+
+        //         var index = this.getAttribute('index');
+        //         alert(index);
+        //     }
+        // }
+
+
+        // 闭包做法
+        /*
+            function f1() {
+    
+                var num = 0;
+    
+                function f2() {
+    
+                    console.log(num);
+    
+                }
+                return f2;
+            }
+    
+            var res1 = f1();
+            res1();//0
+    
+    
+    
+            function f11() {
+    
+                var num = 1;
+    
+                function f22() {
+    
+                    console.log(num);
+    
+                }
+                return f22;
+            }
+            var res2 = f11();
+            res2();//1
+    
+    
+            function f111(){
+    
+                var num = 2;
+    
+                function f222(){
+    
+                    console.log(num);
+                    
+                }
+    
+                return f222;
+            }
+    
+            var res3 = f111();
+            res3(); //2
+        */
+
+        // for (var i = 0; i < 3; i++) {
+
+        //     function f1() {
+
+        //         var num = i;
+
+        //         function f2() {
+
+        //             console.log(num); //产生3个闭包，3个闭包分别访问的是0,1,2
+
+        //         }
+
+        //         return f2;
+        //     }
+
+        //     var res = f1();
+        //     res();//打印0,1,2
+        // }
+
+
+
+        for (var i = 0; i < liList.length; i++) {
+
+            // 使用闭包保存的下标
+            function f1() {
+                var num = i;
+
+                function f2() {
+
+                    alert(num); //产生li的长度个闭包，分别是0 到 长度-1的值
+
+                }
+                return f2;
+            }
+
+            var res = f1();
+            // res();//打印0,1,2
+            // 等某个li被点击就调用res函数
+            liList[i].onclick = res;
+        }
+
+    </script>
+</body>
+
+</html>

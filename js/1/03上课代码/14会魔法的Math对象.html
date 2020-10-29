@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+
+      //1. Math中的 PI ，保存了 一个 圆周率 的数值
+      console.log(Math.PI); // 3.141592653589793
+
+      //2. 求绝对值
+      console.log(Math.abs(-10));
+
+      //3. 天花板函数 ceil  -- 整数位 + 1，小数位 去掉
+      //                   注意：只针对 有小数的 数值，如果是整数，返回原来的值
+
+      console.log(Math.ceil(1.111));// 2
+      console.log(Math.ceil(2.01));// 3
+      console.log(Math.ceil(100.0000001));// 101
+
+      console.log(Math.ceil(100));// 100
+
+      //4. 地板函数 floor --- 整数位 不变，小数位 去掉
+      console.log(Math.floor(1.111));// 1
+      console.log(Math.floor(2.01));// 2
+      console.log(Math.floor(100.0000001));// 100
+      
+       //5. 四舍五入函数 round --- 小数位 >= 0.5 ,小数位去掉，整数位 +1
+       //                                < 0.5 ，小数位去掉，整数位 不变
+      console.log(Math.round(1.111));// 1
+      console.log(Math.round(2.01));// 2
+      console.log(Math.round(100.5));// 101
+
+      //6.求最大值
+      var num1 = 99;
+      var maxNum = Math.max(2,4,78,1,0,num1,5,9,7);
+      console.log('maxNum=' + maxNum);
+
+      
+      //7.求最小值
+      var num1 = 99;
+      var minNum = Math.min(2,4,78,1,0,num1,5,9,7);
+      console.log('minNum=' + minNum);
+      
+
+      
+      
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

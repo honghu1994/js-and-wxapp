@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // 求一个 数组中的最大值
+    //    1. 数组 是 调用时 传进来的
+    //    2. 函数内部要 将 数组中的 最大值 找到，并返回
+
+    function getMax(arrNum) {
+      //定义局部变量 maxNum ，用来当做擂台，保存数组中的 最大值
+      var maxNum = -Infinity;
+
+      //使用 for 循环 生成 数组里的下标，并 找出最大值
+      for(var i = 0; i< arrNum.length;i++){
+        //比较 数组里的元素 和 maxNum 谁大，如果 元素大，就将 元素 存入 maxNum
+        if(arrNum[i] > maxNum){
+          maxNum = arrNum[i];
+        }
+      }
+      
+      //返回 最大值
+      return maxNum;
+    }
+
+    //调用函数
+    var arrAge = [18, 21, 777,25, 99,30, 77,2];
+    var maxAge = getMax(arrAge);
+    console.log(maxAge);
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

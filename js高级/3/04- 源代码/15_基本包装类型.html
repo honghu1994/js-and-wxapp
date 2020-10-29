@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        基本包装类型：
+            我们把Number、String、Boolean都统称为基本包装类型
+            因为这三个类型主要是为了把基本数据类型包装成对象类型
+            它们存在的目的就是为了让基本数据类型也能方便的调用属性和方法
+
+        对象才有属性和方法
+            对象.toString(); 方法
+            对象.length； 属性
+
+
+        像基本类型中的字符串，调用方法时浏览器会主动转成 String的对象
+        基本类型中的数字，调用方法时会主动转成 Number的对象
+        基本类型中的布尔值，调用方法时会主动转成 Boolean的对象
+     -->
+     <script>
+
+
+        //  var str = "abc";
+
+        // 基本类型是没有方法和属性的，为什么下面可以用属性和方法？
+        // 是因为，浏览器吧它包装成了对应的对象，字符串会包装成String这个对象
+        // 浏览器帮你做了这么一件事
+        // str = new String('abc');
+        // console.log(str);
+        //  console.log(str.length);
+        // //  字符串截取，从下标1开始截，所以最终会得到bc
+        //  console.log(str.substr(1));
+
+        // 调用完了后，浏览器会自动又把这个对象恢复成基本类型
+        // str = "abc";
+
+
+        // var num = 10;
+        // //浏览器解析到这一句的时候发现你要调用方法，所以帮你转成了对应的对象
+        // // num = new Number(10);
+        // console.log(num);
+        // console.log(num.toString());
+        // num = 10;
+
+
+        var res = true;
+        // res = new Boolean(true);
+        // console.log(res);
+        
+        console.log(res.toString());
+        res = true;
+        
+        
+         
+     </script>
+</head>
+<body>
+    
+</body>
+</html>

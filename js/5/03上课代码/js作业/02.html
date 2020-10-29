@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset='UTF-8'/>
+        <script>
+            function getMax(arrNum){
+                var maxNum =arrNum[0]
+                for (var i=0;i<arrNum.length;i++){
+                    if(arrNum[i]<maxNum){
+                        maxNum=arrNum[i]
+
+                    }
+                }
+                return maxNum;
+
+            }
+            var arrAge=[1,23,45,2,777]
+            var maxAge=getMax(arrAge)
+            console.log(maxAge);
+            
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

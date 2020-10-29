@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // 匿名函数 作为 参数传递
+
+    function a(b, age) {
+      b(); // 调用传入的 匿名函数
+      console.log(age);
+    }
+
+    // 匿名函数 作为 参数传递
+    a(function () {
+      console.log('我是匿名函数，被作为参数 传给 了 形参 b');
+    }, 18);
+
+    /* 
+    b = function(){
+      console.log('我是匿名函数，被作为参数 传给 了 形参 b');
+    }
+     */
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

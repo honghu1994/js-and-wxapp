@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+        // var divList=document.getElementsByTagName('div')
+        // var pList=document.getElementsByTagName('p')
+        // for(var i=0;i<divList.length;i++){
+        //     divList[i].style.border="5px solid hotpink"
+        // }
+        // for(var i=0;i<pList.length;i++){
+        //    pList[i].style.border="5px solid green"
+        // }
+        // function tagName(tag){
+        //     return document.getElementsByTagName(tag)
+        // }
+        // var divList=tagName('div')
+        // var plist=tagName('p')
+        // function setBorder(list,css){
+        //     for(var i=0;i<list.length;i++){
+        //         list[i].style.border=css;
+        //     }
+        // }
+        // setBorder(divList,"5px solid hotpink")
+        // setBorder(plist,"5px solid green")
+        var myJquery = {};
+        myJquery.tagName = function (tag) {
+            return document.getElementsByTagName(tag);
+        }
+        myJquery.setBorder = function (list, css) {
+
+            for (var i = 0; i < list.length; i++) {
+
+                list[i].style.border = css;
+            }
+        }
+        var divList=myJquery.tagName('div')
+        var pList = myJquery.tagName('p');
+        myJquery.setBorder(divList,'5px solid hotpink')
+        myJquery.setBorder(pList,'5px solid green')
+
+    </script>
+
+</body>
+
+</html>

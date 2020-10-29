@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        //Math这个对象，有2个方法，一个求最大值，一个求最小值
+
+        // var max = Math.max(543,65,787,43,879);
+        // var min = Math.min(543,65,787,43,879);
+        // console.log(max,min);
+
+
+        var arr = [423,65,76,236,43];
+        // 数组如何求最大值？我们以前做需要遍历每个元素，用打擂台思想比大小
+        // 有没有简单方法？
+
+        // var max = Math.max( arr[0],arr[1],arr[2],arr[3],arr[4] );
+        // console.log(max);
+
+        // apply可以把数组元素一一排开传进来
+        // 因为这个方法里的this不需要改，我只是想用apply的特点，让它可以自己吧数组中每个元素一一传进去
+        // 所以，this指向那还是用Math，代表不改，得到的好处是，数组中每个元素不用自己再以一个取，它会自动一一传进去
+        var max = Math.max.apply(Math,arr);
+        console.log(max);
+        
+        var min = Math.min.apply(Math,arr);
+        console.log(min);
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

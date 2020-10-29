@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        斐波那契数列：
+            特点：第一列和第二列固定是1，从第三列开始，每一列的数字都是前两列的和
+
+        1 1 2 3 5 8 13 21 34 55 89........
+
+        炒股必赚方法，就是用斐波那契数列来投资，这个星期投一完，下个星期一万行，再下星期2W，再下星期3W
+
+
+        有一个函数，传入n，就可以计算第n列的斐波那契是几
+        例：我传入的是8，那就能算出第爸列的数字是21
+     -->
+
+    <script>
+
+        /*
+           例：我要算第5列的数是几
+           5-1列 + 5-2列    才能得到第5列 
+                   简单来说要算第5列还要先算第4列
+
+           先算4-1列 + 4-2列    
+                   简单来说要算第4列还要先算第3列
+
+           先算3-1列 + 3-2列       
+                   算第3列还要算第2列和第1列
+
+           但是第2列和第1列，不用往前算了，因为他们是固定都是1
+
+           所以也就是说结束条件是 n == 1 或者 n==2 时不要再往前算，直接返回1 
+
+        */
+        function fib(n) {
+
+            // 如果是第1列或者第2列，那么就没必要往前再计算了，直接得到1
+            if( n == 1 || n == 2){
+
+                return 1;
+            }
+
+            //要算第n列，要算出 n-1列 + n-2列
+            return fib(n - 1) + fib(n - 2);
+        }
+
+        var res = fib(8);
+        console.log(res);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

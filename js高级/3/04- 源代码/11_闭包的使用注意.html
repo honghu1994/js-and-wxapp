@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        注意：
+            外面的函数如果调用多次，就不是同一个局部变量，调用几次就创建几次局部变量
+
+            外面的函数如果只调用1次，只是让闭包调用多次，它们访问的还是同一个局部变量
+     -->
+</head>
+<body>
+    
+    <script>
+        // function f1(){
+
+        //     var num = 10;
+
+        //     function closure(){  
+        //         num++;
+        //         console.log(num);
+                
+        //     }
+
+        //     return closure;
+        // }
+
+        // var res = f1();
+        // res(); //11
+        // res(); //12
+        // res(); //13
+        // res(); //14
+
+
+
+        // 先调用f1函数，再调用它的返回值
+        // f1()(); //11
+        // f1()(); //11
+        // f1()(); //11
+
+
+        // 例：投票及
+        function voter(){
+
+            var ticket = 0;
+
+            function add(){
+
+                ticket++;
+                console.log('最新票为：' + ticket);
+                
+            }
+
+            return add;
+        }
+
+        // 相当于给一台投票机投票多次
+        var res = voter();
+        res(); //代表投一票 1票
+        res(); //代表投一票 2票
+        res(); //代表投一票 3票
+
+
+        // 相当于给多台投票机，每台投1次
+        // voter()(); //都是1票
+        // voter()(); //都是1票
+        // voter()(); //都是1票
+
+
+    </script>
+</body>
+</html>

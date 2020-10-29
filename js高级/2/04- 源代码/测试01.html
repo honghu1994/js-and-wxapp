@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function Person(name, age, gender) {
+    
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+}
+
+//方法写在原型里
+Person.prototype.sayHi = function () {
+
+    console.log('大家好，我叫' + this.name + "，今年" + this.age + "岁");
+
+}
+
+//  Person.prototype.gender = true;
+
+
+// var p1 = new Person('jack', 16, true);
+// p1.sayHi();
+
+
+// var p2 = new Person('rose', 17, false);
+// p2.sayHi();
+
+
+// Person.prototype.eat = function () {
+
+//     console.log(this.name + '在吃玉米');
+// }
+// console.log(p1.eat===p2.eat);
+// function Person(name, age) {
+    
+//     this.name = name;
+//     this.age = age;
+// }
+// Person.prototype.country = "中国";
+    
+//     var p1 = new Person('jack', 16);
+//     console.log(p1);
+    
+//     var p2 = new Person('rose', 17);
+//     console.log(p2);
+//     p1.country = "中华人民共和国";
+//     console.log(p1.country); //中华人民共和国
+//             console.log(p2.country); //中国
+function Person(name, age) {
+
+this.name = name;
+this.age = age;
+}
+
+Person.prototype.sayHi = function () {
+
+console.log('大家好，我叫' + this.name);
+
+};
+
+var p1 = new Person('jack', 16);
+var p2 = new Person('rose', 17);
+
+p1.sayHi();
+p2.sayHi();
+
+
+Person.prototype = {
+
+country: "中国",
+eat: function () {
+
+    console.log(this.name + "吃饭");
+
+}
+};
+
+p1.sayHi();
+p2.sayHi();
+var p3=new Person('andy',19)
+console.log(p3.country);
+p3.eat();
+
+    </script>
+</body>
+</html>

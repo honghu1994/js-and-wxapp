@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset='UTF-8'/>
+        <script>
+              function getSum() {
+
+            var obj = {
+                sayHi: function (num) {
+
+
+                    console.log('hello' + num);
+
+                }
+            };
+
+            return obj;
+        }
+
+        // 效果一样的
+        getSum().sayHi(30);
+
+        // 把返回值当函数来调用了
+        getSum()(function(){
+
+
+        });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

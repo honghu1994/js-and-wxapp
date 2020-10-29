@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var wjl = {
+            house:"豪宅",
+            car:"布加迪威龙",
+            banlance:100000000000,
+            company:"万达",
+        }    
+
+        var wsc = {
+            girlFriends: [ '豆得儿','雪梨','林更新','陈恒岳' ],
+        }
+
+        // 继承：一个对象拥有另外一个的属性和方法
+        wsc.height = 185;
+
+        // 要想wsc拥有wjl的所有属性可以一个一个赋值
+        // wsc.house = wjl.house;
+        // wsc.car = wjl.car;
+        // wsc.banlance = wjl.banlance;
+
+        // 点语法可以换成下面的中括号语法
+        // wsc['house'] = wjl['house'];
+        // wsc['car'] = wjl['car'];
+        // wsc['banlance'] = wjl['banlance'];
+        // console.log(wsc);
+
+        // 但是此时如果wjl有100个属性你要写100次，所以遍历出wjl的所有属性
+
+        // 遍历wjl就能拿出他的所有属性
+        // 混入式继承
+        for(var key in wjl){
+
+            // console.log(key); //key就是wjl里面的所有属性名
+            wsc[key] = wjl[key];
+        }
+        
+        console.log(wsc);
+        
+
+
+    </script>
+</body>
+</html>

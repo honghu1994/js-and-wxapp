@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+
+        原型链的作用：其实主要是为了说明继承的作用
+
+     -->
+</head>
+<body>
+
+    <div id="box" class="test"></div>
+    <p id="p" class="test"></p>
+
+    <script>
+
+        var p1 = { name:"jack",age:16 };
+        // p1.removeAttribute('age'); //会报错，因为它的原型链上没有这个方法
+        // console.log(p1);
+        
+        
+
+
+        // 下面这两个叫DOM对象
+        var box = document.getElementById('box');
+        var p = document.getElementById('p');
+
+        // 删除class属性
+        p.removeAttribute('class'); //因为他们的原型链上有这个方法
+
+
+
+        // box.id;
+        // box.className;
+
+        // p.id;
+        // p.className
+
+        //DOM对象的原型链
+        // DOM对象：就是网页中的元素，它也是对象
+        console.log(box.__proto__);
+        console.log(box.__proto__.__proto__);
+        console.log(box.__proto__.__proto__.__proto__);
+        console.log(box.__proto__.__proto__.__proto__.__proto__);
+        console.log(box.__proto__.__proto__.__proto__.__proto__.__proto__);
+        console.log(box.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__);
+        console.log(box.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__);
+
+
+        console.log(p.__proto__);
+        console.log(p.__proto__.__proto__);
+        console.log(p.__proto__.__proto__.__proto__);
+        console.log(p.__proto__.__proto__.__proto__.__proto__);
+        console.log(p.__proto__.__proto__.__proto__.__proto__.__proto__);
+        console.log(p.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__);
+        console.log(p.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__);
+        
+        
+    </script>
+</body>
+</html>

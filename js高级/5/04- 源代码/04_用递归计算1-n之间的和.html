@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // 计算1-n之间的和，例：n为5，那么就计算 1+2+3+4+5的结果
+
+        // 1 + 2 + 3 + 4    + 5   我要加到5，但是加到5之前，先要从1加到4
+        // 1 + 2 + 3        + 4   我要加到4，但是加到4之前，先要从1加到3
+        // 1 + 2            + 3   我要加到3，但是加到3之前，先要从1加到2
+        // 1                + 2   我要加到2，但是加到2之前，先要有1
+
+        //  1前面不要加了，直接得到结果就是1
+
+        function getSum(n) {
+
+            // 到1的时候不用往前算了，结果就是1
+            if (n == 1) {
+
+                return 1;
+            }
+            // 要算这个数之前，还要算前一个数
+            return getSum(n - 1) + n;
+        }
+
+        var res = getSum(5);
+        console.log(res);
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        预解析：把所有函数和变量的声明提前到它所在的作用域的最顶端，但是赋值语句还是留在原地
+
+        只有函数才可以开辟作用域
+
+
+        预解析时，会把变量声明提升到最顶端，函数的声明会在变量声明的后面
+     -->
+
+    <script>
+
+        //  console.log(age); //undefined
+
+        //  var age = 10;
+
+        //  console.log(age); //10
+
+
+
+        //  // 预解析后 -------------
+        //  var age;
+        //  console.log(age); //undefined
+
+        //  age = 10;
+
+
+        // function f1(){
+
+        //     console.log(age);
+
+        //     var age = 10;
+        // }
+
+        //--------预解析
+        // function f1() {
+        //     var age;
+
+        //     console.log(age);
+
+        //     age = 10;
+        // }
+
+        // f1();
+
+        // console.log(age); //报错
+
+        // function f1(){
+
+        //     console.log(age);//undefined
+
+        //     var age = 10;
+        // }
+        // f1();
+
+        // var age;
+
+        // console.log(age);//undefined
+
+        // if( 10 > 5 ){
+
+        //     age = 10;
+        // }
+
+        // console.log(age);//10
+
+
+        // var f1 = 10;
+        // function f1() {
+
+        //     console.log('我是函数');
+
+        // }
+
+
+        // console.log(f1);//10
+
+
+        //预解析后----------------------
+        // var f1;
+        // function f1() {
+
+        //     console.log('我是函数');
+
+        // }
+
+        // f1 = 10;
+
+        // console.log(f1);//10
+
+
+
+        // console.log(f1);
+
+        // var f1 = 10;
+        // function f1() {
+
+        //     console.log('我是函数');
+
+        // }
+
+        // console.log(f1);//10
+
+        //预解析后----------
+        // var f1; 
+        // function f1() {
+
+        //     console.log('我是函数');
+
+        // }
+        // console.log(f1);
+
+        // f1 = 10;
+
+
+        // console.log(f1);//10
+
+
+
+
+
+        // console.log(f1);
+
+        // function f1() {
+
+        //     console.log('我是函数');
+
+        // }
+        // var f1 = 10;
+
+
+        // console.log(f1);//10
+
+
+        // //预解析----------
+        // var f1;
+        // function f1() {
+
+        //     console.log('我是函数');
+
+        // }
+
+        // console.log(f1); //函数
+
+
+        // f1 = 10;
+
+        // console.log(f1);//10
+
+
+
+        
+        // console.log(f1); // undefined
+        
+        // var f1 = 10;
+
+        // console.log(f1); //10
+        
+        // var f1 = function(){
+
+        //     console.log('我是函数');
+            
+        // }
+        // console.log(f1); //函数
+
+
+        //预解析--------
+        // var f1;
+        // console.log(f1); // undefined
+        
+        // f1 = 10;
+
+        // console.log(f1); //10
+        
+        // f1 = function(){
+
+        //     console.log('我是函数');
+            
+        // }
+        // console.log(f1); //函数
+        
+        
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //【题目】将数组元素拼接成字符串
+
+    //0. 创建了一个数组，里面有5 个元素------------------------------------------------
+    var arrCity = ['小苍苍', '小甜甜', '小狗狗', '小猫猫', '小泽泽'];
+    //                0         1        2         3        4       length = 5
+
+    //1. 准备一个 空字符串
+    var str = ''; // 如果不设置，就是 undefined
+
+    //2. 遍历元素，并将元素 追加到 字符串中
+    for (var i = 0; i < arrCity.length; i++) {
+      //3. 将 元素 拼接到 字符串中
+      str += arrCity[i];  // 相当于  str += '小苍苍'   str += '小甜甜'    str += '小狗狗'  ................
+
+      // 为 不是 最后一个元素 的情况 下 追加 字符 '-'
+      if (i < arrCity.length - 1) {
+        str += '-';
+      }
+    }
+
+    //3. 打印字符串
+    console.log(str);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

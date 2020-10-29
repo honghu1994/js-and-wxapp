@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+
+        //1.思考题1
+        // var name = "The Window";
+        // var object = {
+        //     name: "My Object",
+        //     getNameFunc: function () {
+
+        //         console.log('外面的' + this.name);//My Object
+
+        //         return function () {
+
+        //             return this.name;
+        //         };
+        //     }
+        // };
+
+        // console.log(  object.getNameFunc() ()  );//The Window
+
+
+        //   //2.思考题2
+        var name = "The Window";
+        var object = {
+            name: "My Object",
+            getNameFunc: function () {
+
+                var that = this;
+                
+                return function () {
+                    return that.name;
+                };
+            }
+        };
+        console.log(object.getNameFunc()() ); //My Object
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

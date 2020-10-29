@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        只要声明了构造函数就会有一个跟它对应的原型对象
+
+        注意事项：
+                1. 原型里写大家共用的属性或者方法，不是共用就不要写在原型里
+                        例如性别，每个人的性别不一样，所以不要写在原型里
+
+
+                2. 给原型加成员（属性和方法）只能通过 构造函数.prototype 来添加
+                        如果是 实例对象 添加  只是这个实例对象有，其他实例对象没有
+
+                3. 如果要修改原型的成员，也要通过 构造函数.prototype 来修改
+
+                4. 建议给原型加属性和方法最好声明构造函数一完就写
+
+
+                5. 原型对象可以被替换. 替换前实例化出来的对象，指向的是原来的原型，替换后实例化出来的对象，指向的是替换后的内容
+     -->
+
+    <script>
+
+        // 1. 原型里写大家共用的属性或者方法，不是共用就不要写在原型里
+        // 2. 给原型加成员（属性和方法）只能通过 构造函数.prototype 来添加
+        /*    
+            function Person(name, age, gender) {
+    
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+            }
+    
+            //方法写在原型里
+            Person.prototype.sayHi = function () {
+    
+                console.log('大家好，我叫' + this.name + "，今年" + this.age + "岁");
+    
+            }
+    
+            //  Person.prototype.gender = true;
+    
+    
+            var p1 = new Person('jack', 16, true);
+            p1.sayHi();
+    
+    
+            var p2 = new Person('rose', 17, false);
+            p2.sayHi();
+    
+         
+            Person.prototype.eat = function () {
+    
+                console.log(this.name + '在吃玉米');
+            }
+    
+            // 如果是下面这样加，只代表是给p1加了方法，而其他对象没有
+            p1.eat = function(){
+    
+                console.log(this.name + '在吃玉米');
+            }
+    
+            p1.eat();
+            p2.eat();
+    
+            console.log(p1.gender);
+            console.log(p2.gender);
+         */
+
+
+        // 3. 建议给原型加属性和方法最好声明构造函数一完就写
+        /*
+            function Person(name, age) {
+    
+                this.name = name;
+                this.age = age;
+            }
+    
+    
+            var p1 = new Person('jack', 16);
+            var p2 = new Person('rose', 17);
+    
+            p1.eat(); //报错，因为程序从上往下执行，到这一句的时候还没有eat方法
+            p2.eat();
+    
+            Person.prototype.eat = function () {
+    
+                console.log(this.name + "在吃饭");
+    
+            }
+        */
+
+
+        /*
+            function Person(name, age) {
+    
+                this.name = name;
+                this.age = age;
+            }
+    
+            Person.prototype.country = "中国";
+    
+            var p1 = new Person('jack', 16);
+            var p2 = new Person('rose', 17);
+    
+            // 永远改的都是p1自身，要想改原型只能是： 构造函数.prototype.country来改
+            p1.country = "中华人民共和国";
+             
+            console.log(p1.country); //中华人民共和国
+            console.log(p2.country); //中国
+        */
+
+        // 5. 原型对象可以被替换
+        function Person(name, age) {
+
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.sayHi = function () {
+
+            console.log('大家好，我叫' + this.name);
+
+        };
+
+        var p1 = new Person('jack', 16);
+        var p2 = new Person('rose', 17);
+
+        p1.sayHi();
+        p2.sayHi();
+
+        
+        Person.prototype = {
+
+            country: "中国",
+            eat: function () {
+
+                console.log(this.name + "吃饭");
+
+            }
+        };
+
+        p1.sayHi();
+        p2.sayHi();
+
+        var p3 = new Person('andy',19);
+        console.log(p3.country);
+        p3.eat();
+                
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

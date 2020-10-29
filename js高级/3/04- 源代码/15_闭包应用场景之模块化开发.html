@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+
+        模块化开发：
+            以后一个项目有好多模块，每个模块有不同的开发者去开发
+            每个开发者写自己模块的时候要声明多个变量，很可能会造成跟别的开发者变量名相同，就导致了冲突
+
+            所以，把它们写的代码都放到一个函数里，就不会有冲突了。
+            但是这个函数要自己能执行才能让里面的代码生效，所以我们放到自调用函数里
+
+            此时，解决了变量名冲突的问题，但是我外部可能想访问内部模块的数据，那怎么访问？就可以用闭包
+
+        闭包可以用在模块化开发：
+                可以把某个模块里的内容暴露出来给外界用
+     -->
+</head>
+
+<body>
+
+    <!-- 一个js文件可以称之为一个模块 -->
+    <!-- <script src="zs.js"></script>
+    <script src="ls.js"></script> -->
+
+
+    <script>
+        function ls() {
+
+            function Person(name, age) {
+
+                this.name = name;
+                this.age = age;
+            }
+
+
+            //它需要生成10个对象
+            var list = [];
+            for (var i = 0; i < 10; i++) {
+
+                var p = new Person('jack' + i, 10 + i);
+
+                list.push(p); //把每个对象加到数组里了
+            }
+        }
+
+
+        (function () {
+
+            function Dog(nickname, age) {
+
+                this.nickname = nickname;
+                this.age = age;
+            }
+
+            window.Dog = Dog;
+
+            // 声明一个数组
+            var list = [];
+            for (var i = 0; i < 5; i++) {
+
+                var d = new Dog('大黄' + i, 1 + i);
+                list.push(d);
+            }
+
+        })();
+
+
+
+        var d = new Dog('旺财',3);
+        console.log(d);
+        
+
+
+
+
+    </script>
+
+</body>
+
+</html>

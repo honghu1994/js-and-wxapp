@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  var str ='aaabbccsssab'
+  var obj ={};//创建一个空对象, 目的:把字母作为键,次数作为值
+  for (var i =0;i<str.length ;i++){
+var key =str[i]
+console.log(key);
+
+if(obj[key]){//判断obj中有没有这个键
+  obj[key]++//如果已经在对象obj中存在了，则对应的值加一
+}else{//如果对象obj中不存在该字母的记录，则将该字母加上并赋初值1.
+  obj[key]=1
+}
+
+  }
+  console.log(obj);//{a: 4, b: 3, c: 2, s: 3}
+  
+  for (var key in obj){
+  console.log(key+'出现的次数'+obj[key]);
+  
+}
+var arr=[2,8,5,0,5,2,6,7,2];
+   function unique1(arr){
+  var hash=[];
+  for (var i = 0; i < arr.length; i++) {
+     if(hash.indexOf(arr[i])==-1){
+      hash.push(arr[i]);
+     }
+  }
+  return hash;
+  
+  
+}
+newarr=unique1(arr)
+console.log(newarr);
+
+
+
+  </script>
+</body>
+</html>

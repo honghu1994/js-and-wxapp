@@ -1,0 +1,89 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<style>
+    #map {
+        width: 800px;
+        height: 600px;
+        background-color: #ccc;
+
+        /* 方便让食物参照它定位 */
+        position: relative;
+    }
+</style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        var map = document.getElementById('map')
+        function Food(width, height, bgColor, x, y) {
+            this.width = width || 20;
+            this.height = height || 20;
+            this.bgColor = bgColor || 'green';
+            this.x = x || 0;
+            this.y = y || 0;
+        }
+        // var food = new Food();
+        // var div = document.createElement('div')
+        // div.style.width = food.width + 'px'
+        // div.style.height = food.height + 'px'
+        // div.style.backgroundColor = food.bgColor;
+        // div.style.position = 'absolute';
+        // // div.style.left=food.x+'px';
+        // // div.style.top=food.y+'px'
+        // // map.appendChild(div)
+        // var maxX = map.offsetWidth / food.width;
+        // food.x = parseInt(Math.random() * maxX)
+        // var maxY = map.offsetHeight / food.height;
+        // food.y = parseInt(Math.random() * maxY)
+        // div.style.left = food.x * food.width + "px";
+        // div.style.top = food.y * food.height + "px";
+        // map.appendChild(div);
+        Food.prototype.show = function () {
+            var div = document.createElement('div')
+            div.style.width = this.width + 'px'
+            div.style.height = this.height + 'px'
+            div.style.backgroundColor = this.bgColor;
+            div.style.position = 'absolute';
+            // div.style.left=food.x+'px';
+            // div.style.top=food.y+'px'
+            // map.appendChild(div)
+            var maxX = map.offsetWidth / this.width;
+            food.x = parseInt(Math.random() * maxX)
+            var maxY = map.offsetHeight / this.height;
+            food.y = parseInt(Math.random() * maxY)
+            div.style.left = food.x * this.width + "px";
+            div.style.top = food.y * this.height + "px";
+            map.appendChild(div)
+        }
+        var food = new Food();
+        food.show();
+        function Snake(width, height) {
+            this.width = width || 20;
+            this.height = height || 20;
+            this.direction = 'right';
+            this.body = [
+                { x: 3, y: 1, bgColor: 'red' },
+                { x: 2, y: 1, bgColor: 'green' },
+                { x: 1, y: 1, bgColor: 'orange' }
+            ]
+        }
+        Snake.prototype.show = function () {
+            for (var i = 0; i < this.body.length; i++) {
+                var div = document.createElement('div');
+                div.style.width = this.width + "px";
+                div.style.height = this.height + "px";
+                div.style.backgroundColor = this.body[i].bgColor;
+                div.style.position = "absolute";
+                div.style.left = this.body[i].x * this.width + "px";
+                div.style.top = this.body[i].y * this.height + "px";
+                map.appendChild(div);
+            }
+        }
+        var snake = new Snake();
+        snake.show();
+    </script>
+</body>
+
+</html>

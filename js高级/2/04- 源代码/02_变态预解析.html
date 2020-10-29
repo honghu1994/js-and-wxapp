@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+
+        //1.------------------------------
+        // function foo() {
+        //     var num = 123;
+        //     console.log(num); //123
+        // }
+        // foo();
+        // console.log(num); //报错
+
+
+
+        // 2
+        // var scope = "global";
+        // function foo() {
+        //     console.log(scope); //undefined
+        //     var scope = "local";
+        //     console.log(scope); //local
+        // }
+        // foo();
+        // console.log(scope);
+
+
+        // 3
+        // if ("a" in window) {
+        //     var a = 10;
+        // }
+        // alert(a); // 10
+
+
+        // //预解析---
+        // var a; //全局变量相当于是window的属性
+
+        // if ("a" in window) {
+        //     a = 10;
+        // }
+        // alert(a); // 10
+
+
+
+        // if (!'a' in window) {
+        //     var a = 10;
+        // }
+        // alert(a); // undefined  undefined在window里，true和false和null都不在window里
+
+
+        // console.log(!'a');//false
+        // console.log(!10);//false
+        // console.log(!0);//true
+        // console.log(!'');//true
+
+
+
+
+        // if (name in window) {
+        //     var a = 10;
+        // }
+        // alert(a);  //undefined
+
+        //预解析后----------------
+        // var a;
+
+        // if (name in window) { //window默认就有name属性,你这里没加引号，代表取到name的值，而此时name的值为""字符串
+        //     a = 10;
+        // }
+        // alert(a);  //undefined
+
+
+
+        // if ("name" in window) {
+        //     var a = 10;
+        // }
+        // alert(a); //10
+
+
+
+        // if (a in window) {
+        //     var a = 10;
+        // }
+        // alert(a); //10
+
+        // 预解析----------、    
+        // var a;  //undefined
+        //  if (a in window) { //undefined在window里得到true
+        //     a = 10;
+        // }
+        // alert(a); //10
+
+
+        // 4
+        // var foo = 1;
+        // function bar() {
+
+        //     if (!foo) {
+        //         var foo = 10;
+        //     }
+
+        //     alert(foo); // 10
+        // }
+
+        // bar();
+
+
+        //预解析-------
+        // var foo = 1;
+        // function bar() {
+        //     var foo; //undefined
+
+        //     if (!foo) { //对undefined先取反得到true，再判断条件满足
+        //         foo = 10; //执行了
+        //     }
+
+        //     alert(foo); // 10
+        // }
+
+        // bar();
+
+
+
+        // //5.------------------------------------
+        // var num = 123;
+        // function f1() {
+        //     console.log(num); // 123
+        // }
+
+        // function f2() {
+        //     var num = 456;
+        //     f1();
+        // }
+
+        // f2();
+
+        //6.---------------------------------------
+        // var num = 123;
+        
+        // function f1(num) {
+        //     console.log(num);//456
+        // }
+
+
+        // function f2() {
+        //     var num = 456;
+        //     f1(num);
+        // }
+
+        // f2();
+
+
+
+
+
+// //------------------变态面试题---------------------
+// function Foo() {
+//   getName = function(){
+//     alert(1);
+//   };
+//   return this;
+// }
+// Foo.getName = function() {
+//   alert(2);
+// };
+// Foo.prototype.getName = function(){
+//   alert(3);
+// };
+// var getName = function() {
+//   alert(4);
+// };
+// function getName(){
+//   alert(5);
+// }
+
+// Foo.getName(); // ?
+// getName(); // ?
+// Foo().getName(); // ?
+// getName(); // ?
+// new Foo.getName(); // ?
+// new Foo().getName(); // ?
+// new new Foo().getName(); // ?
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // 【题目】翻转数组
+
+    //0. 创建了一个数组，里面有5 个元素------------------------------------------------
+    var arrCity = ['P城', 'R城', 'G港', '学校', '靶场'];
+    //              0       1       2     3       4       length = 5
+
+    //1. 创建一个 空数组，用来保存 原数组的 翻转数据
+    var arrNewCity = [];//['靶场', '学校', 'G港', 'R城', 'P城'];
+
+    //2. 倒序遍历 原数组，并 从 后 往前 取出元素 ，追加到 新数组中
+    for(var i = arrCity.length - 1; i >= 0 ; i--){ // i = 4 3 2 1 0 -1
+       var ele =  arrCity[i];
+       arrNewCity.push(ele);
+    }
+
+    //3.打印 新数组 和 原数组
+    console.log('原数组：'+arrCity);
+    console.log('新数组：'+arrNewCity);
+
+    //4.将新数组 赋给 原数组
+    arrCity = arrNewCity;
+
+    
+    console.log('翻转后的原数组：'+arrCity);
+
+    // console.log('i=' + i);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

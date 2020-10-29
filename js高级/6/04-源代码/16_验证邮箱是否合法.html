@@ -1,0 +1,110 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    body {
+        background: #ccc;
+    }
+
+    label {
+        width: 60px;
+        display: inline-block;
+    }
+
+    span {
+        color: red;
+    }
+
+    .container {
+        margin: 100px auto;
+        width: 400px;
+        padding: 50px;
+        line-height: 40px;
+        border: 1px solid #999;
+        background: #efefef;
+    }
+
+    span {
+        margin-left: 30px;
+        font-size: 12px;
+    }
+
+    .wrong {
+        color: red
+    }
+
+    .right {
+        color: green;
+    }
+
+    .defau {
+        width: 200px;
+        height: 20px;
+    }
+
+    .de1 {
+        background-position: 0 -20px;
+    }
+</style>
+<body>
+<div class="container">
+    <label>邮箱</label>
+    <input type="text" id="txt"><span></span><br/>
+</div>
+
+
+<script>
+    /*
+        zhou@itcast.cn
+        zhou@163.com
+        z@163.com
+        zhou_123@qq.com
+        163213213@qq.com
+        xxx@ggg.com.cn
+        dsadas@dsd.gov.com
+
+
+        @前面就是 \w： 字母、数字下划线，要出现一次或多次（+）
+
+        \w后面接固定@
+
+        @后面接字母和数字
+
+        再接固定的.
+
+        再接字母（至少2次）
+
+        要严格匹配
+
+        注意：.在正则中有特殊含义，如果你就只是要一个.那么转义\.
+
+    */
+
+    // /\w+@[a-z0-9]+\.[a-z]{2,}/i 
+
+    var reg =  /^\w+@[a-z0-9]+(\.[a-z]{2,})+$/i;
+    // console.log( reg.test( 'zhoulinlin@itcast.cn' ));  //true
+    // console.log( reg.test( 'zhoulinlin@itcast.cn321312.423423654.asdfsd' )); //false
+    // console.log( reg.test( 'zhoulinlin@itcast.com.cn' ));  //true
+
+    document.getElementById('txt').onblur = function(){
+
+        if(reg.test(this.value)){
+
+            alert('输入正确');
+        }else{
+
+            alert('请输入正确的邮箱格式');
+        }
+
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // zhoulinlin@itcast.cn
+        // 你注册的时候不用输入用户名，只要输入邮箱
+        // 再然后把你zhoulinlin当做用户名
+
+
+        var str = "zhoulinlin@itcast.cn";
+        // var idx = str.indexOf('@');
+        // var res = str.substring(0,idx);
+        // console.log(res);
+
+        // 如果你提取的时候正则里加了小括号
+        // 返回的数组下标0，是你提取的内容
+        // 下标1开始是你小括号括起来的内容
+        var res = str.match(  /(\w+)@([a-z0-9]+)(\.[a-z]{2,})+/ );
+        console.log(res);
+
+        // 也可以用$1 $2等，相当于数组里的下标1，下标2
+        console.log(RegExp.$1);
+        console.log(RegExp.$2);
+        console.log(RegExp.$3);
+        
+
+
+        /*
+
+            预定义类：
+                .  除了\r\n以外的字符
+                \d 数字
+                \D 非数字
+                \s 不可见字符
+                \S 可见字符
+                \w 字母、数字、下划线
+                \W 非字母、数字、下划线
+
+
+            自定义类：自己写什么固定内容就找什么内容
+
+            或 ： | 
+
+            优先级:()
+
+            简单类： []  里面任何一个   
+
+            [^]： 负向类，非这些内容
+
+            组合类：不是新复合，把多个放在一起
+
+            边界：
+                ^ ：以什么开头
+                $： 以什么结尾
+
+            严格匹配：
+                    ^内容$
+
+            
+            *: 0次或多次
+            +：1次或多次
+            ?：0或1次
+
+            {n} 必须n次
+            {n,} 最少n次
+            {n,m} 最少n次，最多m次
+
+            
+        */
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

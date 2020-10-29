@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        预定义类：其实正则里提前规定好的一些特殊符号，用来表达对应的意思
+
+        .   ： 代表判断内容是否有 除了\r，\n以外的字符
+
+
+        \d  :  只要有数字（有没有0到9）
+
+
+        \D  ： 只要有非数字(除了0到9以外的)
+
+
+        \s  ： 不可见字符，你打印的时候看不到，例如：空格，再例如\r \n \t
+
+
+        \S  ： 可见字符
+
+
+        \w  ： 单词字符（ 字母、数字、下划线 ）
+
+        \W  ： 非单词字符（找除了字母、数字、下划线以外的）
+     -->
+
+    <script>
+
+        // console.log(' ');
+        // console.log('\r');
+        // console.log('\n');
+        // console.log('\t');
+
+
+        // console.log(/./.test('哈哈哈')); //true
+        // console.log(/./.test('\r')); //false
+        // console.log(/./.test('\n')); //false
+        // console.log(/./.test('\na')); //true
+        // console.log(/./.test('\n ')); //true
+
+        // console.log(/./.test("\r")); //false
+        // console.log(/./.test("\r\n")); //false
+        // console.log(/./.test("" +
+        //     ""));   //false   得到空字符串,空字符串是毛都没有，你要有\r\n以外的字符，但我这是空字符串，毛都没有，毛都没有就是false
+        // console.log(/./.test("\r1"));//true
+        // console.log(/./.test("32435dh1"));//true
+        // console.log(/./.test("d"));//true
+
+
+        //---------\d	数字字符--------------------------------------
+        // console.log(/\d/.test("abc"));  //false
+        // console.log(/\d/.test("!@#$"));  //false
+        // console.log(/\d/.test("!@#$adfgethfe")); //false  
+        // console.log(/\d/.test("!@#$adfgethfe1"));  //true
+        // console.log(/\d/.test("123456"));  //true
+
+
+        //---------\D		非数字字符--------------------------------------
+        //test检测： 只要被检测的字符串中包含了非数字字符,那么结果就是true.
+        // console.log(/\D/.test("abc"));   //true
+        // console.log(/\D/.test("!@#$"));  //true
+        // console.log(/\D/.test("!@#$adfgethfe"));//true  
+        // console.log(/\D/.test("!@#$adfgethfe1")); //true
+        // console.log(/\D/.test("13243546b576871")); //true
+        // console.log(/\D/.test("123456")); //false
+
+
+        //--------\s  不可见字符-----------------------------------------
+        // console.log(/\s/.test("abc\r")); //true
+        // console.log(/\s/.test("abc\n")); //true
+        // console.log(/\s/.test("abc\r\n"));//true
+        // console.log(/\s/.test(" "));    //true
+        // console.log(/\s/.test("" + ""));   //false  拼接后变成空字符串,空字符串毛都没有，你说要找不可见字符就找不到，找不到得到false
+
+
+
+        // console.log(/\s/.test("\r\n\t\r")); //true
+        // console.log(/\s/.test("abcdeg")); //false
+        // console.log(/\s/.test("12354676")); //false
+        // console.log(/\s/.test("12354676aahgrjtj")); //false
+        // console.log(/\s/.test("12354676aahgrjtj!@#$"));//false
+
+
+
+         //--------\S  可见字符-----------------------------------------
+        // console.log(/\S/.test("abc\r"));  //true
+        // console.log(/\S/.test("abc\n"));   //true
+        // console.log(/\S/.test("abc\r\n"));   //true
+        // console.log(/\S/.test(" "));   //false
+        // console.log(/\S/.test("\r\n\t\r"));  //false
+        // console.log(/\S/.test("abcdeg"));  //true
+
+
+        //------ \w 单词字符(所有的字母数字和_)--------------------------------
+        // console.log(/\w/.test("!@#$%#@#$%$#@"));  //false
+        // console.log(/\w/.test("!@#$%#@#$%$#@a")); //true
+        // console.log(/\w/.test("!@#$%#@0#$%$#@"));  //true
+        // console.log(/\w/.test("!@#$%#@_#$%$#@"));  //true
+        // console.log(/\w/.test("!!!!!1234567")); //true
+        // console.log(/\w/.test("!!!!!")); //false
+
+
+        //------ \W 非单词字符(所有的字母数字和_ 简单来说找特殊符号)--------------------------------
+    //    console.log(/\W/.test("abcserge3")); //false
+    //    console.log(/\W/.test("fsdgetherg!"));//true
+    //    console.log(/\W/.test("!123456@"));//true
+    //    console.log(/\W/.test("!@#$%#@_#$%$#@"));//true
+    //    console.log(/\W/.test("!!!!!1234567"));//true
+    //    console.log(/\W/.test("!!!!!"));//true
+
+
+
+        /*
+
+            . ： 代表找到除了 \r\n 以外的字符
+
+            \d : 找到所有数字
+
+            \D ： 非数字
+
+            \s :  不可见字符
+
+            \S ： 可见字符
+
+            \w ： 单词字符，也就是 字母、数字、下划线   
+
+            \W :  非字母、数字、下划线   
+        */
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

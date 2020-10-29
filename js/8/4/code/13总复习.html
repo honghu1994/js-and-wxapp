@@ -1,0 +1,175 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // console.log(undefined == null);
+    // console.log(undefined === null);
+
+    // 显示类型转换
+    // 1 转数值 parseInt()  parseFloat()  Number() 
+    // 2 转字符串  toString()   String()   
+    // 3 转布尔值 Boolean()
+    //                转false：0 -0 NaN , '' , null , undefined , false ,document.all
+    //                转true ：其他所有
+
+    // 隐式类型转换
+    var a = 1 + 'a'; // var a= '1' + 'a';    var a = '1a';
+
+
+    if (undefined) { // if( Boolean('') )
+      console.log('true');
+    } else {
+      console.log('false');
+    }
+
+    // if 结构中 ，任何一个分支条件 满足，就会 执行 分支代码，并 跳出 整个 if结构
+    if (1 < 2) {
+
+    }
+
+    if (1 < 2) {
+
+    } else {
+
+    }
+
+    if (1 < 2) {
+
+    } else if (2 < 5) {
+      console.log('我是分支代码');
+    } else {
+
+    }
+
+    console.log('我是结束');
+
+
+    //switch case  相当于 if(变量 === 值)
+    var age = 11;
+    switch (age) {
+      case 11: {
+        break;
+      }
+      case 12: {
+        break;
+      }
+      default: {
+
+      }
+    }
+
+    aaa();
+
+    //三元运算符 ? :
+    var gender = false;
+    console.log('您的性别是：' + (gender ? '男' : '女'));
+
+    function aaa() {
+      console.log('hi~~');
+      console.log('hi~~');
+      console.log('hi~~');
+    }
+
+
+    //调试：f11 是 逐句 调试，遇到函数，会进入到函数内部 逐句调试执行
+    //     f10 是 逐段 调试，遇到 函数 不会进入到函数内部 逐句调试，而是直接一次性执行完函数代码，然后调试 后面的代码
+
+
+    //求 1-100之间 所有 能被 7 整除的数
+    for (var i = 1; i <= 100; i++) {
+      if (i % 7 == 0) {
+        console.log(i);
+      }
+    }
+
+    //箩筐思想 求1-100之间素有数的和 与 平均值
+    var luoKuang = 0;
+    for (var i = 1; i <= 100; i++) {
+      luoKuang += i;
+    }
+    console.log(luoKuang);
+    console.log(luoKuang / 100);
+
+    //擂台思想 求 最大值
+    var arr = [4, 2, 6, 81, 8, 2, 3];
+    var leiTai = arr[0];
+    for (var i = 1; i < arr.length; i++) {
+      if (arr[i] > leiTai) {
+        leiTai = arr[i];
+      }
+    }
+    console.log('最大值：' + leiTai);
+
+
+    //遍历数组
+    var arr = [4, 2, 6, 81, 8, 2, 3];
+    //                               length = 7
+    for (var i = 0; i < arr.length; i++) {
+      console.log(i); // 0 1 2 3 4 5 6
+    }
+
+    console.log(i); // 7
+
+    for (var i = arr.length - 1; i >= 0; i--) {
+      console.log(i); // 6 5 4 3 2 1 0
+    }
+    console.log(i); // -1
+
+
+    var arr1 = [12, 3, 4];
+
+    function aaaaa() {
+      // arguments
+      console.log('我是一个函数');
+      // return undefined;
+    }
+
+    console.log(aaaaa());
+
+    // 返回多个值
+    function sendBack() {
+      console.log('我要返回多个值~！！');
+      // return [1,2,3,];
+
+      return {
+        a: 1,
+        b: 2
+      };
+    }
+
+
+    //回调函数
+    function show(func) {
+      func();
+    }
+
+    function bb() {
+
+    }
+
+    show(bb);
+
+    // 对象的创建
+    var obj = {
+      name: '小白白'
+    }; // new Object();
+
+    obj.age = 19;
+    obj.age = 100;
+    delete obj.age;
+
+    // for in 遍历对象的属性名称
+    for(var proName in obj){
+      var proValue = obj[proName];
+      console.log(proValue);
+    }
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

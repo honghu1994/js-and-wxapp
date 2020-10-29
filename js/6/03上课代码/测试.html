@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset='UTF-8'/>
+        <script>
+    function doOperate(num1, num2, func) { // num1= 1, num2 = 2, func = add
+      //add(1,2)
+      func(num1, num2); // 调用传入的 回调函数，并传入两个数值
+    }
+
+    //1.1 负责运算加法的函数
+    function add(x, y) {
+      alert(x + y);
+    }
+
+    //1.2 负责运算减法的函数
+    function sub(x, y) {
+      alert(x - y);
+    }
+
+    //2.调用：传入两个数值 和 一个 运算函数 ---------------------------
+    // 将 函数 add 作为 参数 一起 传给 函数 doOperate，在里面 被 调用并进行运算
+    // doOperate(1, 2, add);
+    
+     doOperate(1, 2, sub);
+        </script>
+    </head>

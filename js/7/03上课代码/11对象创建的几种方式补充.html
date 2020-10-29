@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //1. new 的方式 创建对象 --------------------------------
+    //1.1 创建 空 对象
+    var obj = new Object();
+
+    //1.2  创建 带 初始 成员的 对象
+    var obj2 = new Object({
+      age: 1,
+      name: '小白',
+      sayHi: function () {}
+    });
+
+
+
+    //2. { } 字面量 方式 创建 对象----------------------------
+    //2.1 创建 空 对象
+    var obj = {};
+    console.log(obj);
+
+    //2.2 创建 带 初始 成员的 对象
+    var obj2 = {
+      //a.属性
+      age: 18,
+      gender: true,
+
+      //b.方法
+      sayHi: function () {
+        console.log('你好~~~');
+      },
+      beRich: function () {
+        console.log('睡觉，做梦~~~');
+      }
+    };
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

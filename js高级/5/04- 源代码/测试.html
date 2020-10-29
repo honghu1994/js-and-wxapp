@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset='UTF-8'/>
+       
+    </head>
+    <body>
+           <script>
+        //   
+      
+    //   setInterval(function(){
+    //       console.log(this);
+          
+    //   },500);
+    // 
+    // var obj={name:"jack",sayHi:function(){
+    //     console.log(this);
+        
+    // }};
+    // var sayHi=obj.sayHi;
+    // sayHi();
+    //   var name = "The Window";
+    //     var object = {
+    //         name: "My Object",
+    //         getNameFunc: function () {
+
+    //             console.log('外面的' + this.name);//My Object
+
+    //             return function () {
+
+    //                 return this.name;
+    //             };
+    //         }
+    //     };
+    //     console.log(object.getNameFunc()());
+       
+    //    
+   
+//    var nums=[10,20,30,40,50];
+//    nums.push(100);
+//    console.log(nums);
+   var wei={
+       0:10,
+       1:20,
+       2:30,
+       length:3
+
+
+   };
+//  nums.push.call(wei,100);
+//  console.log(wei);
+// Array.prototype.push.call(wei,100);
+// console.log(wei);
+
+
+//  function Myarr(){
+//      for (var i=0;i<arguments.length;i++){
+//          this[i]=arguments[i]
+//      }
+//      this.length=arguments.length;
+//  }
+//    Myarr.prototype.push=function(ys){
+//        this[this.length]=ys;
+//        this.length++;
+
+//    }
+//    var obj={
+//        0:10,
+//        1:20,
+//        2:30,
+//        length:3
+//    }
+//    Myarr.prototype.push.call(obj,40);
+//    console.log(obj);
+// var arr=new Myarr(10,20,30,40);
+// console.log(arr);
+// arr.push(50);
+
+//    function f1(){
+//        console.log(this);
+       
+  
+//    f1();
+//    var obj={name:"jack"}
+//    f1.apply(obj)
+// function f1(n1,n2){
+//     console.log(this);
+//     console.log(n1,n2);
+    
+    
+// }
+// var obj={name:"jack"}
+// f1.apply(obj,[100,200])
+// var max=Math.max(1,23,5,45,6);
+// var min=Math.min(1,23,5,45,6)
+// console.log(max,min);
+// var arr=[2,3,45,6,67]
+// var max=Math.max.apply(Math,arr)
+// var min=Math.min.apply(Math,arr)
+// console.log(max,min);
+function f1(n1,n2){
+    console.log(this);
+    console.log(n1,n2);
+    
+    
+}
+var obj={name:'jack'}
+// f1.call(obj,10,20)
+var f2=f1.bind(obj,10,20)
+f2();
+// function f2(n1,n2){
+//     console.log(obj);
+//     console.log(n1,n2);
+    
+    
+// }
+// var obj2={name:"rose"}
+// obj2.f2=f2;
+// obj2.f2()
+function f1(){
+    console.log(this);
+
+    
+}
+var obj={name:"jack"};
+var func=f1.bind(obj);
+setInterval(func,500)
+
+
+
+
+
+   
+   
+           </script>
+    </body>
+</html>

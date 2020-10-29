@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 把构造函数里的方法写在外面声明个函数节约内存
+        /*
+            function f1(){
+
+                console.log('大家好');
+            }
+
+            function Person(name,age){
+
+                this.name = name;
+                this.age = age;
+                this.sayHi = f1;
+            }
+
+            var p1 = new Person('jack',16);
+            var p2 = new Person('rose',17);
+
+            console.log(p1.sayHi === p2.sayHi);
+        */
+
+
+        // 如果构造函数里有十个方法，我就需要在外面声明十个函数，才能节约内存
+        // 新问题：1. 外面的函数跟构造函数关联一点都不紧密
+        //        2. 变量名污染： 它们都声明在全局作用域，然后声明10个，就有10个变量名被占用，别人就没法用的，别人一用就会被覆盖
+        /*
+            function f1() {
+
+                console.log('大家好');
+            }
+
+            function f2() {
+
+                console.log('吃吃吃');
+
+            }
+
+            function Person(name, age) {
+
+                this.name = name;
+                this.age = age;
+                this.sayHi = f1;
+                this.eat = f2;
+            }
+
+            var p1 = new Person('jack', 16);
+            var p2 = new Person('rose', 17);
+
+            console.log(p1.sayHi === p2.sayHi);
+            console.log(p1.eat === p2.eat);
+        */
+
+        // 解决办法：我把外面声明的函数都封装到一个对象里
+        // 这个时候哪怕有10个函数，也不会污染10个变量名了
+        // 要说污染，也只污染一个，就是obj这个对象
+        // 但是还是不太好：因为始终还是有一个变量名被占用，并且这个对象跟构造函数关联不紧密
+        // 所以这个时候，我们希望能有这个对象，并且还不占用变量名，并且跟构造函数还要关系紧密
+        // 有！这就是原型对象！
+        /*
+            var obj = {};
+    
+            obj.f1 = function f1() {
+    
+                console.log('大家好');
+            }
+    
+            obj.f2 = function f2() {
+    
+                console.log('吃吃吃');
+    
+            }
+    
+            function Person(name, age) {
+    
+                this.name = name;
+                this.age = age;
+                this.sayHi = obj.f1;
+                this.eat = obj.f2;
+            }
+    
+            var p1 = new Person('jack', 16);
+            var p2 = new Person('rose', 17);
+    
+            console.log(p1.sayHi === p2.sayHi);
+            console.log(p1.eat === p2.eat);
+        */
+
+        //系统已经帮我们想到这个问题了，所以给我们提供了一个原型对象，能让我们节约内存空间并且还不会有变量名污染
+        function Person(name, age) {
+
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.sayHi = function(){
+
+            console.log('hello');
+            
+        }
+        Person.prototype.eat = function(){
+
+            console.log('吃吃吃');
+            
+        }
+
+        var p1= new Person('rose',17);
+        var p2= new Person('鱼香',18);
+
+        p1.sayHi();
+        p1.eat();
+
+        p2.sayHi();
+        p2.eat();
+
+        console.log(p1.sayHi == p2.sayHi);
+        console.log(p1.eat == p2.eat);
+        
+    </script>
+</body>
+
+</html>

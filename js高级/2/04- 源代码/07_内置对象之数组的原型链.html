@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        数组的原型对象的原型是Object原型
+     -->
+
+    <script>
+    
+        var nums = [10,20,30,40,50]; //简写形式
+        // 完整写法
+        // var nums = new Array(10,20,30,40,50);
+        console.log(nums);
+        // console.log(nums.__proto__ === Array.prototype);
+
+        // 打印数组原型对象的原型
+        console.log(Array.prototype.__proto__);
+
+
+        console.log(nums.toString());
+        
+        
+        
+
+       
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

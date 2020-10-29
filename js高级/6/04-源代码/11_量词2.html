@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+
+
+    //1.量词
+    //{n}	n次	x=n
+            // 必须匹配n次，例{5} ，必须有5次
+
+    //{n,}	重复n次或更多  x>=n
+            // 至少n次，多了不限 例： {5,} 至少5次，多了随便
+
+    //{n,m} 重复出现的次数比n多但比m少 n<=x<=m
+            // n次以上，m次以下  例：  {5,8} 至少5次，最多8次
+
+
+    //{n}
+    // 必须符合 coloor ,其他一切都不行
+    // console.log(/^colo{2}r$/.test("colr")); //false
+    // console.log(/^colo{2}r$/.test("color"));//false
+    // console.log(/^colo{2}r$/.test("coloor"));//true
+    // console.log(/^colo{2}r$/.test("colooor"));//false
+    // console.log(/^colo{2}r$/.test("coloorcoloor"));  //false
+    // console.log(/^colo{2}r$/.test("coloorc")); //false
+
+
+    //{n,}
+    // coloor 或者 colooooooooooooor 等，l后面的o至少2次
+    // console.log(/^colo{2,}r$/.test("colr")); //false
+    // console.log(/^colo{2,}r$/.test("color")); //false
+    // console.log(/^colo{2,}r$/.test("coloor"));//true
+    // console.log(/^colo{2,}r$/.test("colooor"));//true
+    // console.log(/^colo{2,}r$/.test("coloorcoloor"));  //false
+
+
+    //{n,m}
+    // 只能匹配coloor  或者 colooor
+    console.log(/^colo{2,3}r$/.test("colr"));  //false
+    console.log(/^colo{2,3}r$/.test("color")); //false
+    console.log(/^colo{2,3}r$/.test("coloor")); //true
+    console.log(/^colo{2,3}r$/.test("colooor"));//true
+    console.log(/^colo{2,3}r$/.test("coloooor"));//false
+    console.log(/^colo{2,3}r$/.test("coloorcoloor"));  //false
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

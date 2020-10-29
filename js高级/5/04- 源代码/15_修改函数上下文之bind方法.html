@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        bind方法它的用法跟call是一毛一样的！
+            但是call会立即执行函数，而bind只是产生一个新的修改了this指向的函数
+     -->
+    <script>
+        function f1(n1, n2) {
+
+            console.log(this);
+            console.log(n1, n2);
+        }
+
+        var obj = { name: "jack" };
+        // f1.call(obj, 10, 20);
+
+        // bind不会立刻调用函数，而是会产生一个修改了this指向的新的函数
+        var f2 = f1.bind(obj, 10, 20);
+        /*
+            此时f2里的this相当于是写死了obj
+        function f2(n1, n2) {
+
+            console.log(obj);
+            console.log(n1, n2);
+        }
+
+        */
+        // f2();
+
+
+        // var obj2 = { name:"rose" };
+        // obj2.f2 = f2;
+
+        // obj2.f2(); //依然是obj
+
+        function f1() {
+
+            console.log(this);
+
+        };
+
+        var obj = {name:"jack"};
+        var func = f1.bind(obj);
+
+        // bind最主要的作用：可以修改掉计时器调用的函数里this的指向
+        setInterval(func, 500);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

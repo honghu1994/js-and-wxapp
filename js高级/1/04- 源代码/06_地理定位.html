@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        地理定位：获取你当前设备所在的经纬度,不会有是北纬南纬那些，它就只是获得经纬度的度数
+     -->
+</head>
+<body>
+    
+
+    <script>
+
+        // 去服务器请求你当前设备的经纬度
+        // 如果你设备有GPS模块，就去连接GPS卫星获取经纬度（最高的）
+        // 如果你设备没有GPS模块，那么就根据你的ip地址去浏览器所在的服务器查询你当前的位置（误差在方圆3公里以内）
+        // 所以现在这段代码，在谷歌打开没用，因为你要去谷歌服务器查IP.谷歌被墙了
+        window.navigator.geolocation.getCurrentPosition( function(loc){
+
+            // loc这个形参里就保存了经纬度
+            // 纬度
+            console.log(loc.coords.latitude);
+            // 经度
+            console.log(loc.coords.longitude);
+            
+        } )    
+    </script>
+</body>
+</html>

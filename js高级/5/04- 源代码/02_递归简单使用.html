@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        递归：
+            函数自己调用自己。还一定要有结束条件
+
+        递归能做的，其实循环也能做。只是某些情况下用递归比循环要方便（后面要讲的遍历DOM树）
+     -->
+
+    <script>
+
+        //  辣鸡代码，会死循环
+        //  function f1(){
+
+        //      console.log('我是f1');
+
+        //      f1();             
+        //  }
+
+        //  f1();
+
+
+        var i = 0;
+
+        function f1() {
+
+            i++;
+            console.log('班长喜欢苍老师' + i);
+
+            if (i < 3) {
+                f1();
+            }
+
+            console.log('我在后面' + i);
+
+        }
+
+        //班长喜欢苍老师1，班长喜欢苍老师2，班长喜欢苍老师3， 我在后面3
+        f1();
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

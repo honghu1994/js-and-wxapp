@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+      /* 
+      6. 编一个程序，从键盘上输入三个数，打印出最大数。  ***
+        不能用Math.max
+        要自己用判断语句来写
+      */
+      var num1 = parseInt(prompt('请输入一个数：'));
+      var num2 = parseInt(prompt('请输入一个数：'));
+      var num3 = parseInt(prompt('请输入一个数：'));
+
+      // var maxNum = Math.max(num1,num2,num3);
+
+      if(num1 >= num2 && num1 >= num3){
+        alert('最大值为：' + num1);
+      }else if(num2 >= num1 && num2 >= num3){
+        alert('最大值为：' + num2);
+      }else{
+        alert('最大值为：' + num3);
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

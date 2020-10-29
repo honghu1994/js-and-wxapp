@@ -1,0 +1,33 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //0. 创建了一个数组，里面有5 个元素------------------------------------------------
+    var arrCity = ['P城', 'R城', 'G港', '学校', '靶场'];
+    //              0       1       2     3       4       length = 5
+
+    //1. 数组名.push(新的值) 可以向数组 中添加 元素！--- 是从数组的 尾部追加元素
+    arrCity.push('军事基地');
+    arrCity.push('Z城');
+    console.log(arrCity);
+
+
+    //2.数组名.[数组名.length] = 新的值  -----------------------------------------------
+    // ['P城', 'R城', 'G港', '学校', '靶场','军事基地','Z城' ];
+    //    0       1    2      3       4        5       6      length = 7
+
+    // ['P城', 'R城', 'G港', '学校', '靶场','军事基地','Z城' ,'Y城'];
+    //    0       1    2      3       4        5       6      7     length = 8
+    arrCity[arrCity.length] = 'Y城';
+    arrCity[arrCity.length] = 'F城';
+    console.log(arrCity);
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

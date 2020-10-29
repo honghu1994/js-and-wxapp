@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset='UTF-8'/>
+        <script>
+            for (var i=1;i<=5;i++){
+                var isOk=confirm('第'+i+'遍问:你会了吗?')
+                if (isOk){
+                    alert('你学会了,嘻嘻')
+                    break;
+                }else {
+                    alert('来我再讲一遍')
+                    if(i==5){
+                        alert('你学的太努力了,回家休息吧')
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

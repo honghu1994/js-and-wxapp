@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        学这个可以判断你的内容是否为汉字
+         
+        [\u4e00-\u9fa5]  这就是所有汉字范围了，这种\u4e00这种写法叫Unicode编码，这个代表的就是汉字
+
+     -->
+     <script>
+        //  console.log( /[\u4e00-\u9fa5]/.test('哈哈321312') ); //true
+        //  console.log( /[\u4e00-\u9fa5]/.test('321312') ); //false
+
+        //  console.log( /^[\u4e00-\u9fa5]/.test('321呵312') ); //false
+        //  console.log( /^[\u4e00-\u9fa5]/.test('呵321312') ); //true
+
+
+        //  console.log( /[^\u4e00-\u9fa5]/.test('呵321312') ); //true
+
+        //  console.log( /[^1-9]/.test('0') ); //true
+        //  console.log( /[^1-9]/.test('0323213') ); //true
+
+        // 严格匹配只能有一个不是汉字
+        // console.log( /^[^\u4e00-\u9fa5]$/.test('呵321312') ); //false
+        // console.log( /^[^\u4e00-\u9fa5]$/.test('3') ); //true
+        // console.log( /^[^\u4e00-\u9fa5]$/.test('哈') ); //false
+        // console.log( /^[^\u4e00-\u9fa5]$/.test('哈3') ); //不符合严格匹配 false
+         
+     </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        function test() {
+
+            function f2(num) {
+
+                console.log('f2');
+                console.log(num);
+                
+
+            }
+
+            return f2;
+        }
+
+        // var res = test();
+
+        // res( function(){
+
+        //     console.log('回调');
+            
+        // } );
+
+
+        // test()( function(){
+
+        //     console.log('回调');
+            
+        // } )
+
+        test();
+        
+        (function(){
+            console.log('我是自调用函数');
+            
+        })();
+
+    </script>
+</body>
+
+</html>

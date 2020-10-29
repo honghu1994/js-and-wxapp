@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        组合类：把多个组合在一起
+
+        在正则中-代表到  所以a-z 就是从a到z任意一个字母
+     -->
+
+     <script>
+        //1.组合类
+        // 找要么a-m之间的要么1-5之间的
+        // [a-m1-5]相当于写的是 [abcdefghijklm12345]。只要找到中间某一个
+        // console.log(/[a-m1-5]/.test("b")); //true  
+        // console.log(/[a-m1-5\n]/.test("2")) //true
+        // console.log(/[a-m1-5]/.test("65666"))//true
+        // console.log(/[a-m1-5]/.test("6666")) //false
+        // console.log(/[a-m1-5\n]/.test("ttttyyyyzzz66666"))//false
+
+
+
+        //console.log("================");
+        // 要有2个字符
+        // 左边要满足不是0-5，右边要满足不是a-g
+        // console.log(/[^0-5][^a-g]/.test("6z"));  //true
+        // console.log(/[^0-5][^a-g]/.test("6z7y")); //true
+        // console.log(/[^0-5][^a-g]/.test("4")); //false
+        // console.log(/[^0-5][^a-g]/.test("4b")); //false
+        // console.log(/[^0-5][^a-g]/.test("4yaaabbbccc")); //false
+        // console.log(/[^0-5][^a-g]/.test("4yaaabbbc7cc"));   //true 
+        // console.log(/[^0-5][^a-g]/.test("4yaaabbbc7cc9x"));  //true
+
+
+
+        // console.log("================");
+        // 因为有或代表1位就行了，要么满足不是0-5，要么满足不是a-g
+        // console.log(/[^0-5]|[^a-g]/.test("4b"));  //true
+        // console.log(/[^0-5]|[^a-g]/.test("2"));    //true
+
+        // console.log("================");
+        // 要么满足不是0-7 要么满足不是5-9
+        // console.log(/[^0-7]|[^5-9]/.test("8"));    //true
+        // console.log(/[^0-7]|[^5-9]/.test("5"));  //false
+        // console.log(/[^0-7]|[^5-9]/.test("567")); //false
+        // console.log(/[^0-7]|[^5-9]/.test("5678"));   //true
+
+
+        // 要么满足不是0-7 要么满足 三位数(第一位不是5-9，第二位abcd任何一个，第三位固定a)
+        // console.log(/[^0-7]|[^5-9][abcd]a/.test("5678"));   //true
+
+        // 三位： 第一位： 要么可满足不是0-7 要么满足不是5-9
+        // 第二位：abcd随便一个
+        // 第三位：a
+        // console.log(/([^0-7]|[^5-9])[abcd]a/.test("5678"));   //false
+
+        // console.log(/([^0-7]|[^5-9])[abcd]a/.test("aaa"));   //true
+        // console.log(/([^0-7]|[^5-9])[abcd]a/.test("aaaa"));   //true
+        // console.log(/([^0-7]|[^5-9])[abcd]a/.test("aaab"));   //true
+
+        // console.log(/([^0-7]|[^5-9])[abcd]a/.test("aa"));   //false
+
+
+     </script>
+</head>
+<body>
+    
+</body>
+</html>

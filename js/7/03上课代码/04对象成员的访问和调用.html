@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //1.对象：超级容器，可以存放所有东西 -- 变量、数组、函数、对象
+    //  对象的成员，包括 属性 和 方法
+
+    //1.1 对象的属性：就是 对象里的 “变量”，用来 保存 数据
+    //1.2 对象的方法：就是 对象里的 “函数”，用来 保存 代码
+    var bzDuiXiang = {
+      // 对象的属性
+      gfName: '小川川',
+      gfAge: 35,
+      gfGender: true,
+
+      childNames: ['小小川', '小小波'],
+
+      // 对象的 方法
+      sayHi: function () {
+        console.log('Hi~大家好~~我是 班长的 小可爱~~~');
+      }
+    };
+
+    //2.访问 对象 里的属性 ---------------------------------------------------
+    console.log(bzDuiXiang.gfName);
+    console.log(bzDuiXiang.gfAge);
+    console.log(bzDuiXiang.gfGender);
+    console.log(bzDuiXiang.childNames);
+
+    //2.1 访问 对象中 不存在的属性时，返回 undefined
+    console.log(bzDuiXiang.money); // undefined
+
+    //3. 调用 对象的 方法
+    bzDuiXiang.sayHi();
+
+    // 打印整个对象
+    console.log(bzDuiXiang);
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

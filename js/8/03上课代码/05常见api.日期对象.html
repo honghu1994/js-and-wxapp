@@ -1,0 +1,85 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // api  (application program interface)  --> 函数  ——> 别人写好的函数
+    // 函数 有是那种叫法：
+    //                  a.函数 - 写在 对象外面的
+    //                  b.方法 - 写在 对象里面的
+    //                  c.api -  别人写的，我们来用
+
+
+    // 日期对象 Date    ，    数组对象 Array    ，  字符串 String
+    //1. 创建 日期对象
+    var dateObj = new Date();
+    console.log(dateObj);
+
+    //2. 格式化 日期显示
+    console.log(dateObj.toLocaleString());
+
+    //3. 获取 自定义的 日期格式 --------------------------------
+    //   2019年5月31日 9点59分59秒
+    function getDateTime() {
+      //3.1 获取年
+      var year = dateObj.getFullYear();
+      console.log(year);
+      //3.2 获取月份 (0-11)
+      var month = dateObj.getMonth() + 1;
+      console.log(month);
+      //3.3 获取天 
+      // var day = dateObj.getDay(); // 获取星期几
+      var day = dateObj.getDate();
+      console.log(day);
+
+      //3.4 获取小时
+      var hour = dateObj.getHours();
+      console.log(hour);
+      //3.5 获取分钟
+      var minit = dateObj.getMinutes();
+      console.log(minit);
+      //3.6 获取秒钟
+      var second = dateObj.getSeconds();
+      console.log(second);
+
+      var dateStr = year + '年' + month + '月' + day + '日 ' + hour + '点' + minit + '分' + second + '秒';
+      return dateStr;
+    }
+    var strTime = getDateTime();
+    console.log(strTime);
+
+    //3.9 补充 ： 获取 毫秒数 总数 --- 从 1970年1月1号 0点0分0秒 到 现在 的 总毫秒数
+    var allMillSeconds = dateObj.getTime().toString(); // '1559268784128'
+    // 将 总毫秒数 转换回  正常的 日期时间 显示
+    var date = changeDateFormatWithTime(allMillSeconds); 
+    console.log(date);
+
+    function changeDateFormat(cellval) {
+      if (!cellval) return "暂无";
+      var date = new Date(parseInt(cellval.replace("/Date(", "").replace(")/", ""), 10));
+      var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+      var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+      date.get
+      return date.getFullYear() + "-" + month + "-" + currentDate;
+    }
+
+    function changeDateFormatWithTime(cellval) {
+      if (!cellval) return "暂无";
+      var date = new Date(parseInt(cellval.replace("/Date(", "").replace(")/", ""), 10));
+      var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+      var currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+      var hours = date.getHours() < 10 ? "0" + (date.getHours()) : date.getHours();
+      var minute = date.getMinutes() < 10 ? "0" + (date.getMinutes()) : date.getMinutes();
+      var second = date.getSeconds() < 10 ? "0" + (date.getSeconds()) : date.getSeconds();
+      return date.getFullYear() + "-" + month + "-" + currentDate + " " + hours + ":" + minute + ":" + second;
+    }
+  
+  
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

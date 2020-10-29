@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<style type="text/css">
+    body {
+        background: #ccc;
+    }
+
+    label {
+        width: 40px;
+        display: inline-block;
+    }
+
+    span {
+        color: red;
+    }
+
+    .container {
+        margin: 100px auto;
+        width: 400px;
+        padding: 50px;
+        line-height: 40px;
+        border: 1px solid #999;
+        background: #efefef;
+    }
+
+    span {
+        margin-left: 30px;
+        font-size: 12px;
+    }
+
+    .wrong {
+        color: red
+    }
+
+    .right {
+        color: green;
+    }
+
+    .strengthLv0 {
+        height: 6px;
+        width: 120px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv1 {
+        background: red;
+        height: 6px;
+        width: 40px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv2 {
+        background: orange;
+        height: 6px;
+        width: 80px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv3 {
+        background: green;
+        height: 6px;
+        width: 120px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+</style>
+<body>
+        <div class="container">
+
+                <label>密码</label>
+                <input type="text" id="inp1" maxlength="16">
+        
+                <div class="pass-wrap">
+                    <em>密码强度：</em><em id="strength"></em>
+                    <div id="strengthLevel" class="strengthLv0"></div>
+                </div>
+            </div>
+    <script>
+
+    var inp1=document.getElementById('inp1');
+    var tip=document.getElementById('strength');
+    var level=document.getElementById('strengthLevel');
+    inp1.onkeyup=function(){
+        if(inp1.value==""){
+            tip.innerHTML="";
+            return;
+        }
+        if(inp1.value.length <5){
+            tip.innerHTML="密码长度不能少于5位";
+            level.className="strengthLv0";
+            return;
+        }
+        var score=0;
+        if(/[a-z]/i.test(inp1.value)){
+            score++;
+        }
+        if(/\d/.test(inp1.value)){
+            score++;
+        }
+        if(/\W/.test(inp1.value)){
+            score++;
+        }
+        level.className="strengthLv"+score;
+        if(score==1){
+            tip.innerHTML='弱'
+        
+        }else if(score==2){
+            tip.innerHTML='中'
+        
+           } else if(score==3){
+            tip.innerHTML='强'
+        }
+    }
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset='UTF-8'/>
+        <script>
+            function isSuNum(num){
+                var count=0
+                for(var i=1; i<=num;i++){
+                    if(num%i==0){
+                        count++;
+                    }
+                    
+                    
+
+                }
+                if (count==2){
+                        return '素数';
+                    }
+
+                return '不是素数'
+            }
+            var usrNum=parseInt(prompt('请输入一个数字'))
+            var  isSu=isSuNum(usrNum)
+            alert(isSu)
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

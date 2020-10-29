@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset='UTF-8'/>
+        <script>
+            var ranNum=Math.floor(Math.random()*100);
+            var count=0
+            do {
+                var usrNum=parseInt(prompt('请输入您要猜的数字'));
+                count++
+                if (usrNum==ranNum){
+                    alert('恭喜您猜对了')
+                }else if(usrNum>ranNum){
+                    alert('猜大了')
+                }else{
+                    alert('猜小了')
+                }
+            }while(true)
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

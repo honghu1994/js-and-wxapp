@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //4.循环录入5个人的年龄并计算 平均年龄,如果录入的数据出现负数或大于100的数,立即停止输入并报错，还要将之前输入的个数和平均值打印出来
+    var count = 0; // 合法年龄的 个数
+    var sumAge = 0; // 和法年龄 的 综合
+    var avgAge = 0; // 合法年龄的平均值
+
+    //循环 的目的：执行 五次 代码，接收 5个 人的年龄
+    for (var i = 1; i <= 5; i++) {
+      var age = parseInt(prompt('请输入年龄：'));
+
+      if (age < 0 || age > 100) {
+        alert('年龄输入错误，停止执行程序~~！');
+        break; //跳出整个循环
+      }
+
+      //累加 合法 年龄
+      sumAge += age;
+      //累加 合法 年龄的个数
+      count++;
+
+    }
+
+    //计算 平均年龄值
+    avgAge = sumAge / count;
+
+    alert('合法输入了【' + count + '】个年龄，合法年龄总和为【' + sumAge + '】，合法年龄平均值为【' + avgAge + '】');
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

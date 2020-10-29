@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        原型对象里有一个属性叫 constructor，指向了它对应的构造函数
+     -->
+
+    <script>
+        function Person(name, age) {
+
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.sayHi = function () {
+
+            console.log('hello');
+
+        }
+
+        // console.log(Person.prototype);
+        // console.log(Person.prototype.constructor === Person); //true
+
+
+        var p1 = new Person('jack', 16);
+
+        // 不会这么写，只是验证constructor找到了它对应的构造函数
+        var p2 = new Person.prototype.constructor('rose', 18);
+
+        var p3 = new p1.__proto__.constructor('andy',19);
+
+        console.log(p1);
+        console.log(p2);
+        console.log(p3);
+
+        p1.sayHi();
+        p2.sayHi();
+        p3.sayHi();
+        
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

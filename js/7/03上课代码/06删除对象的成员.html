@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+      var benLaoPo = {
+        name : '小笨蛋',
+        cook : function(){
+          console.log('做的菜真难吃~~~');
+        }
+      };
+
+      console.log(benLaoPo.name);
+
+      benLaoPo.cook();
+
+      // 无法 通过 设置为 null 来 删除对象里的成员
+      // benLaoPo.cook = null;
+
+      // benLaoPo.cook();
+
+      //1. delete 关键字：用来 删除 对象 里的成员
+      // 删除 对象里的方法
+      delete benLaoPo.cook;
+
+      // 删除 对象里的 属性
+      delete benLaoPo.name;
+
+      
+
+      console.log(benLaoPo);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

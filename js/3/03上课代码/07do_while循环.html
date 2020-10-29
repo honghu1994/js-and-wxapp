@@ -1,0 +1,34 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //2. do while 循环
+    //       会 先 将 循环代码 执行 一次，然后 再判断 是否要 进行下一次循环
+    //   先斩后奏
+
+    //案例：输出 1 - 5 之间的和
+    var num = 1; // 保存 循环次数
+
+    var sum = 0; // 保存 和 --- 箩筐变量
+
+    do {
+      console.log('num = '+num); 
+      // num = 1,2,3,4,5
+
+      sum += num; // 将 num 里的数值 累加到 sum变量中！！
+      //sum = 1 + 2 + 3 + 4 + 5
+
+      num += 1; // num = num + 1
+
+    } while (num <= 5);
+
+    console.log('sum = ' + sum);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

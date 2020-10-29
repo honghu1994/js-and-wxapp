@@ -1,0 +1,52 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // 数组对象 -----------------------------------------------
+    var arrCity = ['P城', 'C城', 'Y城', 'R城', '军事基地'];
+
+    //1.concat 连接 连个数组
+    arrCity = arrCity.concat(['Z城','研究所']);
+    console.log(arrCity);
+
+
+    //2.join 将元素 拼接成 字符串 返回
+    var strCitys = arrCity.join('|'); // 传入的是 分隔符，默认 是 ,
+    console.log(strCitys);
+    console.log(strCitys.length);
+
+    //3.reverse 翻转数组 -- 直接 对 本数组 的元素做翻转操作，不需要返回值
+    arrCity.reverse();
+    console.log(arrCity);
+
+
+    //4.splice 删除 和 替换 --------------------------------------
+    var arrCity = ['P城', 'C城', 'Y城', 'R城', '军事基地'];
+    //               0      1      2      3      4
+    console.log(arrCity);
+    //4.1 删除 指定元素
+    arrCity.splice(2,1); // 从 下标2 开始删，删除 1 个元素
+    console.log(arrCity);
+
+    // arrCity[1] = 'G港';
+    //4.2 替换 指定元素
+    arrCity.splice(1,2,'G港'); // 从下标1删除2个元素，并替换一个 G港 到 下标1 的位置
+    console.log(arrCity);
+
+    
+    var arrCity = ['P城', 'C城', 'Y城', 'R城', '军事基地'];
+    //               0      1      2      3      4
+    console.log(arrCity);
+    // 4.3 插入 指定元素
+    arrCity.splice(2,0,'Z城'); // 在 下标 为 2 的元素 前面 插入 一个元素 Z城
+    console.log(arrCity);
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

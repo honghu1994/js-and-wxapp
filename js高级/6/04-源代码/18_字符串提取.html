@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!--  -->
+
+    <script>
+        // var str = "hello world";
+        // // 找到匹配hello的，再把匹配的内容提取出来
+        // // 会返回数组
+        // var res = str.match('hello');
+        // console.log(res);
+
+
+        // var str = "hello world";
+        // var arr = str.match(/o/g);
+        // console.log(arr);
+
+
+        var str = "578596803@qq.com楼主好人，跪求种子 321312@qq.com 谢谢楼主   1652822874@qq.com. 谢谢  wkj130@126.com，欢迎来骚扰";
+
+        var arr = str.match( /\w+@[a-z0-9]+(\.[a-z]{2,})+/ig );
+
+        console.log(arr);
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

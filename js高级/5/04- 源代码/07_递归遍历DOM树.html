@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    
+    <div id="box">
+        <ul>
+            <li>
+                <div>
+                    <span>我是span</span>
+                    <p>p标签</p>
+                </div>
+            </li>
+
+            <li>
+                <span>sp1</span>
+                <span>sp2</span>
+            </li>
+        </ul>
+        <div>
+            <p>p1</p>
+            <p>p2</p>
+            <p>p3</p>
+        </div>
+    </div>
+
+    <script>
+        
+        var box = document.getElementById('box');
+
+        // 打印出所有的元素
+        // for(var i = 0; i < box.children.length; i++){
+
+        //     for(var j = 0; j < box.children[i].children.length; j++){
+
+        //         console.log(box.children[i].children[j]);
+                
+        //     }
+        // }
+        
+        // 这个函数专门用来打印子元素
+        function 打印子元素(ele){
+
+            for(var i = 0; i < ele.children.length; i++){
+
+                console.log(ele.children[i]);
+
+                打印子元素(ele.children[i]);
+            }
+        }
+
+        打印子元素(box);
+
+
+
+        // var 数字1 = 10;
+        // var 数字2 = 20;
+        // var 和 = 数字1 + 数字2;
+        // console.log(和);
+    </script>
+</body>
+</html>

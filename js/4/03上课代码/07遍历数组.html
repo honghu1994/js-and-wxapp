@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // 业务：打印 数组里的每个元素，手动打印太麻烦~~
+    // console.log(arrCity[0]);
+    // console.log(arrCity[1]);
+    // console.log(arrCity[2]);
+    // console.log(arrCity[3]);
+    // console.log(arrCity[4]);
+
+
+    //0. 创建了一个数组，里面有5 个元素------------------------------------------------
+    var arrCity = ['P城', 'R城', 'G港', '学校', '靶场'];
+    //              0       1       2     3       4       length = 5
+
+    // 【使用 for 循环 来 遍历 数组里的元素】
+
+    //一、正序遍历 数组的元素 0 -> 最后一个下标  -----------------------------------------------
+
+    //a. 正序遍历 的第1种方法 ： i < arr.length
+    // 1.通过 for循环 里的 i，依次生成 数组里元素的 下标
+    for (var i = 0; i < arrCity.length; i++) { // i = 0 1 2 3 4
+      // 2.通过 中括号访问法，访问 数组中 对应 i 下标 的元素，并打印出来！
+      console.log(arrCity[i]);
+    }
+
+    //b. 正序遍历 的第2种方法 ： i <= arr.length - 1
+    for (var i = 0; i <= arrCity.length - 1; i++) { // i = 0 1 2 3 4
+      console.log(arrCity[i]);
+    }
+
+    console.log('倒序遍历数组：');
+
+    //二、倒序遍历 数组的元素 最后一个下标 -> 0 ---------------------------------------------------------
+    for (var i = arrCity.length - 1; i >= 0; i--) { // i = 4 3 2 1 0
+      console.log(arrCity[i]);
+    }
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

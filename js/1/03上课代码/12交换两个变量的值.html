@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+      //1. 将 两个 变量 中保存的 值 交换位置
+      var a = '苹果';
+      var b = '梨子';
+      console.log(a,b);
+
+      // a = b;
+      // b = a;
+
+      //1.1 将 a 的值 保存到 临时变量中
+      var temp = a;   // temp = 苹果  a = 苹果  b = 梨子
+      
+      //1.2 将 b 的值 保存到 a 中
+      a = b;          // temp = 苹果  a = 梨子  b = 梨子
+
+      //1.3 将 临时变量 的值 保存到 b 中
+      b = temp;       // temp = 苹果  a = 梨子  b = 苹果
+
+      console.log(a,b);
+      
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

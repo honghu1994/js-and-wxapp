@@ -1,0 +1,81 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //1.switch穿透：当 case 中 没有 写 break 来 退出 整个 swtich结构时，就叫做 switch穿透。
+    //              没写 break 的 case {} 代码结束后，会执行 下一个 case{} 代码块里的代码！！直到遇到 break 或 default 为止！！！
+
+    var usrName = '小波波';
+
+    switch (usrName) {
+      case '小波波': { // 相当于 if(usrName === '小波波')
+        console.log('亲，我可以亲你吗？');
+        // 注意 这里 没有 写 break;
+      }
+      case '小苍苍': {
+        console.log('亲，我可以抱你嘛？');
+        break;
+      }
+      case '小泽泽': {
+        console.log('亲，我可以带你去湘江边吗？');
+        break;
+      }
+      default: {
+        console.log('我不喜欢男的~~~~');
+      }
+    }
+
+    console.log('我是switch结构后面的代码~~~~');
+
+    //2. 合理使用switch 穿透 ----------------------------------------------
+
+    var usrYear, usrMonth, usrDay;
+    // prompt() 方法用于显示可提示用户进行输入的对话框
+    usrYear = parseInt(prompt('请输入年份：'));
+    usrMonth = prompt('请输入月份：'); // '1'
+
+    //2.判断是否为 大月
+    // 【强调】switch 中的 判等 是  === ，又判断 值，也判断 类型
+    switch (usrMonth) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12: {
+        usrDay = 31;
+        break;
+      }
+      case 4:
+      case 6:
+      case 9:
+      case 11: {
+        usrDay = 30;
+        break;
+      }
+      case 2: {
+        if (usrYear % 400 == 0 || (usrYear % 4 == 0 && usrYear % 100 != 0)) {
+          usrDay = 29;
+        } else {
+          usrDay = 28;
+        }
+      }
+      default: {
+        alert('您输入的月份有误~~~可能您的身份不是地球人吧~~~');
+      }
+    }
+
+    //5.如果 usrDay 已经被赋值过了，就打印出来
+    if (usrDay != undefined) {
+      alert('【' + usrYear + '】年【' + usrMonth + '】月有【' + usrDay + '】天');
+    }
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

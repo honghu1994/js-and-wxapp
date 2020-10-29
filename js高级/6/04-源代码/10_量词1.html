@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    //1.量词
+    // "*"	重复零次或更多 x>=0          {0,}
+             //次数要 >= 0
+
+    // "+"	重复一次或更多次 x>=1        {1,}
+            // 至少1次
+
+    // "?"	重复零次或一次  x=(0||1)     {0,1}
+
+    //*
+    
+    // 只要有color
+    // console.log(/color/.test("color"));  //true
+    // console.log(/color/.test("colorcolor"));  //true
+
+    // 严格匹配的内容是： colo(0次或多次)r  例： colr  color  coloor colooooooor
+    // console.log(/^colo*r$/.test("colr")); //true
+    
+    //  console.log(/^colo*r$/.test("color")); //true
+    //  console.log(/^colo*r$/.test("coloor")); //true
+    //  console.log(/^colo*r$/.test("colooor")); //true
+    //  console.log(/^colo*r$/.test("colooorcolooor"));//false  
+    //  console.log(/^colo*r$/.test("olooor"));  //false
+
+
+    // 整体的color可以没有，或者有多次
+    //   console.log(/^(color)*$/.test(""));//true
+    //   console.log(/^(color)*$/.test("1"));//false
+    //   console.log(/^(color)*$/.test("color")); //true
+    //   console.log(/^(color)*$/.test("colorcolor"));//true
+    //   console.log(/^(color)*$/.test("colorcolorcolor"));//true
+    //   console.log(/^(color)*$/.test("1colorcolorcolor")); //false
+
+    // //   // 没有*了，只能有1个color
+    //   console.log(/^(color)$/.test("colorcolorcolor"));  //false
+
+
+    //+ ：1次或多次
+    
+    // l后面的那个o至少出现1次
+    //  console.log(/^colo+r$/.test("colr"));  //false
+    //  console.log(/^colo+r$/.test("color")); //true
+    //  console.log(/^colo+r$/.test("coloor")); //true
+    //  console.log(/^colo+r$/.test("colooor")); //true
+    //  console.log(/^colo+r$/.test("colooorcolooor"));   //false
+
+
+
+    //? 0或1次
+    // l后面的o要么有1次要么没有，并且严格匹配
+    console.log(/^colo?r$/.test("colr")); //true
+    console.log(/^colo?r$/.test("color")); //true
+    console.log(/^colo?r$/.test("coloor")); //false
+    console.log(/^colo?r$/.test("colooor")); //false
+    console.log(/^colo?r$/.test("colooorcolooor")); //false  
+    console.log(/^colo?r$/.test("colorcolor"));   //false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

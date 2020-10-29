@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+
+        Object构造函数，也有两重含义
+            1.本身作为构造函数，它实例化出了其他的原型对象
+            2.自身作为对象，也会有__proto__属性，并且也会有构造函数把它实例化出来
+                    它的__proto__指向了Function的原型对象，所以证明这个Object构造函数其实是由Function实例化的
+
+
+
+        所有函数都是Function实例化的：
+                    也就是说Function原型里提供的属性和方法，所有的函数都有
+
+        所有原型对象都是Object实例化的
+                    也就是说Object原型里提供和的属性和方法，所有的对象都有
+     -->
+
+    <script>
+        console.dir(Object);
+        console.log(Object.__proto__ === Function.prototype);//true
+        
+        
+     </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,117 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //1. 什么是类型转换？ -- 将 一种类型的数据  转成 另外一种 类型
+    //1.1 转数值 parseInt  parseFloat Number
+    //a.parseInt 转 整型数值
+    //           a1.如果 遇到 小数字符串，会将 小数点和小数部分 去掉，只转换 整数部分
+    //           a2.如果 转换的 数据 不是一个 数值字符串，就会转换失败，返回 NaN
+    //           a3.如果 遇到 非数值，会自动停止转换，只转换非数值 前面的 数据
+    //           a4.如果 最前面是 空格，会 自动 忽略空格，转换后面的数据
+    //           a5.如果 中间遇到空格，会自动停止转换，只转换 空格 前面的 数据
+    var num = parseInt('11'); // '11' -> 11
+    console.log(typeof num); // number
+
+    var num = parseInt('11.1'); //'11.1' -> 11
+    console.log(num);
+
+    var num = parseInt('aaaa'); // NaN
+    console.log(num);
+
+    var num = parseInt('12a34'); // 12
+    console.log(num);
+
+    var num = parseInt('a12'); // NaN
+    console.log(num);
+
+    var num = parseInt(' 12'); //12
+    console.log(num);
+
+    var num = parseInt(' 12 34'); //12
+    console.log(num);
+
+    //案例：将 '100px' -> '110px' --------------------------------------
+    var divWidth = '100px';
+    divWidth = parseInt(divWidth); //divWidth =  100
+
+    divWidth += 10;// divWidth =  100 + 10;
+    divWidth += 'px';// 110 + 'px' -> '110px'
+
+    console.log('divWidth=' + divWidth);
+
+    //b.parseFloat 转小数
+    var num = parseInt('11.1'); // 11
+    var num = parseFloat('11.1'); // 11.1
+    console.log(num);
+
+    
+    var num = parseFloat('aaaa'); // NaN
+    console.log(num);
+
+    var num = parseFloat('12a34'); // 12
+    console.log(num);
+
+    var num = parseFloat('a12'); // NaN
+    console.log(num);
+
+    var num = parseFloat(' 12'); //12
+    console.log(num);
+
+    //c.Number 转 任何数值
+    var num = Number('111000');
+    console.log(num);
+
+    var num = Number('111000.777');
+    console.log(num);
+
+    var num = Number('111000aaa111'); // NaN
+    console.log(num);
+
+    //1.2 转字符串
+    // 数据.toString()   String(x)  
+    //a. 数据.toString() 可以 用来 将 数据 转成 字符串 
+    var num = 11;
+    console.log(num.toString()); // 11 -> '11'
+
+    //注意：数值直接量 不能 通过 .来调用 toString()方法，因为 会被当做 小数点
+    // console.log(11.toString());
+
+    console.log(true.toString());
+
+    //b.String(x) 可以用来 将 没有 toString()方法的 数据 转成 字符串，比如：undefined 和 null
+
+    // console.log(undefined.toString()); //报错：Cannot read property 'toString' of undefined
+    var str = String(undefined);
+    console.log(str);
+
+    var str = String(null);
+    console.log(str);
+    console.log('............');
+    
+
+
+    //1.3 转布尔值
+    // Boolean(x)  用来 将 数据 转成 true 或者 false
+    //             会转成 false 的有 8 种： 0 ， -0，NaN ，''，undefined , null , false , document.all
+    //             其他的全都转成 true
+    var isOk = Boolean('false');//true
+    console.log(isOk);
+
+    var isOk = Boolean('小白白'); //true
+    console.log(isOk);
+
+    var isOk = Boolean(Infinity); //true
+    console.log(isOk);
+
+    var isOk = Boolean('\n'); //true
+    console.log(isOk);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

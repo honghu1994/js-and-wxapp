@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+      //1.因为 使用 代码 来做的业务，大部分 都是 包含数据的，所以 需要 数据(直接量) 和 储存数据(变量等) 的 语法！！！
+
+      //2.直接量（数据）-- 直接 可以被 js引擎（浏览器） 解析的数据 就是 直接量！！
+      console.log(110);
+      console.log(35);
+      console.log(18.5);
+
+      console.log('我爱你，老婆~~~');
+      console.log('知道了~~~ 我也爱你哦~~~~');
+      console.log("爸爸妈妈，我也爱你们~~~");
+      console.log('i love u ~~~');
+      console.log('110');
+
+      console.log(true);
+      console.log(false);
+
+      // console.log(james);
+      
+      //3.数据类型：由于 JS中的 数据 有多种，所以 为他们分了类别，这些了别的统称：数据类型
+      //3.1 数值类型 Number
+      //        作用：用来 在 js中 表示  各种 数字 -> 整数(整型数值) ， 小数(浮点数) ，负数
+      console.log(110);
+      console.log(112);
+      console.log(520);
+
+      console.log(1.314); // 加了小数点 的小数
+      console.log(-1); // 负数
+
+      //a. 数值类型的 取值范围 -- 因为内存是有限的，数字是无限的，所以 在js中 已经规定好数字范围！
+      //   最大值 和 最小值
+      console.log('最大值为：');
+      console.log(Number.MAX_VALUE); // 最大值：js能够显示的 最大值
+
+      console.log('最小值为：');
+      console.log(Number.MIN_VALUE); // 最小值：js能够显示的 最小值
+      
+      //  无穷大 和 无穷小 ---- 因为 数学 的范畴中 数字 是无限的，所以 JS中 使用 无穷大和无穷小来表示 这个两个概念
+      console.log(Infinity); //Infinity 无穷大
+      console.log(-Infinity); //-Infinity 无穷小
+      
+
+      //3.2 数值类型里 两个特殊的地方
+      //a. Infinity 和 任何数值运算 结果都是 Infinity
+      console.log(Infinity + 1);
+
+      //b. JS中 由于 处理的机制问题，相除时，可能得到 的无穷循环小数 只会 显示 15-17 位
+      console.log(10 / 3);
+      
+      
+      
+      
+      
+      
+      
+      
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

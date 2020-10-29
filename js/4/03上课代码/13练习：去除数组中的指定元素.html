@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+      
+    //0. 创建了一个数组，里面有5 个元素------------------------------------------------
+    var arrCity = ['小苍苍','小苍苍', '小甜甜', '小苍苍','小狗狗', '小猫猫', '小泽泽'];
+    //                0         1        2         3        4       length = 5
+
+    console.log(arrCity);
+
+    // 1. 遍历 数组里的 元素，如果 找到 目标元素，就调用 splice 方法 删除
+    for(var i = 0; i < arrCity.length;i++){
+      //2. 如果 遍历的元素 等于 '小苍苍'
+      if(arrCity[i]  == '小苍苍'){
+        // 3. 调用 数组的 splice 方法 ，根据当前下标 ，删除 1个元素
+        arrCity.splice(i,1);
+      }
+    }
+
+    //4.打印 删除 目标元素 后的 数组
+    console.log(arrCity);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

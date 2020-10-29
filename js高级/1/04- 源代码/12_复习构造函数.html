@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 对象类型：也是一种数据类型，它可以一个变量保存多个数据
+        // 数组也可以用一个变量保存多个数据
+        // 保存一个人的名字、年龄、学号
+        // var arr = ['jack',16,19];
+        // 如果你用数组，取值明显吗？不明显
+        // arr[0];
+        // arr[1]; //这个是年龄？
+        // arr[2]; //这个是学号
+
+
+        // 对象类型
+        // var p1 = { name: "jack", age: 16, stuNo: 19 };
+        // p1.name;
+        // p1.age;
+        // p1.stuNo;
+
+
+        // 我要创建2个对象，分别是：鱼香 16 true  肉丝 17 false
+        // var p1 = {};
+        // p1.name = "鱼香";
+        // p1.age = 16;
+        // p1.gender = true;
+
+
+        // var p2 = {};
+        // p2.name = "肉丝";
+        // p2.age = 17;
+        // p2.gender = false;
+
+        // var p3 = {};
+        // p3.name = "jack";
+        // p3.age = 15;
+        // p3.gender = true;
+
+        // 封装成函数
+        // function creatObject(name,age,gender) {
+
+        //     var obj = {};
+        //     obj.name = name;
+        //     obj.age = age;
+        //     obj.gender = gender;
+
+        //     return obj;
+        // }
+
+        // var p1 = creatObject('jack',16,true);
+        // var p2 = creatObject('andy',17,false);
+        // var p3 = creatObject('rose',18,false);
+
+        // console.log(p1);
+        // console.log(p2);
+        // console.log(p3);
+
+
+        // 构造函数：其实就跟我们刚刚封装的函数效果都是一样的
+        // 不用自己创建对象，也不用自己返回对象
+        // 构造函数作用：就是用来方便让我们创建对象的，不用每次创建对象都一个一个给它属性赋值
+        function Person(name, age, gender) {
+
+            //不用自己创建了
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            // 不用自己返回了
+        }
+
+        /*
+        new帮我们做的事：
+            会帮我们创建空对象
+            并且调用这个构造函数的时候，把函数里的this指向了这个空对象
+            函数结束的时候返回这个对象
+        */
+        var p1 = new Person('jack', 16, true);
+        var p2 = new Person('rose', 15, false);
+        var p3 = new Person('andy', 19, true);
+
+        console.log(p1);
+        console.log(p2);
+        console.log(p3);
+
+
+        // 最后总结：构造函数其实就是一个快速创建对象的封装
+
+
+
+    </script>
+</body>
+
+</html>

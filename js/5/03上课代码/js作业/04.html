@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset='UTF-8'/>
+        <script>
+            function getMax(arrNum){
+                var temp=0;
+            for(var lun=1; lun<arrNum.length;lun++){
+                for(var i=0;i<arrNum.length-lun;i++){
+                    if(arrNum[i]>arrNum[i+1]){
+                         temp=arrNum[i]
+                        arrNum[i]=arrNum[i+1]
+                        arrNum[i+1]=temp;
+                    }
+                }
+            }
+            return arrNum;
+        }
+        var arr=[2200,4,322,211,12];
+        var arr1=getMax(arr);
+        console.log(arr1);
+        
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

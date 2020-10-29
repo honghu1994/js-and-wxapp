@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+      //1.计算机中 几乎所有的 随机生成的数 都是 伪随机数！ ---  有规律可循！！
+
+      //2.使用 JS 生成 随机数 很简单， Math.random() 会 返回一个 0 - 1 之间的 随机小数
+      //  取值范围： 大于等于0 ，小于 1  --> [0,1)
+      var ranNum = Math.random();
+      console.log(ranNum);
+
+      //3.生成 0 - 100 之间的随机数(包含小数点)
+      var ranNum = Math.random() * 100;
+      console.log(ranNum);
+
+      //4.生成 0 - 100 之间的 随机整数！！！
+      var ranNum = Math.random() * 100;
+      ranNum = Math.floor(ranNum); // 将 生成的 随机数 传入 floor方法，返回去掉 小数点的 整数 ，从新 赋值给 ranNum 变量
+      console.log(ranNum);
+      
+      
+      
+
+      
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

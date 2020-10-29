@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+      // console.log(b); // 报错： b is not defined
+
+      //【js引擎 会 先 做 预解析，然后再 由上到下 的执行代码】
+
+      // 1. JS预解析
+      //    1.1 将 所有 声明的变量 提到 所在作用域的 最顶端
+      //    1.2 将 所有 声明的函数 提到 所在作用域的 最顶端
+      //    注意：提升后，变量 在 函数 之前
+
+
+
+      //1.1 将 所有 声明的变量 提到 所在作用域的 最顶端----------
+      console.log(a); // undefined
+      var a = 1;
+      console.log(a); // 1
+
+      //1.2 将 所有 声明的函数 提到 所在作用域的 最顶端-------------
+      b();
+
+      function b(){
+        console.log('我是bbbbbbbbbb');
+      }
+
+
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

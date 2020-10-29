@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+
+        原型对象：本质上也是一个对象
+        
+        什么时候有这个对象？
+               当你声明一个构造函数的时候，就会有一个原型对象
+
+        
+    分以下三步学习：
+        1.先找到这个对象
+                构造函数.prototype 这就是找到原型对象
+
+        2.这个对象有什么作用和特点
+                给原型对象加的方法，实例化出来的对象也可以调用（相当于实例化出来的对象也拥有了）
+
+        3.为什么要有这个对象
+                可以把一些实例化对象相同的方法和属性写在原型里，就可以节约内存空间
+
+     -->
+
+    <script>
+
+        /*
+            //  这是一个构造函数
+             function Person(name,age){
+    
+                this.name = name;
+                this.age = age;
+             }
+    
+             console.log(Person.prototype);
+    
+            //  给原型对象加了一个sayHi方法
+             Person.prototype.sayHi = function(){
+    
+                console.log('大家好，我叫' + this.name +',今年' + this.age + '岁');
+                
+             }
+             
+    
+            //  通过构造函数可以实例化对象
+            var p1 = new Person('龙玉川',99);
+            console.log(p1);
+            p1.sayHi();
+        */
+
+
+        /*
+            //如果把相同的方法都写到构造函数，会导致实例化10个对象，就有10个方法，就浪费内存空间
+            function Person(name, age, gender) {
+    
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+                this.sayHi = function () {
+    
+                    // console.log('大家好，我叫' + this.name + ",今年" + this.age + "岁，我是" + (this.gender ? "男" : "女") + "生");
+                    console.log('hello');
+                    
+                }
+            }
+    
+            var p1 = new Person('林利群', 98, true);
+            p1.sayHi();
+    
+            var p2 = new Person('龙玉川', 16, false);
+            p2.sayHi();
+    
+            //两个实例化的sayHi是同一个吗？？？不是！
+            console.log(p1.sayHi === p2.sayHi);//false
+        */
+
+
+        function Person(name, age, gender) {
+
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+        // 把相同方法写到原型里有个好处：节省内存空间
+        Person.prototype.sayHi = function () {
+
+            console.log('hello');
+
+        }
+
+        var p1 = new Person('林利群', 98, true);
+        p1.sayHi();
+
+        var p2 = new Person('龙玉川', 16, false);
+        p2.sayHi();
+
+        console.log(p1.sayHi === p2.sayHi);//true
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

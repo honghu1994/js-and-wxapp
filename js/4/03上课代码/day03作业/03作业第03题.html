@@ -1,0 +1,26 @@
+ <html>
+
+ <head>
+   <title></title>
+   <meta charset='UTF-8' />
+   <script>
+     // 3.输入班级人数 , 然后依次输入学员成绩，计算班级学员的平均成绩 和 总成绩
+     var stuNum = parseInt(prompt('请输入班级人数：'));
+     var sumScore = 0; //总成绩
+     var avgScroe = 0; // 平均成绩
+
+     for (var i = 1; i <= stuNum; i++) { // i++ -> i = i + 1;
+       var stuScore = parseInt(prompt('请输入第【' + i + '】个学员的成绩：'));
+       sumScore += stuScore;// 累加成绩到 总成绩变量中
+     }
+
+     avgScroe = sumScore / stuNum;
+
+     alert('总人数【' + stuNum + '】，总分数【' + sumScore + '】，平均成绩【' + avgScroe + '】');
+   </script>
+ </head>
+
+ <body>
+ </body>
+
+ </html>

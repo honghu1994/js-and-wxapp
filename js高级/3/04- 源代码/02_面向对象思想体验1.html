@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <script>
+        // 我们以前写的代码就是面向过程
+        /*
+            var divList = document.getElementsByTagName('div');
+            var pList = document.getElementsByTagName('p');
+    
+            // 我要给所有的div加粉色边框
+            for (var i = 0; i < divList.length; i++) {
+    
+                divList[i].style.border = "5px solid hotpink";
+            }
+    
+            // 我要给所有的p标签加绿色边框
+            for (var i = 0; i < pList.length; i++) {
+    
+                pList[i].style.border = "5px solid green";
+            }
+        */
+
+
+        // 面向对象推导：
+        /*
+            function tagName(tag) {
+                // 会得到一个结果，而这个结果是外界调用者想要拿到的，所以return出去
+                return document.getElementsByTagName(tag);
+            }
+            
+            var divList = tagName('div');
+            var pList = tagName('p');
+    
+            function setBorder(list,css) {
+    
+                for (var i = 0; i < list.length; i++) {
+    
+                    list[i].style.border = css;
+                }
+            }
+    
+            setBorder(divList,'5px solid hotpink');
+            setBorder(pList,'5px solid green');
+        */
+
+        // 此时虽然说封装解决了问题，但是有变量名污染的问题，你封装2个函数就有2个变量名污染，而且位置比较散，不在一个整体
+        // 所以解决这个问题的办法就是：把函数都当做一个对象里的方法
+
+        var myJquery = {};
+        myJquery.tagName = function (tag) {
+            // 会得到一个结果，而这个结果是外界调用者想要拿到的，所以return出去
+            return document.getElementsByTagName(tag);
+        }
+        myJquery.setBorder = function (list, css) {
+
+            for (var i = 0; i < list.length; i++) {
+
+                list[i].style.border = css;
+            }
+        }
+
+        // 面向对象是面向过程的高度封装
+        var divList = myJquery.tagName('div');
+        var pList = myJquery.tagName('p');
+
+        myJquery.setBorder(divList,'5px solid hotpink');
+        myJquery.setBorder(pList,'5px solid green');
+
+
+    </script>
+</body>
+
+</html>

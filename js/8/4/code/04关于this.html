@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+
+  <script>
+    var pp = '宝马';
+
+    // this 就是函数内部的一个特殊 属性（变量）
+
+    //1.写代码时，脑子里可以这么想： 某个对象 方法 里的 this 就是 这个对象
+    //                             因为 要调用 一个对象里的方法时，大部分情况 都是 通过这个 对象.方法() 去调用的
+    //2.本质上说：对象 方法里的 this，就是 ： 【谁.出这个方法，方法里的this就是谁】
+
+/*  */
+
+    //1. 声明一个 全局函数 ，可以 共享给 其他对象使用     -------------------------
+    var showCar =  function () {
+      console.log('我是【' + this.pinPai + '】车~~~');
+    }
+
+
+    // 2. 两个对象 的 show 方法 共享 一个 全局函数 showCar---------------------------
+    var carObj1 = {
+      pinPai: '保时捷',
+      price: 2000000,
+      owner: 'james',
+
+      show: showCar // 将 全局函数 showCar 设置给 carObj1 的 show
+    };
+
+    // carObj1.show();
+
+
+    var carObj2 = {
+      pinPai: '奔驰',
+      price: 1000000,
+      owner: 'james',
+
+      show: showCar // 将 全局函数 showCar 设置给 carObj2 的 show
+    };
+
+    // 3. 通过 不同 对象 调用 show 方法  -----------------------------
+    carObj1.show(); // 此刻 方法里的 this 是 carObj1
+
+    carObj2.show(); // 此刻 方法里的 this 是 carObj1
+  </script>
+
+</head>
+
+<body>
+</body>
+
+</html>

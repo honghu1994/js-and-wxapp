@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // var nums = [10,20,30,40,50];
+        // nums.push(100); //里面默认的this是nums自己，因为this是nums自己，所以就是给nums添加了一个元素
+        // console.log(nums);
+
+
+        // var wei = {
+        //     0:10,
+        //     1:20,
+        //     2:30,
+        //     length:3
+        // };
+
+        // // wei.push(100);
+        // nums.push.call(wei,100); //把push里的this改成了wei，所以就是给wei加一个元素100
+        // console.log(wei);
+
+
+        // 优化写法：
+        // var nums = [10,20];
+        // console.log(nums); //其实push是Array.prototype的方法，
+        //所以其实你要借用，没必要再准备一个真数组，可以直接借用Array.prototype的方法
+
+        var wei = {
+            0: 10,
+            1: 20,
+            2: 30,
+            length: 3
+        };
+        
+        Array.prototype.push.call(wei,100);
+        console.log(wei);
+        
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

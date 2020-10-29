@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //【函数形参 的默认值】: 当 调用函数时，没有传入实参时，形参 会有一个 默认的值
+    //1.方式一：使用 || 运算符 的 短路 操作
+    function bigSword1(jiShiId, yinLiao) { //var jiShiId;
+      // 如果 jiShiId 没有实参值，默认 是 undefined，也就是说，调用函数时，没有实参传入
+
+      //1.1 通过 if 来 模式 设置 默认值         ------------------------
+      // if(jiShiId == undefined){
+      //   // 所以 设置 jiShiId 的默认值为 77
+      //   jiShiId = 77;
+      // }
+
+
+      // if(yinLiao== undefined){
+      //   yinLiao = '可乐';
+      // }
+
+      //1.2 通过 三元运算符 来 模式 设置 默认值    ------------------------
+      // jiShiId = jiShiId == undefined ? 77: jiShiId;
+      // yinLiao = yinLiao == undefined ? '可乐': yinLiao;
+
+      // if ()中的值 如果 直接是  0 -0 NaN null undefined '' ，相当于 if(false){ }
+
+      // if(!jiShiId){
+      //   jiShiId = 77;
+      // }
+
+      //1.3 通过 逻辑或 短路来 模拟 设置默认值      ------------------------
+      //    形参 =  形参 || 默认值;
+
+      // jiShiId = jiShiId || 77; 
+      // yinLiao = yinLiao || '牛奶';
+
+      console.log('------------欢迎来到快乐岛盲人按摩健康会所------------');
+      console.log('交钱：1888~~~');
+      console.log('选择盲人技师 ' + jiShiId + ' 号 ~~');
+      console.log('天黑请闭眼~~正规盲人按摩开始~~');
+      console.log('正规按摩结束，先生请喝一杯' + yinLiao + '~~~');
+    }
+
+    //4.方式四：使用 es6 语法 设置默认值
+    function bigSword(jiShiId = 77, yinLiao='牛奶') {
+
+      console.log('------------欢迎来到快乐岛盲人按摩健康会所------------');
+      console.log('交钱：1888~~~');
+      console.log('选择盲人技师 ' + jiShiId + ' 号 ~~');
+      console.log('天黑请闭眼~~正规盲人按摩开始~~');
+      console.log('正规按摩结束，先生请喝一杯' + yinLiao + '~~~');
+    }
+
+    //调用函数：没有传实参
+    bigSword();
+
+    //调用函数：传递了实参
+    bigSword(29,'肾宝');
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

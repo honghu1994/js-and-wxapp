@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        []：代表只要出现中括号中的某一个都算匹配
+
+            例：[132a] ：主要出现1或者3或者2或者a都算
+     -->
+    <script>
+        // //  132a中某一个
+        //  console.log(/[132a]/.test('abcdefg')); //true
+        // //  找132a
+        //  console.log(/132a/.test('abcdefg')); //false
+
+        // 找abc中的任意一个
+        // console.log(/[abc]/.test("a")); //true
+        // console.log(/[abc]/.test("b")); //true
+        // console.log(/[abc]/.test("c")); //true
+        // console.log(/[abc]/.test("123456a")); //true
+        // console.log(/[abc]/.test("123456abcabc")); //true
+        // console.log(/[abc]/.test("123456"));//false
+        // console.log(/[abc]/.test("ddddddddd!!!!!!"));//false
+        // console.log(/[abc]/.test("dddddbdddd!!!!!!"));//true
+        // console.log(/[abc]/.test("dddddBdddd!!!!!!")); //false
+        // // 忽略大小写（不区分大小写）
+        // console.log(/[abc]/i.test("dddddBdddd!!!!!!")); //true
+
+
+
+        // 中间是要么a要么b要么c，所以最终组成 yaz 或者 ybz 或者 ycz
+        // console.log(/y[abc]z/.test("yaz"));  //true
+        // console.log(/y[abc]z/.test("ybz"));  //true
+        // console.log(/y[abc]z/.test("ycz"));  //true
+        // console.log(/y[abc]z/.test("yz"));  //false
+        // console.log(/y[abc]z/.test("yabcz")); //false
+        // console.log(/y[abc]z/.test("yazybzycz")); //true
+
+
+        // 找yaaz  ybbz yccz
+        console.log(/y(aa|bb|cc)z/.test("yaaz")); //true
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

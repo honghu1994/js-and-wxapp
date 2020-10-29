@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        in两个作用：
+            用forin 遍历对象、数组
+
+            判断对象是否拥有某个属性
+
+            语法：
+                    字符串 in 对象 
+                            
+                    如果不加引号，就不是字符串，会当变量来取值，再判断这个值在不在对象的键的里面
+     -->
+
+    <script>
+
+        // var obj = {name:"jack",age:16};
+
+        // 遍历对象时，key是属性名
+        // for(var key in obj){
+
+        //     console.log('key=' + key+'-------- value=' + obj[key]);
+
+        // }
+        // console.log(obj);
+
+        // var arr = [10,20,30,40,50];
+        // // console.log(arr);
+        // // 遍历数组时，key是下标
+        // for(var key in arr){
+
+        //     console.log(key);
+        //     console.log(arr[key]);
+
+        // }
+
+
+        var obj = { name: "jack", age: 16, sayHi: function () { console.log('hello') } };
+
+        // // 判断obj里有没有name这个键
+        // console.log( 'name' in obj ); //true
+        // console.log( 'age' in obj ); //true
+        // console.log( 'height' in obj ); //false
+        // console.log( 'sayHi' in obj ); //true
+        // console.log( 'toString' in obj ); //true //这个属性是系统给的，但是系统给的，相当于也在obj里面
+        // // 所以你可以调用
+        // console.log(obj.toString());
+
+
+
+        //    var age = 19;
+        //    console.log( age in obj ); //false
+        //    console.log( 'age' in obj ); //true
+
+   
+        // console.log(name in obj); //代表先取name遍历的值，再问这个在不在obj里面，取到空字符串，空字符串得到false
+        // console.log('name' in obj); //就是问name这个key在不在obj里面，在得到true
+
+        
+        // window默认有一个name属性，无论给它是什么值，都是字符串
+        // 所有全局变量相当于是window的属性，那么反过来哦，window的属性相当于是全局变量
+            
+        // console.log(age in obj);//报错，window里默认没有age属性，而且你又没有声明，所以报错
+        // console.log( top in obj); //false
+       
+    
+        // console.log('name' in obj); //判断obj有没有name这个键
+        // console.log(name in obj); //判断obj有没有name这个变量对应的值得键，
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

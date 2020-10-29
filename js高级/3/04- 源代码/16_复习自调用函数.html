@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+
+        // // 匿名函数作用1：作为自调用函数
+        // (function (){
+
+        //     console.log('匿名函数');
+
+        // })();
+
+        // // 匿名函数作用2：可以赋值
+        // var f1 = function(){
+
+        //     console.log('...');
+
+        // }
+
+        // // 匿名函数作用3：可以作为回调函数
+        navigator.geolocation.getCurrentPosition( function(){
+
+
+        });
+
+
+        // // 自调用函数可以传参数吗？可以
+        // (function(num){
+
+        //     console.log(num);
+
+        // })(300);
+
+
+
+        // function getSum() {
+
+        //     var obj = {
+        //         sayHi: function (num) {
+
+
+        //             console.log('hello' + num);
+
+        //         }
+        //     };
+
+        //     return obj;
+        // }
+
+        // 效果一样的
+        // getSum().sayHi(30);
+
+        // 把返回值当函数来调用了
+        // getSum()(function(){
+
+
+        // });
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

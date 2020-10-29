@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        闭包：其实就是一种函数
+                一种可以访问另外一个函数内部变量的函数
+
+        作用：延长局部变量的生命周期，换句话说就是可以让某个局部变量，在外面也可以访问
+
+        闭包相当于是连接函数内部和外部的桥梁
+
+
+        局部变量生命周期：一进入函数就创建局部变量,除了这个函数的大括号，就销毁
+
+
+        内存泄露：程序有一块空间一直占用着没被回收
+        闭包：因为延长了局部变量的生命周期，所以这块空间一直没销毁
+        所以少用闭包，并且记得如果这个闭包不用了就记得把闭包赋值为null
+
+
+        闭包写法：
+            1. 返回函数法
+
+                function 外面函数(){
+
+                    会有局部变量
+
+                    function 里面函数(){
+
+                        访问这个局部变量
+                    }
+
+                    return 里面函数;
+                }
+
+                
+            2. 全局变量引用法
+                var 全局变量;
+                function 外面函数(){
+
+                    会有局部变量
+
+                    function 里面函数(){
+
+                        访问这个局部变量
+                    }
+
+                    全局变量 = 里面函数;
+                }
+
+            
+            3. window属性引用
+
+                function 外面函数(){
+
+                    会有局部变量
+
+                    function 里面函数(){
+
+                        访问这个局部变量
+                    }
+
+                    window.某属性 = 里面函数;
+                }
+     -->
+
+    <script>
+        /*
+             function f1(){ //这里诞生局部变量
+    
+                 var num = 10;
+                 console.log('里面num=' + num);
+                 
+             } //这里销毁局部变量
+    
+             f1();
+             console.log(num);
+       */
+
+
+        //闭包第一种写法：返回函数法
+        /*
+             function f1(){
+    
+                 var num = 10;
+                 
+                //  这个函数就叫闭包
+                 function f2(){
+    
+                    console.log('f2里num=' + num);
+                 }
+                 
+                 return f2;
+             }//这里才销毁
+    
+    
+             var res = f1();
+            //  console.log(res);
+             res(); //相当于是在外面访问的num了
+        */
+
+
+        // 闭包第二种写法：全局变量引用法
+        /*
+            var res;
+            function f1() {
+    
+                var num = 1000;
+    
+                function closure(){
+    
+                    console.log('num=' + num);
+                    
+                }
+    
+                res = closure;
+            }
+        
+            f1();
+            res();
+        */
+
+
+        // 闭包第三种写法：用window保存的方法
+        function f1() {
+
+            var num = 1000;
+
+            function closure() {
+
+                console.log('num=' + num);
+
+            }
+
+            window.res = closure;
+        }
+
+
+        f1();
+        window.res();
+        // 如果不用了，那么就记得把这个闭包引用赋值为null
+        window.res = null;
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

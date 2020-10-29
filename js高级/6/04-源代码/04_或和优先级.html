@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        在正则里一个 | 就代表或，就是要么匹配左边，要么匹配右边
+
+
+        ()： 优先级，先用小括号得到结果
+
+     -->
+
+    <script>
+
+        // // 要么有hei，要么有ma
+        // console.log(/hei|ma/.test("hei")); //true
+        // console.log(/hei|ma/.test("ma"));  //true
+        // console.log(/hei|ma/.test("heima")); //true
+        // console.log(/hei|ma/.test("heiheimama"));  //true
+        // console.log(/hei|ma/.test("heimaheima"));  //true
+        // console.log(/hei|ma/.test("林黑群真尼玛hei"));  //true
+        // console.log(/hei|ma/.test("he1im2a")); //false
+
+
+
+        // 先小括号得到结果，要么有i要么有m，然后跟外面组合，得到要么heia 要么hema
+        // 最终找heia或者hema
+        // console.log(/he(i|m)a/.test("hei")); //false
+        // console.log(/he(i|m)a/.test("ma")); //false
+        // console.log(/he(i|m)a/.test("heima")); //false
+        // console.log(/he(i|m)a/.test("heia")); //true
+        // console.log(/he(i|m)a/.test("hema")); //true
+        // console.log(/he(i|m)a/.test("heimaheima")); //false
+        // console.log(/he(i|m)a/.test("heiahahahhaha")); //true
+        // console.log(/he(i|m)a/.test("hahahhahahema"));//true
+        // console.log(/he(i|m)a/.test("heiaheiahemahema"));//true
+        // console.log(/he(i|m)a/.test("he1iaheaiahe3mahe4ma")); //false
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

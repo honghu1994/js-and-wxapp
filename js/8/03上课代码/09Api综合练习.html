@@ -1,0 +1,112 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //添加删除数组练习
+    //练习1
+    var arr = ["刘备"];
+    //添加数据后变成：["赵云","马超","刘备","关羽","张飞"]
+    arr.push('关羽', '张飞');
+    arr.unshift("赵云", "马超");
+    console.log(arr);
+    //删除数据后变成：["关羽","张飞"]
+
+    //练习2
+    var arr = ["赵云", "马超", "刘备", "关羽", "张飞"];
+    //            0      1      2       3       4     length = 5
+    //把数组的最后一个元素变成数组的第一个元素
+    //把数组的第一个元素变成数组的最后一个元素
+    var temp = arr[0];
+    arr[0] = arr[arr.length - 1];
+    arr[arr.length - 1] = temp;
+    console.log(arr);
+
+
+
+    var arr = ["赵云", "马超", "刘备", "关羽", "张飞"];
+    //            0      1      2       3       4     length = 5
+    //截取["刘备","关羽"]
+    // arr.splice(2,2);
+
+    //在马超后面增加 马腾
+    // arr.splice(2,0,'马腾');
+
+    //删除关羽
+    arr.splice(3, 1);
+    console.log(arr);
+
+
+
+    //1. 截取字符串"我爱中华人民共和国"，中的"中华"
+    var str = '我爱中华人民共和国';
+    var str1 = str.substr(2, 2);
+    console.log(str1);
+
+
+    //2. "abcoefoxyozzopp"查找字符串中所有o出现的位置
+    //    分析：将 所有 o 的 下标 都 找到 ，并存入 数组，最后打印数组
+    var str = 'abcoefoxyozzopp';
+    //         abc o ef o xy o  z  z   o  pp
+    //         012 3 45 6 78 9  10 11  12
+    var arrIndex = [];
+    do {
+      //2.1 获取 最后一个 o 的下标
+      var lastOIndex = str.lastIndexOf('o');
+      //2.2 判断 下标 是否 > -1，如果大于，说明 找到了 一个 o，如果 不大于-1，说明 已经没有o了
+      if (lastOIndex > -1) {
+        //2.3 先将 下标 存入 数组
+        arrIndex.push(lastOIndex);
+        //2.4 截取新字符串：从下标0开始截取 到 o 下标的 前一个位置
+        str = str.substring(0, lastOIndex);
+      } else {
+        break; //跳出循环
+      }
+    } while (true);
+
+    console.log(arrIndex);
+
+
+    //3. 把字符串中所有的o替换成!
+    var str = 'abcoefoxyozzopp';
+    str = str.replace(/o/g,'!');
+    console.log(str);
+
+    //4. 把一个字符串中所有的空格全部去掉
+    var str = 'i love u,but u dont know ~~~';
+    str = str.replace(/ /g,'');
+    console.log(str);
+
+    //5. 统计一个字符串中每个字符出现的次数 ----------------------
+    var str = 'abcoao';
+    //思路分析：
+    //      a. 将所有 出现的 字符 单独保存，每种字符 只保存1次
+    //      b. 保存 每种 字符 出现 的 次数
+    //         { a:2 , b:1 , c:1 , o:2}
+
+    var obj = {};
+    for(var i = 0; i < str.length;i++){
+      //1.取出 字符
+      var charI = str[i];
+      //2.判断 对象中 是否 有 与 字符 同名的 属性
+      if( charI in obj){
+        //3.在 同名属性 上，累加 次数
+        obj[charI] += 1;
+      }else{
+        //4.如果 对象中 不存在 与 字符 同名的属性，则 动态添加一个 ，设置默认值为 1
+        obj[charI] = 1; 
+        // obj.a = 1;  -> obj['a'] = 1
+      }
+    }
+
+    console.log(obj);
+
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

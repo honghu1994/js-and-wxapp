@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        修改函数上下文你可以简单理解为就是修改函数内的this指向
+
+        call方法：可以用来修改函数内的this
+                call也能立即调用函数，只不过还多一个功能：把this修改成你传过去的对象
+
+
+        call语法：
+            函数.call(参数1,参数n)
+
+                参数1：是修改的函数内的this指向
+                参数n：你传给函数的实参，形参有几个你就传几个实参（依然还是逗号隔开）
+     -->
+
+    <script>
+        //     function f1() {
+
+        //         console.log('f1被调用了');
+
+        //         console.log(this);
+
+        //         console.log('f1结束了');
+
+        //     }
+
+        //     f1();//window
+
+        //     var obj = { name: "jack" };
+        //     //  把f1函数里的this改成obj
+        //     f1.call(obj); //this变成了obj  也会立即调用函数，初次以外，还会把this指向给改成你传过来的对象
+
+        //    //f1.call(); //window
+
+
+        // function getSum(n1,n2){
+
+        //     console.log(this);
+        //     console.log(n1,n2);
+
+        // }
+
+        // // getSum(10,20);//window  分别打印10和20
+
+        // var obj = {name : "jack"};
+
+        // getSum.call(obj); //这个时候，仅仅只是把this改成了obj，但是n1和n2两个形参没有传值，所以n1和n2为undefined
+
+        // getSum.call(obj,10,20); //这样既改了this，也把实参传过去了
+
+
+        var obj1 = {
+            name: "jack",
+            sayHi: function (age) {
+
+                console.log('大家好，我叫' + this.name + '今年' + age);
+
+            }
+        }
+
+        obj1.sayHi(19); //jack
+
+        var obj2 = { name: "rose" };
+        obj1.sayHi.call(obj2,16); //大家好，我叫rose
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

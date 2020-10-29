@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset='UTF-8'/>
+    <script>
+      var str = '我们都是最棒的 IT学习者~~~在前端的路上，一往无前，学无止境~~~';
+
+      //1.charAt 返回 对应 下标的 字符 -------------------------------------
+      var char1 = str.charAt(5);
+      console.log(char1);
+
+      //2.indexOf 返回 对应 字符的 下标，如果 找不到 字符，就返回 -1 ---------
+      //          注意：如果 有多个 相同的目标字符，返回 第一个 匹配字符的 下标
+      var index1 = str.indexOf('学')
+      console.log(index1);
+
+      //2.2 lastIndexOf 返回 对应的 最后一个 字符的下标 ---------------------
+      var index2 = str.lastIndexOf('学');
+      console.log(index2);
+
+      //2.3 找 第一个 出现的 前端 两个字的下标
+      var index3 = str.indexOf('');
+      console.log(index3);
+
+      // 思考题：如何 获取 字符串中 所有 匹配 字符的 下标呢？
+
+
+      // 关于 字符串 的 恒定性：字符串一旦创建，无法直接修改，只能重新创建一个新的字符串来覆盖！
+
+      //3.concat 连接字符串 -----------------------------------------------
+      var str = '我喜欢你，你不知道，但没关系~~~我家狗知道~~';
+
+      // str+='讨厌~~~';
+
+      str = str.concat('讨厌','死鬼','不早说~~~');
+      console.log(str);
+
+      //4. replace() 替换 指定的字符串 -----------------------------------
+      var str = '我喜欢你，你不知道，你喜欢我吗？ 没关系~~~我家狗知道~~';
+      //4.1 默认 只能替换 第一个 匹配的 字符串
+      // str = str.replace('喜欢','讨厌');
+      //4.2 如果 要 将 所有匹配的 字符串都替换，需要使用 正则表达式
+      str = str.replace(/喜欢/g,'讨厌');
+      console.log(str);
+
+
+      //5.split() 将 字符串  按照 分隔符 拆成 若干个 元素，存入 数组，并返回 数组
+      var str = 'i love u , do u love me~~~';
+      var arr = str.split(' ');
+      console.log(arr); // ["i", "love", "u", ",", "do", "u", "love", "me~~~"]
+
+      //6.substr(index,count)  从 指定 下标 复制取出 count 个字符，并返回
+      var str = 'i love u , do u love me~~~';
+      var word = str.substr(2,4);
+      console.log(str);
+      console.log(word);
+
+      //7substring(beginIndex,endIndex)   截取范围： beginIndex <= x  < endIndex
+      var str = 'i love u,do u love me~~~';
+      var word = str.substring(2,10);
+      console.log(word);
+
+      //8.toUpperCase() 将 字符串中 所有 英文字母 都转成 大写
+      var str = 'i love u,do u love me~~~';
+      str = str.toUpperCase();
+      console.log(str);
+
+      //9.toLowerCase() 将 字符串中 所有 英文字母 都转成 小写
+      var str = 'I LOVE U , DO U LOVE ME~~~';
+      str = str.toLowerCase();
+      console.log(str);
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

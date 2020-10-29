@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    var girlFriend = {
+      gfName: '小静',
+      age: 21,
+      gender: false,
+
+      xcook: function () {
+        console.log('做菜简直就是 金顶厨师的水平~~~~');
+      },
+      run: function () {
+        console.log('每天晚上跑跑步~~~~');
+        //return undefined;
+      }
+    };
+
+    // var proValue = girlFriend['age']; 
+    // console.log(proValue);
+
+    // var proValue2 = girlFriend.age;
+    // console.log(proValue2);
+
+    //1.接收用户输如的 属性名 - 假设用户 输入的 是 gfName
+    var proName = prompt('请输入您要访问的 属性 的名字：'); //相当于 ： var proName = 'gfName'
+
+    //2.根据用户书输入的属性名 获取 对应的 属性值
+    var proValue = girlFriend[proName]; //相当于 ： var proValue = girlFriend['gfName']
+    // var proValue = girlFriend.run();
+    //                                    相当于 ： var proValue = girlFriend.gfName;
+    // proValue();
+    
+    console.log(proValue);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

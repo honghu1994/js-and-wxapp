@@ -1,0 +1,62 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // a-----------------------------------
+    function fun() {
+      var num; // 局部变量的 声明部分 被 提到函数的 最前端
+      console.log(num); // undefined
+      num = 20;
+    }
+    var num;
+
+    num = 10; // 全局变量
+
+    fun();
+
+    
+
+    // b-----------------------------------
+
+    function f1() {
+      var a; // 局部变量的 声明部分 被 提到函数的 最前端
+      var b; // 局部变量的 声明部分 被 提到函数的 最前端
+      b = 9;
+      console.log(a); // undefined
+      console.log(b); // 9
+      a = '123';
+    }
+
+    var a;
+    a = 18;
+    f1();
+
+
+
+
+
+
+    // c-----------------------------------
+    f1();
+    console.log(c);
+    console.log(b);
+    console.log(a);
+
+    function f1() {
+      var a = b = c = 9;
+      //var a = 9;
+      //b = 9;
+      //c = 9;
+      console.log(a);
+      console.log(b);
+      console.log(c);
+    }
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

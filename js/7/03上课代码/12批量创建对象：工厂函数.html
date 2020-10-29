@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // var stu1 = {
+    //   name: '小白',
+    //   age: 21,
+    //   gender: true,
+    //   sayHi: function () {
+    //     console.log('我是小白~~');
+    //   }
+    // };
+
+
+    // var stu2 = {
+    //   name: '小黑',
+    //   age: 23,
+    //   gender: false,
+    //   sayHi: function () {
+    //     console.log('我是小黑~~');
+    //   }
+    // };
+
+    //简单工厂模式 -- 批量生产 对象
+
+    //工厂函数：每次调用，内部都会 创建一个对象，并 设置好 属性的值（一般通过形参传入），最后返回 这个对象 给 调用者
+
+    // 1.用来创建 一个 学员对象 的 方法 --------------------------------
+    function createStuInfo(stuName, stuAge, stuGender) {
+      //1.1 创建对象 并设置 属性值
+      var obj = {
+        name: stuName,
+        age: stuAge,
+        gender: stuGender,
+        sayHi: function () {
+          console.log('我很喜欢你~~~~');
+        }
+      };
+
+      //1.2 将 对象 返回
+      return obj;
+    }
+
+    //2.使用工厂函数 创建2个对象----------------------------------------
+    var stu1 = createStuInfo('小白', 18, false);
+    console.log(stu1);
+
+    var stu2 = createStuInfo('小黑', 21, true);
+    console.log(stu2);
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

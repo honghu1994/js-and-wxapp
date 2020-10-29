@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    body {
+        background: #ccc;
+    }
+
+    label {
+        width: 40px;
+        display: inline-block;
+    }
+
+    span {
+        color: red;
+    }
+
+    .container {
+        margin: 100px auto;
+        width: 400px;
+        padding: 50px;
+        line-height: 40px;
+        border: 1px solid #999;
+        background: #efefef;
+    }
+
+    span {
+        margin-left: 30px;
+        font-size: 12px;
+    }
+
+    .wrong {
+        color: red
+    }
+
+    .right {
+        color: green;
+    }
+
+    .strengthLv0 {
+        height: 6px;
+        width: 120px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv1 {
+        background: red;
+        height: 6px;
+        width: 40px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv2 {
+        background: orange;
+        height: 6px;
+        width: 80px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+
+    .strengthLv3 {
+        background: green;
+        height: 6px;
+        width: 120px;
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+
+        <label>密码</label>
+        <input type="text" id="inp1" maxlength="16">
+
+        <div class="pass-wrap">
+            <em>密码强度：</em><em id="strength"></em>
+            <div id="strengthLevel" class="strengthLv0"></div>
+        </div>
+    </div>
+
+
+    <script>
+        // 找到文本框
+        var inp1 = document.getElementById('inp1');
+        // 找到提示文字的em
+        var tip = document.getElementById('strength');
+        // 找到等级
+        var level = document.getElementById('strengthLevel');
+
+        // 键盘弹起事件
+        inp1.onkeyup = function(){
+
+            if(inp1.value == ""){
+                // 如果删没了，把提示文字也清空
+                tip.innerHTML = "";
+                return;
+            }
+            //字符串有length属性
+            if(inp1.value.length < 5){
+
+                //长度不能小于5
+                tip.innerHTML = "密码长度不能少于5位";
+                level.className = "strengthLv0"; //div也要复原
+                return;
+            }
+
+            // 能来到这就是大于或等于5位，那么就应该判断强弱
+            var score = 0;
+            // 如果字母+1
+            if( /[a-z]/i.test( inp1.value ) ){
+
+                score++;
+            }
+
+            // 如果有数字+1
+            if( /\d/.test( inp1.value ) ){
+
+                score++;
+            }
+
+            // 如果有特殊符号 + 1
+            if( /\W/.test( inp1.value) ){
+
+                score++;
+            }
+            
+            level.className = "strengthLv" + score;
+
+            // 根据等级显示不同的文字
+            if(score == 1){
+
+                tip.innerHTML = "弱";
+
+            }else if(score == 2){
+
+                tip.innerHTML = "中";
+
+            }else if(score == 3){
+
+                tip.innerHTML = "强";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

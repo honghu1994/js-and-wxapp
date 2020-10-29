@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    function add(x, y) {
+      // 准备 累加和用的 变量
+      var sumNum = 0;
+
+      // 循环 生成 x 到 y 之间所有的数
+      for(var i = x; i <= y;i++){
+        // 将 生成的数 累加到 变量 sumNum 中
+        sumNum += i;
+      }
+
+      //返回 累加和
+      return sumNum;
+    }
+
+    var num = add(1, 100);
+    console.log(num);
+
+    // var maxNum = Math.max(2,1,5,6);
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

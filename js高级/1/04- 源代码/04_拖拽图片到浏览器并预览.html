@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        ondrop：在范围内松手
+
+        浏览器默认就有ondrop的行为：会打开你拖进来的文件
+     -->
+
+    <style>
+
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body{
+            border:5px dashed black;
+        }
+    </style>
+</head>
+<body>
+    <h1>拖拽图片到虚线内</h1>
+
+    <script>
+
+        document.body.ondragover = function(e){
+            
+            // 这个阻止默认行为只是为了让ondrop能够得到触发
+            e.preventDefault();
+        }
+        
+        document.body.ondrop = function(e){
+
+            // 阻止浏览器默认会打开你拖进来的文件的行为
+            e.preventDefault();
+
+            // 为了把拖进来的图片显示出来
+
+            // 所有拖进来的图片都在事件对象里
+            // 具体点：e.dataTransfer.files里，files是一个伪数组，拖进来几个图片长度就为几
+            // console.log(e.dataTransfer.files);
+
+            // 我们这个案例里只拖一张图片，那么下标0就是被拖进来的图片
+            // console.log(e.dataTransfer.files[0]);
+
+            // 我要想办法把这个图片对象转成路径，这叫转成临时路径
+            // 临时路径：当当前网页关闭就失效
+            var url = URL.createObjectURL(e.dataTransfer.files[0]);
+            console.log(url);
+            
+            document.body.style.background =  "url("+ url +")";
+            
+        }
+    </script>
+</body>
+</html>

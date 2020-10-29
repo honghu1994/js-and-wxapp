@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    // --------------------------- 恒定性 ---------------------------
+    var str = '小白';
+    str += '，我爱你~~'
+    // 一共出现了 3个字符串 的原因，就是因为 字符串恒定性：字符串 一旦创建 无法修改，只能销毁
+
+
+    // -------------------------------关于 值类型的 包装器 -------------------
+    var age = 1;
+    // age.toString();
+
+    // 当 我们 调用 值类型数据 的 各种方法时，js引擎 偷偷帮我们创建了 对应类型的 包装器 对象，调用的 是 包装器对象 里的方法
+    var age1 = new Number(1);
+    age1.toString()
+
+    // var a = new Array();
+
+    // 1.1 对象的字面量 表示法
+    var obj1 = {
+      name: 'james',
+      age: 1
+    };
+
+    // ----------------------------------json ---------------------------------------------------------------
+    var obj2 = {
+      'name': 'james',
+      'age': 1
+    };
+
+    // 将对象 转成 json字符串，可以 方便 网络传输，也方便 保存在本地硬盘
+    var jsonStr = JSON.stringify(obj1);
+    console.log(jsonStr);
+
+    // 将 JSON字符串 转成 对象 ，方便调用访问
+    var jsonObj =  JSON.parse(jsonStr);
+    console.log(jsonObj);
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>

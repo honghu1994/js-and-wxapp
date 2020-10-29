@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <title></title>
+  <meta charset='UTF-8' />
+  <script>
+    //0. 创建了一个数组，里面有5 个元素------------------------------------------------
+    var arrCity = ['P城', 'R城', 'G港', '学校', '靶场'];
+    //              0       1       2     3       4       length = 5
+
+
+    //1.splice( index,count )删除 数组中 指定下标 的元素
+    //            index -- 要删除的元素的开始下标
+    //            count -- 要删除的元素的 个数
+    arrCity.splice(3,1);
+    console.log(arrCity);
+
+
+    //2.splice 从指定下标开始，一直删除到最后一个元素
+    //             index
+    //             count  -- 如果 第二个参数 不传，则 代表 从  index 一直删到 结尾
+    arrCity.splice(1); // 从 下标1 开始删除，一直 删到最后一个元素
+    console.log(arrCity); //[ 'P城' ]
+
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
